@@ -39,24 +39,19 @@ extern int32_t passport_app(void* p);
 extern int32_t scened_app(void* p);
 extern int32_t storage_test_app(void* p);
 extern int32_t subghz_app(void* p);
-extern int32_t jukebox_app(void *p);
-extern int32_t universal_rf_remote_app(void *p);
 extern int32_t usb_mouse_app(void* p);
 extern int32_t usb_test_app(void* p);
 extern int32_t vibro_test_app(void* p);
 extern int32_t bt_hid_app(void* p);
 extern int32_t battery_test_app(void* p);
 extern int32_t text_box_test_app(void* p);
+extern int32_t file_browser_app(void* p);
 
 // Plugins
 extern int32_t music_player_app(void* p);
 extern int32_t snake_game_app(void* p);
 extern int32_t tetris_game_app(void *p);
 extern int32_t clock_app(void *p);
-// extern int32_t floopper_bloopper(void* p);
-// extern int32_t raycast_game_app(void* p);
-extern int32_t spectrum_analyzer_app(void* p);
-extern int32_t flappy_game_app(void* p); 
 
 // On system start hooks declaration
 extern void bt_on_system_start();
@@ -350,22 +345,6 @@ const FlipperApplication FLIPPER_PLUGINS[] = {
      .flags = FlipperApplicationFlagDefault},
 #endif
 
-#ifdef APP_FLAPPY_GAME
-    {.app = flappy_game_app, 
-	.name = "Flipper Flappy Bird", 
-	.stack_size = 1024, 
-	.icon = &A_Plugins_14
-	},
-#endif
-
-#ifdef APP_JUKEBOX
-    {.app = jukebox_app,
-     .name = "Jukebox",
-     .stack_size = 2048,
-     .icon = &A_UniversalRemote_14,
-     .flags = FlipperApplicationFlagDefault},
-#endif
-
 #ifdef APP_MUSIC_PLAYER
     {.app = music_player_app,
      .name = "Music Player",
@@ -382,24 +361,8 @@ const FlipperApplication FLIPPER_PLUGINS[] = {
      .flags = FlipperApplicationFlagDefault},
 #endif
 
-#ifdef APP_SPECTRUM_ANALYZER
-    {.app = spectrum_analyzer_app, 
-    .name = "Spectrum Analyzer", 
-    .stack_size = 1024, 
-    .icon = &A_Plugins_14,
-    .flags = FlipperApplicationFlagDefault},
-#endif
-
 #ifdef APP_TETRIS_GAME
     {.app = tetris_game_app, .name = "Tetris Game", .stack_size = 1024, .icon = NULL},
-#endif
-
-#ifdef APP_UNIVERSALRF
-     {.app = universal_rf_remote_app,
-     .name = "Universal SubGHz",
-     .stack_size = 2048,
-     .icon = &A_UniversalRemote_14,
-     .flags = FlipperApplicationFlagDefault},
 #endif
 
     {.app = wav_player_app,
@@ -407,19 +370,6 @@ const FlipperApplication FLIPPER_PLUGINS[] = {
      .stack_size = 4096,
      .icon = &A_MusicPlayer_14,
      .flags = FlipperApplicationFlagDefault},
-
-// #ifdef APP_RAYCAST_GAME
-//     {.app = raycast_game_app, .name = "Raycast Game", .stack_size = 4096, .icon = NULL},
-// #endif
-
-// #ifdef FLOOPPER_BLOOPPER
-//     {.app = floopper_bloopper,
-//      .name = "Floopper Bloopper",
-//      .stack_size = 1024,
-//      .icon = &A_Plugins_14,
-//      .flags = FlipperApplicationFlagDefault},
-// #endif
-
 };
 
 const size_t FLIPPER_PLUGINS_COUNT = COUNT_OF(FLIPPER_PLUGINS);
@@ -527,6 +477,14 @@ const FlipperApplication FLIPPER_DEBUG_APPS[] = {
      .name = "Display Test",
      .stack_size = 1024,
      .icon = NULL,
+     .flags = FlipperApplicationFlagDefault},
+#endif
+
+#ifdef APP_FILE_BROWSER_TEST
+    {.app = file_browser_app,
+     .name = "File Browser test",
+     .stack_size = 2048,
+     .icon = &A_BadUsb_14,
      .flags = FlipperApplicationFlagDefault},
 #endif
 
