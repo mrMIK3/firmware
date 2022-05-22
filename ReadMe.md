@@ -7,7 +7,10 @@ Our goal is to expand to the Flipper Zero's capability as much as possible witho
 
 # Update firmware
 
-[Get Latest Firmware from Update Server](https://github.com/FroggMaster/flipperzero-kokoe-firmware)
+[Get Latest Firmware from Update Server](https://github.com/FroggMaster/flipperzero-kokoe-firmware/releases)
+
+
+## With STLink
 
 Flipper Zero's firmware consists of two components:
 
@@ -15,8 +18,6 @@ Flipper Zero's firmware consists of two components:
 - Core1 Firmware - HAL + OS + Drivers + Applications.
 
 They both must be flashed in order described.
-
-## With STLink
 
 ### Core1 Firmware
 
@@ -41,7 +42,7 @@ One liner: `make flash_radio`
 
 ## With USB DFU 
 
-1. Download latest [DFU Firmware](https://github.com/FroggMaster/flipperzero-kokoe-firmware/releases)
+1. Download latest [DFU Firmware Release](https://github.com/FroggMaster/flipperzero-kokoe-firmware/releases)
 
 2. Reboot Flipper to Bootloader
  - Press and hold `← Left` + `↩ Back` for reset 
