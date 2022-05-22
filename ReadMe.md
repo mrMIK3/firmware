@@ -7,7 +7,7 @@ Our goal is to expand to the Flipper Zero's capability as much as possible witho
 
 # Update firmware
 
-[Get Latest Firmware Release](https://github.com/FroggMaster/flipperzero-kokoe-firmware/releases)
+[Get The Latest Firmware Release](https://github.com/FroggMaster/flipperzero-kokoe-firmware/releases)
 
 
 ## With STLink
