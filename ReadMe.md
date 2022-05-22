@@ -1,19 +1,17 @@
 # Flipper Zero Kokoe Firmware
 
-<a href="https://ibb.co/5Fgtgmg"><img src="https://i.ibb.co/rsRTRYR/image.png" alt="image" border="0"></a>
-
 <a href="https://ibb.co/wQ12PVc"><img src="https://i.ibb.co/wQ12PVc/fzCUSTOM.png" alt="fzCUSTOM" border="0"></a>
 
-Welcome to [Flipper Zero](https://flipperzero.one/)'s Custom Firmware repo!
-Our goal is to make any features possible in this device without any stupid limitations! Please help us realize emulation for all dynamic (rolling codes) protocols and brute-force app!
+Welcome to [Flipper Zero](https://flipperzero.one/)'s Kokoe Custom Firmware repo!
+Our goal is to expand to the Flipper Zero's capability as much as possible without any limitations. You are encouraged to help us realize our goal; Expandig upon emulation for dynamic (rolling codes) protocols, brute-forcing, sniffing and other various functioanlities. 
 
 # Update firmware
 
-[Get Latest Firmware from Update Server](https://github.com/Eng1n33r/flipperzero-firmware)
+[Get Latest Firmware from Update Server](https://github.com/FroggMaster/flipperzero-kokoe-firmware)
 
 Flipper Zero's firmware consists of two components:
 
-- Core2 firmware set - proprietary components by ST: FUS + radio stack. FUS is flashed at factory and you should never update it.
+- Core2 firmware set - proprietary components by ST: FUS + radio stack. FUS is flashed at the factory and you should never update it.
 - Core1 Firmware - HAL + OS + Drivers + Applications.
 
 They both must be flashed in order described.
@@ -43,7 +41,7 @@ One liner: `make flash_radio`
 
 ## With USB DFU 
 
-1. Download latest [Firmware](https://update.flipperzero.one)
+1. Download latest [DFU Firmware](https://github.com/FroggMaster/flipperzero-kokoe-firmware/releases)
 
 2. Reboot Flipper to Bootloader
  - Press and hold `← Left` + `↩ Back` for reset 
