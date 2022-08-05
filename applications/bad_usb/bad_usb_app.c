@@ -122,7 +122,6 @@ void bad_usb_app_free(BadUsbApp* app) {
 
     // Views
     view_dispatcher_remove_view(app->view_dispatcher, BadUsbAppViewWork);
-    view_dispatcher_remove_view(app->view_dispatcher, BadUsbAppViewConfigLayout);
     bad_usb_free(app->bad_usb_view);
 
     // Custom Widget
