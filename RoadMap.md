@@ -6,6 +6,8 @@
 - I tried to organize them in terms of difficulty.
 
 ## WISH LIST ITEMS:
+- `SubGhz` Port Unleashed OG visual frequency analyzer.
+- `UART` Move UART Echo app from Debug to GPIO section.
 - `Notepad` APP to allow taking quick notes and saving to SD.
 - - Also can possibly open/edit .md,.txt,.fmf and other text friendly formats
 - `Write URL to NFC` APP to allow creating URL NFC tags from only the flipper
