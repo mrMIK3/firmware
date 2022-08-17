@@ -27,9 +27,6 @@ static const Icon* const portrait_bad[MOODS_TOTAL] = {
 static const Icon* const* portraits[MOODS_TOTAL] = {portrait_happy, portrait_ok, portrait_bad};
 
 static const char* const moods[BUTTHURT_MAX] = {
-    "Stoned",
-    "Baked",
-    "Ripped",
     "Joyful",
     "Happy",
     "Satisfied",
@@ -39,11 +36,10 @@ static const char* const moods[BUTTHURT_MAX] = {
     "Bored",
     "Sad",
     "Disappointed",
-    "Annoyed"
-    // ,
-    // "Upset",
-    // "Angry",
-    // "Furious"
+    "Annoyed",
+    "Upset",
+    "Angry",
+    "Furious"
 };
 
 static void input_callback(InputEvent* input, void* ctx) {
