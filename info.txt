@@ -1,0 +1,2 @@
+C:\Users\kevin\OneDrive\Documents\GitHub\flipperzero-firmware-wPlugins>docker-compose up -d
+C:\Users\kevin\OneDrive\Documents\GitHub\flipperzero-firmware-wPlugins>docker-compose exec dev ./fbt
