@@ -27,11 +27,9 @@ static const Icon* const portrait_bad[MOODS_TOTAL] = {
 static const Icon* const* portraits[MOODS_TOTAL] = {portrait_happy, portrait_ok, portrait_bad};
 
 static const char* const moods[BUTTHURT_MAX] = {
-    "Stoned",
-    "Baked",
-    "Ripped",
     "Joyful",
     "Happy",
+    "Good",
     "Satisfied",
     "Relaxed",
     "Okay",
@@ -39,10 +37,10 @@ static const char* const moods[BUTTHURT_MAX] = {
     "Bored",
     "Sad",
     "Disappointed",
-    "Annoyed"
+    "Annoyed",
+    "Upset",
+    "Angry"
     // ,
-    // "Upset",
-    // "Angry",
     // "Furious"
 };
 
