@@ -87,6 +87,26 @@ FIRMWARE_APPS = {
         # Debug
         "debug_apps",
     ],
+    "no_games": [
+        "crypto_start",
+        # Svc
+        "basic_services",
+        # Apps
+        "basic_apps",
+        "updater_app",
+        "archive",
+        # Custom Apps
+        "custom_apps",
+        # Settings
+        "passport",
+        "system_settings",
+        "about",
+        "basic_plugins",
+        # WIFI Plugins
+        "wifi_plugins",
+        # Debug
+        "debug_apps",
+    ],
     "unit_tests": [
         "basic_services",
         "updater_app",
