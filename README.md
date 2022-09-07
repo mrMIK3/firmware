@@ -6,13 +6,14 @@
 <b>Latest Updates:</b>
 
 - Known Issues:			`FAP Loader`, `Chess` & `Chip8` (No Controls)
-- If you have any issue with something not listed in the "All Changes/Features" section, feel free to ask any questions you have in the main discord for Flipper Zero. They are a group, of free speech censoring GPL violators, that will surely ban you if you think diffrently than they want you to, and/or if you use their code in ways they have allowed under GPL. Unfortunately, the Flipper Zero community on the official Discord is toxic and will not grow unless a complete change of moderation is made.
+- If you have any issue with something not listed in the "All Changes/Features" section, feel free to ask any questions you have in the main discord for Flipper Zero.
 - Games/Apps `HIDDEN` for compile space can be found on Side B in the update folder.
 - Minor update for PicoPass from Bettse
 - Added [NRFSniff : Adds unique count display #56 (By Graf3x)](https://github.com/Eng1n33r/flipperzero-firmware/pull/56/) & Thanks to [Unleashed/xMasterX](https://github.com/Eng1n33r/flipperzero-firmware)
 - Assets: Includes New Dolphin Animations: [GITS (By Haseo)]
 - Assets: Includes a NFC Level 50 Gan0n Amiibo (Instead of Link)
-- Added [SubGhz Bruteforcer (By Ganapati)](https://github.com/ganapati/)
+- Added [SubGhz Bruteforcer (By Ganapati)](https://github.com/Ganapati/flipperzero-firmware)
+- Added [SubGhz: fix decoder kelooq #1719 (By Skorpionm)](https://github.com/flipperdevices/flipperzero-firmware/pull/1719)
 
 <table width="100%" border="0" cellspacing="0">
   <tr> <td colspan=2> <h3>This software is for experimental purposes only and is not meant for any illegal activity/purposes. We do not condone illegal activity and strongly encourage keeping transmissions to legal/valid uses allowed by law.</h3> </td> </tr>
@@ -149,6 +150,7 @@ $ ./fbt plugin_dist FIRMWARE_APP_SET=ext_apps
 - [Add new card parsers #1503 (By Astrrra)](https://github.com/flipperdevices/flipperzero-firmware/pull/1503)
 - [Fix Mifare Classic 4K reading of the last 8 sectors #1712 (By Astrrra)](https://github.com/flipperdevices/flipperzero-firmware/pull/1712)
 - [Picopass: detect and show SE / SIO #1701 (By pcunning)](https://github.com/flipperdevices/flipperzero-firmware/pull/1701)
+- [SubGhz: fix decoder kelooq #1719 (By Skorpionm)](https://github.com/flipperdevices/flipperzero-firmware/pull/1719)
 
 </details>
 
