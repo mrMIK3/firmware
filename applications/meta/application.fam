@@ -34,24 +34,24 @@ App(
     apptype=FlipperAppType.METAPACKAGE,
     provides=[
         "APPS_Sub_Playlist",
-        # "APPS_BarcodeGenerator",
-        # "APPS_BluetoothRemote",
+        "APPS_BarcodeGenerator",
+        "APPS_BluetoothRemote",
         # "APPS_Calculator",
         "APPS_DolphinRestorer",
         "APPS_DolphinBackup",
         "APPS_FlipFrid",
         "APPS_MouseJacker",
-        # "APPS_MouseJiggler",
-        # "APPS_multi_conv",
-        # "APPS_MusicPlayer",
-        "APPS_NameChanger",
+        "APPS_MouseJiggler",
+        "APPS_multi_conv",
+        "APPS_MusicPlayer",
+        # "APPS_NameChanger",
         "APPS_NRFSniff",
         # "APPS_Paint",
         "INTAPP_Picopass",
         "APPS_SentrySafe",
         # "APPS_SpectrumAnalyzer",
         "APPS_SubBrute",
-        # "APPS_WAVPlayer",
+        "APPS_WAVPlayer",
     ],
 )
 
@@ -85,9 +85,9 @@ App(
     name="Wifi applications for plug-in menu",
     apptype=FlipperAppType.METAPACKAGE,
     provides=[
-        "wifi_marauder",
-        "APPS_wifi_deauther",
-        "INTAPP_WiFiScanner",
+        "wifi_marauder"
+        # "APPS_wifi_deauther",
+        # "INTAPP_WiFiScanner",
     ],
 )
 
