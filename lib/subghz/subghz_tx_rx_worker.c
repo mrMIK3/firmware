@@ -5,9 +5,9 @@
 
 #define TAG "SubGhzTxRxWorker"
 
-#define SUBGHZ_TXRX_WORKER_BUF_SIZE 2048
+#define SUBGHZ_TXRX_WORKER_BUF_SIZE 1048
 //you can not set more than 62 because it will not fit into the FIFO CC1101
-#define SUBGHZ_TXRX_WORKER_MAX_TXRX_SIZE 60
+#define SUBGHZ_TXRX_WORKER_MAX_TXRX_SIZE 61
 
 #define SUBGHZ_TXRX_WORKER_TIMEOUT_READ_WRITE_BUF 40
 
@@ -75,7 +75,6 @@ bool subghz_tx_rx_worker_rx(SubGhzTxRxWorker* instance, uint8_t* data, uint8_t* 
         furi_delay_tick(1);
         if(!--timeout) {
             FURI_LOG_W(TAG, "RX cc1101_g0 timeout");
-            furi_hal_subghz_flush_rx();
             furi_hal_subghz_rx();
             break;
         }
