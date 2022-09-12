@@ -208,9 +208,9 @@ SubGhzTxRxWorker* subghz_tx_rx_worker_alloc() {
     furi_thread_set_context(instance->thread, instance);
     furi_thread_set_callback(instance->thread, subghz_tx_rx_worker_thread);
     instance->stream_tx =
-        xStreamBufferCreate(sizeof(uint8_t) * SUBGHZ_TXRX_WORKER_BUF_SIZE, sizeof(uint8_t));
+        xStreamBufferCreate(sizeof(uint8_t), sizeof(uint8_t));
     instance->stream_rx =
-        xStreamBufferCreate(sizeof(uint8_t) * SUBGHZ_TXRX_WORKER_BUF_SIZE, sizeof(uint8_t));
+        xStreamBufferCreate(sizeof(uint8_t), sizeof(uint8_t));
 
     instance->status = SubGhzTxRxWorkerStatusIDLE;
     instance->worker_stoping = true;
