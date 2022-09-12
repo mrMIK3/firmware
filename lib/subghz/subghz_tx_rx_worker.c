@@ -149,14 +149,14 @@ static int32_t subghz_tx_rx_worker_thread(void* context) {
         //transmit
         size_tx = xStreamBufferBytesAvailable(instance->stream_tx);
         if(size_tx > 0 && !timeout_tx) {
-            timeout_tx = 10; //20ms
+            timeout_tx = 5; //10ms
             if(size_tx > SUBGHZ_TXRX_WORKER_MAX_TXRX_SIZE) {
                 xStreamBufferReceive(
                     instance->stream_tx,
                     &data,
                     SUBGHZ_TXRX_WORKER_MAX_TXRX_SIZE,
                     SUBGHZ_TXRX_WORKER_TIMEOUT_READ_WRITE_BUF);
-                subghz_tx_rx_worker_tx(instance, data, SUBGHZ_TXRX_WORKER_MAX_TXRX_SIZE);
+                subghz_tx_rx_worker_tx(instance, &data, SUBGHZ_TXRX_WORKER_MAX_TXRX_SIZE);
             } else {
                 //todo checking that he managed to write all the data to the TX buffer
                 xStreamBufferReceive(
@@ -164,7 +164,7 @@ static int32_t subghz_tx_rx_worker_thread(void* context) {
                 subghz_tx_rx_worker_tx(instance, data, size_tx);
             }
         } else {
-            //recive
+            //receive
             if(subghz_tx_rx_worker_rx(instance, data, size_rx)) {
                 if(xStreamBufferSpacesAvailable(instance->stream_rx) >= size_rx[0]) {
                     if(instance->callback_have_read &&
