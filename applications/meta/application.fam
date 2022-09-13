@@ -51,7 +51,7 @@ App(
         "APPS_SentrySafe",
         # "APPS_SpectrumAnalyzer",
         "APPS_SubBrute",
-        "APPS_WAVPlayer",
+        #"APPS_WAVPlayer",
     ],
 )
 
