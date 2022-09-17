@@ -18,7 +18,7 @@ jobs:
         run: ./fbt resources icons
 
       - name: build updater package
-        run: ./fbt updater_package FIRMWARE_APP_SET=no_games
+        run: ./fbt updater_package FIRMWARE_APP_SET=no_games COMPACT=1
 
       - name: zip updater package
         run: cd dist/f7-C/f7-update-RM420 && zip ${{ github.sha }}.zip *
