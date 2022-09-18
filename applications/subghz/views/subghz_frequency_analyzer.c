@@ -18,18 +18,6 @@
 #define RSSI_SCALE 2
 #define TRIGGER_STEP 1
 
-static const NotificationSequence sequence_hw_blink = {
-    &message_blink_start_10,
-    &message_blink_set_color_cyan,
-    &message_do_not_reset,
-    NULL,
-};
-
-static const NotificationSequence sequence_hw_blink_stop = {
-    &message_blink_stop,
-    NULL,
-};
-
 typedef enum {
     SubGhzFrequencyAnalyzerStatusIDLE,
 } SubGhzFrequencyAnalyzerStatus;
@@ -43,7 +31,6 @@ struct SubGhzFrequencyAnalyzer {
     float rssi_last;
     uint32_t frequency_last;
     uint32_t frequency_last_vis;
-    NotificationApp* notifications;
 };
 
 typedef struct {
@@ -206,8 +193,14 @@ void subghz_frequency_analyzer_pair_callback(void* context, uint32_t frequency, 
     SubGhzFrequencyAnalyzer* instance = context;
 
     if((rssi == 0.f) && (instance->locked)) {
-        notification_message(instance->notifications, &sequence_hw_blink);
+        if(instance->callback) {
+            instance->callback(SubGhzCustomEventSceneAnalyzerUnlock, instance->context);
+        }
         instance->frequency_last_vis = instance->frequency_last;
+    } else if((rssi != 0.f) && (!instance->locked)) {
+        if(instance->callback) {
+            instance->callback(SubGhzCustomEventSceneAnalyzerLock, instance->context);
+        }
     }
 
     if((rssi != 0.f) && (frequency != 0)) {
@@ -217,8 +210,6 @@ void subghz_frequency_analyzer_pair_callback(void* context, uint32_t frequency, 
         if(!instance->locked) {
             // Triggered!
             instance->rssi_last = rssi;
-            notification_message(instance->notifications, &sequence_hw_blink_stop);
-            notification_message(instance->notifications, &sequence_success);
             FURI_LOG_D(TAG, "triggered");
         }
         // Update values
@@ -243,10 +234,6 @@ void subghz_frequency_analyzer_pair_callback(void* context, uint32_t frequency, 
 void subghz_frequency_analyzer_enter(void* context) {
     furi_assert(context);
     SubGhzFrequencyAnalyzer* instance = context;
-
-    // Notifications
-    instance->notifications = furi_record_open(RECORD_NOTIFICATION);
-    notification_message(instance->notifications, &sequence_hw_blink);
 
     //Start worker
     instance->worker = subghz_frequency_analyzer_worker_alloc(instance->context);
@@ -278,16 +265,17 @@ void subghz_frequency_analyzer_exit(void* context) {
     furi_assert(context);
     SubGhzFrequencyAnalyzer* instance = context;
 
-    // Stop blinking
-    notification_message(instance->notifications, &sequence_hw_blink_stop);
-
-    // Stop worker
+    //Stop worker
     if(subghz_frequency_analyzer_worker_is_running(instance->worker)) {
         subghz_frequency_analyzer_worker_stop(instance->worker);
     }
     subghz_frequency_analyzer_worker_free(instance->worker);
 
-    furi_record_close(RECORD_NOTIFICATION);
+    with_view_model(
+        instance->view, (SubGhzFrequencyAnalyzerModel * model) {
+            model->rssi = 0;
+            return true;
+        });
 }
 
 SubGhzFrequencyAnalyzer* subghz_frequency_analyzer_alloc() {
@@ -303,6 +291,12 @@ SubGhzFrequencyAnalyzer* subghz_frequency_analyzer_alloc() {
     view_set_input_callback(instance->view, subghz_frequency_analyzer_input);
     view_set_enter_callback(instance->view, subghz_frequency_analyzer_enter);
     view_set_exit_callback(instance->view, subghz_frequency_analyzer_exit);
+
+    with_view_model(
+        instance->view, (SubGhzFrequencyAnalyzerModel * model) {
+            model->rssi = 0;
+            return true;
+        });
 
     return instance;
 }
