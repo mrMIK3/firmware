@@ -1,7 +1,7 @@
 App(
     appid="clock_loader",
     name="Clock",
-    apptype=FlipperAppType.APP,
+    apptype=FlipperAppType.SYSTEM,
     entry_point="clock_loader_app",
     requires=["gui"],
     stack_size=int(1.5 * 1024),

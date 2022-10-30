@@ -132,7 +132,7 @@ bool desktop_scene_main_on_event(void* context, SceneManagerEvent event) {
         }
         case DesktopMainEventOpenTikTok: {
             LoaderStatus status =
-                loader_start(desktop->loader, "Applications", EXT_PATH("/apps/Main/TikTok_Remote.fap"));
+                loader_start(desktop->loader, "Applications", EXT_PATH("/apps/Tools/TikTok_Remote.fap"));
             consumed = true;
             break;
         }

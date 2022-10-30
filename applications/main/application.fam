@@ -21,6 +21,7 @@ App(
         #"SubGHz_Remote",
         "SubGHz_Remote_loader",
         "tiktok_loader",
+        "totp_loader",
         # "Spectrum_Analyzer",
     ],
 )

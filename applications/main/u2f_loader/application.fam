@@ -1,7 +1,7 @@
 App(
     appid="u2f_loader",
     name="U2F",
-    apptype=FlipperAppType.APP,
+    apptype=FlipperAppType.PLUGIN,
     entry_point="u2f_loader_app",
     requires=[
         "gui",

@@ -1,0 +1,14 @@
+App(
+    appid="totp_loader",
+    name="Authenticator",
+    apptype=FlipperAppType.APP,
+    entry_point="totp_loader_app",
+    requires=[
+        "gui",
+        "dialogs",
+    ],
+    stack_size=int(2 * 1024),
+    icon="A_TOTP_14",
+    order=22,
+	link="/ext/apps/Misc/Authenticator.fap",
+)
