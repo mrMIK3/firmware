@@ -1,0 +1,14 @@
+App(
+    appid="tiktok_loader",
+    name="TikTok Remote",
+    apptype=FlipperAppType.APP,
+    entry_point="tiktok_loader_app",
+    requires=[
+        "gui",
+        "dialogs",
+    ],
+    stack_size=int(2 * 1024),
+    icon="A_TikTok_14",
+    order=80,
+	link="/ext/apps/Tools/TikTok_Remote.fap",
+)

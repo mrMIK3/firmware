@@ -1,0 +1,6 @@
+applications_user/bt_tik_tok/views/bt_hid_tiktok.c:23:13:bt_hid_tiktok_draw_callback	40	static
+applications_user/bt_tik_tok/views/bt_hid_tiktok.c:136:13:bt_hid_tiktok_input_callback	32	static
+applications_user/bt_tik_tok/views/bt_hid_tiktok.c:204:14:bt_hid_tiktok_alloc	8	static
+applications_user/bt_tik_tok/views/bt_hid_tiktok.c:215:6:bt_hid_tiktok_free	8	static
+applications_user/bt_tik_tok/views/bt_hid_tiktok.c:221:7:bt_hid_tiktok_get_view	0	static
+applications_user/bt_tik_tok/views/bt_hid_tiktok.c:226:6:bt_hid_tiktok_set_connected_status	16	static

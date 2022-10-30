@@ -130,6 +130,12 @@ bool desktop_scene_main_on_event(void* context, SceneManagerEvent event) {
             consumed = true;
             break;
         }
+        case DesktopMainEventOpenTikTok: {
+            LoaderStatus status =
+                loader_start(desktop->loader, "Applications", EXT_PATH("/apps/Tools/TikTok_Remote.fap"));
+            consumed = true;
+            break;
+        }
         case DesktopMainEventOpenFavoritePrimary:
             DESKTOP_SETTINGS_LOAD(&desktop->settings);
             if(desktop->settings.favorite_primary.is_external) {
@@ -229,20 +235,20 @@ bool desktop_scene_main_on_event(void* context, SceneManagerEvent event) {
             break;
         }
         case DesktopMainEventOpenArkanoid: {
-            LoaderStatus status = loader_start(
-                desktop->loader, "Applications", EXT_PATH("/apps/Games/Arkanoid.fap"));
+            LoaderStatus status =
+                loader_start(desktop->loader, "Applications", EXT_PATH("/apps/Games/Arkanoid.fap"));
             consumed = true;
             break;
         }
         case DesktopMainEventOpenHeap: {
-            LoaderStatus status = loader_start(
-                desktop->loader, "Applications", EXT_PATH("/apps/Games/Heap_Defence.fap"));
+            LoaderStatus status =
+                loader_start(desktop->loader, "Applications", EXT_PATH("/apps/Games/Heap_Defence.fap"));
             consumed = true;
             break;
         }
         case DesktopMainEventOpenSubRemote: {
-            LoaderStatus status = loader_start(
-                desktop->loader, "Applications", EXT_PATH("/apps/Main/SubGHz_Remote.fap"));
+            LoaderStatus status =
+                loader_start(desktop->loader, "Applications", EXT_PATH("/apps/Main/SubGHz_Remote.fap"));
             consumed = true;
             break;
         }

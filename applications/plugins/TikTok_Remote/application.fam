@@ -1,0 +1,10 @@
+App(
+    appid="TikTok_Remote",
+    name="TikTok Remote",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="bt_tik_app",
+    stack_size=1 * 1024,
+    fap_category="Main",
+    fap_icon="bt_tiktok_10px.png",
+    fap_icon_assets="assets",
+)

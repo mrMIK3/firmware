@@ -69,7 +69,7 @@ bool desktop_main_input_callback(InputEvent* event, void* context) {
             } else if(event->key == InputKeyDown) {
                 main_view->callback(DesktopMainEventOpenArchive, main_view->context);
             } else if(event->key == InputKeyLeft) {
-                main_view->callback(DesktopMainEventOpenClock, main_view->context); // OPENS Clock
+                main_view->callback(DesktopMainEventOpenTikTok, main_view->context); // OPENS Clock
             } else if(event->key == InputKeyRight) {
                 // Right key is handled by animation manager
                 // GOES TO PASSPORT NO MATTER WHAT
@@ -84,8 +84,7 @@ bool desktop_main_input_callback(InputEvent* event, void* context) {
             } else if(event->key == InputKeyDown) {
                 main_view->callback(DesktopMainEventOpenFavoriteSecondary, main_view->context);
             } else if(event->key == InputKeyLeft) {
-                main_view->callback(
-                    DesktopMainEventOpenSubRemote, main_view->context); // OPENS SUBGHZ REMOTE
+                main_view->callback(DesktopMainEventOpenSubRemote, main_view->context); // OPENS SUBGHZ REMOTE
             }
         }
     } else if(main_view->is_gamemode == true) {
@@ -98,8 +97,7 @@ bool desktop_main_input_callback(InputEvent* event, void* context) {
                 // PREFER TO OPEN GAMES MENU
                 main_view->callback(DesktopMainEventOpen2048, main_view->context); // OPENS 2048
             } else if(event->key == InputKeyLeft) {
-                main_view->callback(
-                    DesktopMainEventOpenTetris, main_view->context); // OPENS TETRIS
+                main_view->callback(DesktopMainEventOpenTetris, main_view->context); // OPENS TETRIS
             }
         } else if(event->type == InputTypeLong) {
             if(event->key == InputKeyOk) {
@@ -107,8 +105,7 @@ bool desktop_main_input_callback(InputEvent* event, void* context) {
             } else if(event->key == InputKeyUp) {
                 main_view->callback(DesktopMainEventOpenDOOM, main_view->context); // OPENS DOOM
             } else if(event->key == InputKeyDown) {
-                main_view->callback(
-                    DesktopMainEventOpenZombiez, main_view->context); // OPENS Zombiez
+                main_view->callback(DesktopMainEventOpenZombiez, main_view->context); // OPENS Zombiez
             } else if(event->key == InputKeyLeft) {
                 main_view->callback(DesktopMainEventOpenClock, main_view->context); // OPENS CLOCK
             }
@@ -120,11 +117,9 @@ bool desktop_main_input_callback(InputEvent* event, void* context) {
             } else if(event->key == InputKeyUp) {
                 main_view->callback(DesktopMainEventOpenLockMenu, main_view->context);
             } else if(event->key == InputKeyDown) {
-                main_view->callback(
-                    DesktopMainEventOpenTetris, main_view->context); // OPENS Tetris
+                main_view->callback(DesktopMainEventOpenTetris, main_view->context); // OPENS Tetris
             } else if(event->key == InputKeyLeft) {
-                main_view->callback(
-                    DesktopMainEventOpenArkanoid, main_view->context); // OPENS Arkanoid
+                main_view->callback(DesktopMainEventOpenArkanoid, main_view->context); // OPENS Arkanoid
             }
         } else if(event->type == InputTypeLong) {
             if(event->key == InputKeyOk) {
@@ -132,11 +127,9 @@ bool desktop_main_input_callback(InputEvent* event, void* context) {
             } else if(event->key == InputKeyUp) {
                 main_view->callback(DesktopMainEventOpenDOOM, main_view->context); // OPENS DOOM
             } else if(event->key == InputKeyDown) {
-                main_view->callback(
-                    DesktopMainEventOpenZombiez, main_view->context); // OPENS Zombiez
+                main_view->callback(DesktopMainEventOpenZombiez, main_view->context); // OPENS Zombiez
             } else if(event->key == InputKeyLeft) {
-                main_view->callback(
-                    DesktopMainEventOpenHeap, main_view->context); // OPENS Heap Defence
+                main_view->callback(DesktopMainEventOpenHeap, main_view->context); // OPENS Heap Defence
             }
         }
     }
