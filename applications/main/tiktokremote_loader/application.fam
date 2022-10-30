@@ -9,6 +9,6 @@ App(
     ],
     stack_size=int(2 * 1024),
     icon="A_TikTok_14",
-    order=80,
-	link="/ext/apps/Tools/TikTok_Remote.fap",
+    order=90,
+	link="/ext/apps/Main/TikTok_Remote.fap",
 )
