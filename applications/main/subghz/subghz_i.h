@@ -14,7 +14,7 @@
 #include "views/subghz_test_packet.h"
 #endif
 #include <gui/gui.h>
-#include <subghz_icons.h>
+#include "subghz_icons.h"
 #include <dialogs/dialogs.h>
 #include <gui/scene_manager.h>
 #include <notification/notification_messages.h>
