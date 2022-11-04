@@ -1,0 +1,14 @@
+App(
+    appid="nfc_loader",
+    name="NFC",
+    apptype=FlipperAppType.APP,
+    entry_point="nfc_loader_app",
+    requires=[
+        "gui",
+        "storage",
+    ],
+    stack_size=int(1.5 * 1024),
+    icon="A_NFC_14",
+    order=30,
+	link="/ext/apps/Main/nfc.fap",
+)
