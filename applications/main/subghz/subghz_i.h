@@ -14,6 +14,7 @@
 #include "views/subghz_test_packet.h"
 #endif
 #include <gui/gui.h>
+#include "subghz_icons.h"
 #include <dialogs/dialogs.h>
 #include <gui/scene_manager.h>
 #include <notification/notification_messages.h>
@@ -38,7 +39,6 @@
 #include <lib/toolbox/path.h>
 
 #include "rpc/rpc_app.h"
-#include "subghz_icons.h"
 
 #define SUBGHZ_MAX_LEN_NAME 64
 #define SUBGHZ_EXT_PRESET_NAME true
