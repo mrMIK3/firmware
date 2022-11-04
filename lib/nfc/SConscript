@@ -6,6 +6,8 @@ env.Append(
     ],
     SDK_HEADERS=[
         File("#/lib/nfc/nfc_device.h"),
+        File("#/lib/nfc/nfc_types.h"),
+        File("#/lib/nfc/nfc_worker.h"),
     ],
 )
 
