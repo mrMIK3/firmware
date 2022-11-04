@@ -4,7 +4,7 @@
 
 #include <input/input.h>
 #include <gui/elements.h>
-#include <assets_icons.h>
+#include <subghz_icons.h>
 #include <m-array.h>
 
 #define FRAME_HEIGHT 12
