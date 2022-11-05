@@ -10,17 +10,10 @@
 <b>Latest Updates:</b>
 
 - Known Issues:	 `Chess`
-- Last Synced/Checked [Unleashed/xMasterX](https://github.com/DarkFlippers/unleashed-firmware), changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md): `2022-11-04 15:00 EST`
-- Last Synced/Checked [OFW](https://github.com/flipperdevices/flipperzero-firmware), changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2022-11-04 15:00 EST`
-- Added: [DHT Monitor (By quen0n)](https://github.com/quen0n/FipperZero-DHT-Monitor)
-- Added some stupid breaks for default switch cases.
-- Updated: [IFTTT Virtual Button (By Ferrazzi)](https://github.com/Ferrazzi/FlipperZero_IFTTT_Virtual_Button) `Req: ESP8266 w/ IFTTT FW Flashed`
-- Fixes for slower animations to be MUCH faster
-- [BadUSB: BadUSB as FAP #396 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/396)
-- [RFID: LFRFID AS FAP #397 (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/397) (With Thanks to @ESurge)
-- [Infrared: Infrared AS FAP #398 (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/398) (With Thanks to @ESurge)
-- [SubGHz: SubGHz AS FAP #400 (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/400) (With Thanks to @ESurge)
+- Last Synced/Checked [Unleashed/xMasterX](https://github.com/DarkFlippers/unleashed-firmware), changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md): `2022-11-05 14:23 EST`
+- Last Synced/Checked [OFW](https://github.com/flipperdevices/flipperzero-firmware), changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2022-11-05 14:23 EST`
 - Updated Clock Animation In Konami Mode
+- [SubGHz: SubGHz AS FAP #400 (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/400) (With Thanks to @ESurge)
 
 <details>
   <summary><B>TO DO / REMOVED</b></summary><br/>
