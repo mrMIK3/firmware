@@ -16,6 +16,7 @@ App(
     fap_category="Main",
     fap_icon="sub1_10px.png",
     fap_icon_assets="images",
+    fap_libs=["subghz", "toolbox"],
 )
 
 App(
