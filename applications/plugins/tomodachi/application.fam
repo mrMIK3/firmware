@@ -1,0 +1,24 @@
+App(
+    appid="tomodachi_monitor",
+    name="Tomo Monitor",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="tomodachi_monitor",
+    cdefines=["APP_TOMO_MON"],
+    requires=[
+        "gui",
+        "dialogs",
+    ],
+    stack_size=2 * 1024,
+    icon="A_U2F_14",
+    order=80,
+    fap_icon="tamaIcon.png",
+    fap_category="NeedsTesting",
+    #fap_private_libs=[
+    #    Lib(
+    #        name="flipper_comms",
+    #        sources=[
+	#			"flipper_comms.c",
+    #        ],
+    #    ),
+    #],
+)

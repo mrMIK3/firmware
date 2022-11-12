@@ -1,0 +1,13 @@
+App(
+    appid="tomodachisrv",
+    name="TomodachiSrv",
+    apptype=FlipperAppType.SERVICE,
+    entry_point="tomo_srv",
+    cdefines=["SRV_TOMO"],
+    requires=[
+        "cli",
+        "dialogs",
+    ],
+    stack_size=4 * 1024,
+    order=20,
+)
