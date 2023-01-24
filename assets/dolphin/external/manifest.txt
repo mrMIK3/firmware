@@ -1,86 +1,37 @@
 Filetype: Flipper Animation Manifest
 Version: 1
 
-Name: Kuronons_RMCFW_128x64
-Min butthurt: 0
-Max butthurt: 14
-Min level: 2
-Max level: 30
-Weight: 7
-
-Name: L1_Mods_128x64
+Name: BatemanSigma
 Min butthurt: 0
 Max butthurt: 14
 Min level: 1
 Max level: 30
-Weight: 7
+Weight: 8
 
-Name: L1_Painting_128x64
+Name: MordekayRigby
 Min butthurt: 0
 Max butthurt: 14
 Min level: 1
 Max level: 30
-Weight: 7
+Weight: 8
 
-Name: L1_Wotori_Purple_rain_128x64
+Name: MemeHack
 Min butthurt: 0
 Max butthurt: 14
 Min level: 1
 Max level: 30
-Weight: 7
+Weight: 8
 
-Name: L2_Unleashed_FlipperCity_128x64
-Min butthurt: 0
-Max butthurt: 14
-Min level: 2
-Max level: 30
-Weight: 7
-
-Name: L2_Wake_up_128x64
+Name: ChaosElmo
 Min butthurt: 0
 Max butthurt: 14
 Min level: 1
 Max level: 30
-Weight: 7
+Weight: 8
 
-Name: RM_G0G374_128x64
-Min butthurt: 0
-Max butthurt: 14
-Min level: 2
-Max level: 30
-Weight: 7
-
-Name: Sasquach_Blaster_128x64
+Name: HackingCat_inversed
 Min butthurt: 0
 Max butthurt: 14
 Min level: 1
 Max level: 30
-Weight: 7
-
-Name: Sasquach_CloudG0ku_128x64
-Min butthurt: 0
-Max butthurt: 14
-Min level: 1
-Max level: 30
-Weight: 7
-
-Name: Sasquach_D1g1talRa1n_128x64
-Min butthurt: 0
-Max butthurt: 14
-Min level: 1
-Max level: 30
-Weight: 4
-
-Name: Sasquach_Narut0_128x64
-Min butthurt: 0
-Max butthurt: 14
-Min level: 1
-Max level: 30
-Weight: 7
-
-Name: Sasquach_RMCF_128x64
-Min butthurt: 0
-Max butthurt: 14
-Min level: 2
-Max level: 30
-Weight: 7
+Weight: 8
