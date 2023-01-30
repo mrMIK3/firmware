@@ -24,6 +24,23 @@ typedef enum {
     LocaleDateFormatYMD = 2, /**< Year/Month/Day */
 } LocaleDateFormat;
 
+typedef enum {
+    LocaleKeyboardQWERTY = 0, /**< qwerty keyboard (default) */
+    LocaleKeyboardAZERTY = 1, /**< azerty keyboard */
+} LocaleKeyboardLayout;
+
+/** Get Locale keyboard layout
+ *
+ * @return     The locale keyboard layout.
+ */
+LocaleKeyboardLayout locale_get_keyboard_layout();
+
+/** Set locale keyboard layout
+ *
+ * @param[in]  format  The locale keyboard layout.
+ */
+void locale_set_keyboard_layout(LocaleKeyboardLayout layout);
+
 /** Get Locale measurement units
  *
  * @return     The locale measurement units.

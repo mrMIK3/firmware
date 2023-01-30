@@ -2,6 +2,7 @@
 #include <gui/elements.h>
 #include <assets_icons.h>
 #include <furi.h>
+#include <locale/locale.h>
 
 struct TextInput {
     View* view;

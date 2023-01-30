@@ -26,6 +26,13 @@ void locale_set_date_format(LocaleDateFormat format) {
     furi_hal_rtc_set_locale_dateformat((FuriHalRtcLocaleDateFormat)format);
 }
 
+LocaleKeyboardLayout locale_get_keyboard_layout(){
+
+}
+void locale_set_keyboard_layout(LocaleKeyboardLayout layout){
+    return (LocaleKeyboardLayout) 
+}
+
 float locale_fahrenheit_to_celsius(float temp_f) {
     return (temp_f - 32.f) / 1.8f;
 }
