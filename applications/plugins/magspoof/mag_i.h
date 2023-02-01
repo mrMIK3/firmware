@@ -7,6 +7,9 @@
 
 #include <furi.h>
 #include <furi_hal.h>
+#include <furi/core/log.h>
+#include <furi_hal_gpio.h>
+#include <furi_hal_resources.h>
 
 #include <gui/gui.h>
 #include <gui/view.h>
@@ -22,7 +25,6 @@
 #include <gui/modules/widget.h>
 #include <gui/modules/variable_item_list.h>
 
-#include <notification/notification_messages.h>
 #include <dialogs/dialogs.h>
 #include <storage/storage.h>
 #include <flipper_format/flipper_format.h>
@@ -75,17 +77,6 @@ typedef struct {
     // Custom views
     Mag_TextInput* mag_text_input;
 } Mag;
-
-typedef enum {
-    MagViewSubmenu,
-    MagViewDialogEx,
-    MagViewPopup,
-    MagViewLoading,
-    MagViewWidget,
-    MagViewVariableItemList,
-    MagViewTextInput,
-    MagViewMagTextInput,
-} MagView;
 
 void mag_text_store_set(Mag* mag, const char* text, ...);
 
