@@ -16,8 +16,9 @@ extern "C" {
 
 #define FURI_HAL_VERSION_NAME_LENGTH 8
 #define FURI_HAL_VERSION_ARRAY_NAME_LENGTH (FURI_HAL_VERSION_NAME_LENGTH + 1)
-/** BLE symbol + "Flipper " + name */
-#define FURI_HAL_VERSION_DEVICE_NAME_LENGTH (1 + 8 + FURI_HAL_VERSION_ARRAY_NAME_LENGTH)
+#define FURI_HAL_BT_ADV_NAME_LENGTH (18 + 1) // 18 characters + null terminator
+#define FURI_HAL_VERSION_DEVICE_NAME_LENGTH \
+    (1 + FURI_HAL_BT_ADV_NAME_LENGTH) // Used for custom BT name, BLE symbol + name
 
 /** OTP Versions enum */
 typedef enum {
@@ -156,6 +157,9 @@ FuriHalVersionDisplay furi_hal_version_get_hw_display();
  * @return     Hardware Manufacture timestamp
  */
 uint32_t furi_hal_version_get_hw_timestamp();
+
+// Set custom name
+void furi_hal_version_set_custom_name(const char* name);
 
 /** Get pointer to target name
  *

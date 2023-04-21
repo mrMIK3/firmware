@@ -90,6 +90,16 @@ typedef struct {
 
 static FuriHalVersion furi_hal_version = {0};
 
+void furi_hal_version_set_custom_name(const char* name) {
+    if((name != NULL) && ((strlen(name) >= 1) && (strlen(name) <= 8))) {
+        strlcpy(furi_hal_version.name, name, FURI_HAL_VERSION_ARRAY_NAME_LENGTH);
+        snprintf(
+            furi_hal_version.device_name, FURI_HAL_VERSION_DEVICE_NAME_LENGTH, "xFlipper %s", name);
+
+        furi_hal_version.device_name[0] = AD_TYPE_COMPLETE_LOCAL_NAME;
+    }
+}
+
 static void furi_hal_version_set_name(const char* name) {
     if(name != NULL) {
         strlcpy(furi_hal_version.name, name, FURI_HAL_VERSION_ARRAY_NAME_LENGTH);
@@ -255,7 +265,7 @@ uint8_t furi_hal_version_get_hw_connect() {
 }
 
 FuriHalVersionRegion furi_hal_version_get_hw_region() {
-    return FuriHalVersionRegionUnknown;
+    return furi_hal_version.board_region;
 }
 
 FuriHalVersionRegion furi_hal_version_get_hw_region_otp() {
@@ -263,7 +273,19 @@ FuriHalVersionRegion furi_hal_version_get_hw_region_otp() {
 }
 
 const char* furi_hal_version_get_hw_region_name() {
-    return "R00";
+    switch(furi_hal_version_get_hw_region_otp()) {
+    case FuriHalVersionRegionUnknown:
+        return "R00";
+    case FuriHalVersionRegionEuRu:
+        return "R01";
+    case FuriHalVersionRegionUsCaAu:
+        return "R02";
+    case FuriHalVersionRegionJp:
+        return "R03";
+    case FuriHalVersionRegionWorld:
+        return "R04";
+    }
+    return "R??";
 }
 
 const char* furi_hal_version_get_hw_region_name_otp() {
