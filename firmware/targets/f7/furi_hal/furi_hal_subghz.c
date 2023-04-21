@@ -9,9 +9,9 @@
 #include <furi_hal_resources.h>
 #include <furi_hal_power.h>
 
-#include <stm32wbxx_ll_dma.h>
-
 #include <lib/flipper_format/flipper_format.h>
+
+#include <stm32wbxx_ll_dma.h>
 
 #include <furi.h>
 #include <cc1101.h>
