@@ -391,26 +391,26 @@ void* rpc_system_gui_alloc(RpcSession* session) {
 
     if(rpc_session_get_owner(rpc_gui->session) != RpcOwnerBle) {
         if(loaded) {
-            switch(rpc_gui->settings.icon_style) {
-            case ICON_STYLE_SLIM:
-                view_port_enabled_set(
-                    rpc_gui->rpc_session_active_viewport_slim, rpc_gui->settings.rpc_icon);
-                view_port_enabled_set(rpc_gui->rpc_session_active_viewport, false);
-                view_port_update(rpc_gui->rpc_session_active_viewport_slim);
-                gui_add_view_port(
-                    rpc_gui->gui,
-                    rpc_gui->rpc_session_active_viewport_slim,
-                    GuiLayerStatusBarLeftSlim);
-                break;
-            case ICON_STYLE_STOCK:
-                view_port_enabled_set(rpc_gui->rpc_session_active_viewport_slim, false);
-                view_port_enabled_set(
-                    rpc_gui->rpc_session_active_viewport, rpc_gui->settings.rpc_icon);
-                view_port_update(rpc_gui->rpc_session_active_viewport);
-                gui_add_view_port(
-                    rpc_gui->gui, rpc_gui->rpc_session_active_viewport, GuiLayerStatusBarLeft);
-                break;
-            }
+            // switch(rpc_gui->settings.icon_style) {
+            // case ICON_STYLE_SLIM:
+                // view_port_enabled_set(
+                    // rpc_gui->rpc_session_active_viewport_slim, rpc_gui->settings.rpc_icon);
+                // view_port_enabled_set(rpc_gui->rpc_session_active_viewport, false);
+                // view_port_update(rpc_gui->rpc_session_active_viewport_slim);
+                // gui_add_view_port(
+                    // rpc_gui->gui,
+                    // rpc_gui->rpc_session_active_viewport_slim,
+                    // GuiLayerStatusBarLeftSlim);
+                // break;
+            // case ICON_STYLE_STOCK:
+                // view_port_enabled_set(rpc_gui->rpc_session_active_viewport_slim, false);
+                // view_port_enabled_set(
+                    // rpc_gui->rpc_session_active_viewport, rpc_gui->settings.rpc_icon);
+                // view_port_update(rpc_gui->rpc_session_active_viewport);
+                // gui_add_view_port(
+                    // rpc_gui->gui, rpc_gui->rpc_session_active_viewport, GuiLayerStatusBarLeft);
+                // break;
+            // }
         } else {
             view_port_enabled_set(rpc_gui->rpc_session_active_viewport_slim, true);
             view_port_enabled_set(rpc_gui->rpc_session_active_viewport, false);
