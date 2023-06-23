@@ -3,7 +3,7 @@
 #include "desktop_settings_scene.h"
 #include <storage/storage.h>
 #include <dialogs/dialogs.h>
-#include <fap_loader/fap_loader_app.h>
+#include <flipper_application/flipper_application.h>
 
 #define NONE_APPLICATION_NAME ("None (disable)")
 #define NONE_APPLICATION_INDEX (FLIPPER_APPS_COUNT2 + 1)
@@ -16,7 +16,7 @@ static bool favorite_fap_selector_item_callback(
     UNUSED(context);
 #ifdef APP_FAP_LOADER
     Storage* storage = furi_record_open(RECORD_STORAGE);
-    bool success = fap_loader_load_name_and_icon(file_path, storage, icon_ptr, item_name);
+    bool success = flipper_application_load_name_and_icon(file_path, storage, icon_ptr, item_name);
     furi_record_close(RECORD_STORAGE);
 #else
     UNUSED(file_path);
@@ -94,6 +94,9 @@ void desktop_settings_scene_favorite_on_enter(void* context) {
         NONE_APPLICATION_INDEX,
         desktop_settings_scene_favorite_submenu_callback,
         app);
+    if(curr_favorite_app->is_external) {
+        pre_select_item = NONE_APPLICATION_INDEX;
+    }
 
     if(strcmp(curr_favorite_app->name_or_path, "None (disable)") == 0) {
         pre_select_item = NONE_APPLICATION_INDEX;

@@ -2,12 +2,11 @@
 
 #include <furi.h>
 #include <gui/icon.h>
-#include <assets_icons.h>
 
 typedef enum {
-    FlipperApplicationFlagDefault = 0,
-    FlipperApplicationFlagInsomniaSafe = (1 << 0),
-} FlipperApplicationFlag;
+    FlipperInternalApplicationFlagDefault = 0,
+    FlipperInternalApplicationFlagInsomniaSafe = (1 << 0),
+} FlipperInternalApplicationFlag;
 
 typedef struct {
     const FuriThreadCallback app;
@@ -15,14 +14,14 @@ typedef struct {
     const char* appid;
     const size_t stack_size;
     const Icon* icon;
-    const FlipperApplicationFlag flags;
+    const FlipperInternalApplicationFlag flags;
     const char* link;
-} FlipperApplication;
+} FlipperInternalApplication;
 
 /* Apps list
  * Spawned by loader
  */
-const FlipperApplication FLIPPER_APPS2[] = {
+const FlipperInternalApplication FLIPPER_APPS2[] = {
 
     {
         .name = "Clock",
