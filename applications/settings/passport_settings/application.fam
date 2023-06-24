@@ -1,6 +1,6 @@
 App(
     appid="passport_settings",
-    name="Passport Settings",
+    name="Passport",
     apptype=FlipperAppType.EXTSETTINGSAPP,
     entry_point="passport_settings_app",
     requires=[
