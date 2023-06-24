@@ -9,7 +9,6 @@
 typedef struct {
     char* args;
     char* name;
-    char* link;
     FuriThread* thread;
     bool insomniac;
     FlipperApplication* fap;

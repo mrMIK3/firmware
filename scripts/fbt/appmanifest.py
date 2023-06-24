@@ -20,6 +20,7 @@ class FlipperAppType(Enum):
     METAPACKAGE = "Package"
     PLUGIN = "Plugin"
     EXTMAINAPP = "ExtMainApp"
+    EXTSETTINGSAPP = "ExtSettingsApp"
 
 
 @dataclass
@@ -376,16 +377,21 @@ class ApplicationsCGenerator:
      .appid = "{app.link}",
      .stack_size = 0,
      .icon = {f"&{app.icon}" if app.icon else "NULL"},
-     .link = "{f"{app.link}" if app.link else "NULL"}",
      .flags = {'|'.join(f"FlipperInternalApplicationFlag{flag}" for flag in app.flags)}}}"""
-     # .appid = "/ext/apps/.Main/{app.link}.fap",
+        if app.apptype == FlipperAppType.EXTSETTINGSAPP:
+            return f"""
+    {{.app = NULL,
+     .name = "{app.name}",
+     .appid = "{app.link}",
+     .stack_size = 0,
+     .icon = {f"&{app.icon}" if app.icon else "NULL"},
+     .flags = {'|'.join(f"FlipperInternalApplicationFlag{flag}" for flag in app.flags)}}}"""
         return f"""
     {{.app = {app.entry_point},
      .name = "{app.name}",
      .appid = "{app.appid}",
      .stack_size = {app.stack_size},
      .icon = {f"&{app.icon}" if app.icon else "NULL"},
-     .link = "{f"{app.link}" if app.link else "NULL"}",
      .flags = {'|'.join(f"FlipperInternalApplicationFlag{flag}" for flag in app.flags)} }}"""
 
     def generate(self):
@@ -403,6 +409,8 @@ class ApplicationsCGenerator:
             apps = self.buildset.get_apps_of_type(apptype)
             if apptype is FlipperAppType.APP:
                 apps += self.buildset.get_apps_of_type(FlipperAppType.EXTMAINAPP)
+            if apptype is FlipperAppType.SETTINGS:
+                apps += self.buildset.get_apps_of_type(FlipperAppType.EXTSETTINGSAPP)
             apps.sort(key=lambda app: app.order)
             contents.append(",\n".join(map(self.get_app_descr, apps)))
             contents.append("};")

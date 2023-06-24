@@ -52,10 +52,30 @@ static void loader_menu_start(const char* name) {
     furi_record_close(RECORD_LOADER);
 }
 
+static bool loader_menu_check_appid(uint32_t index, bool settings) {
+    if(settings) {
+        if(strstr(FLIPPER_SETTINGS_APPS[index].appid, ".fap")) {
+            return true;
+        }
+    } else {
+        if(strstr(FLIPPER_APPS[index].appid, ".fap")) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 static void loader_menu_callback(void* context, uint32_t index) {
     UNUSED(context);
-    const char* name = FLIPPER_APPS[index].name;
-    loader_menu_start(name);
+
+    if(loader_menu_check_appid(index, false)) {
+        const char* name = FLIPPER_APPS[index].appid;
+        loader_menu_start(name);
+    } else {
+        const char* name = FLIPPER_APPS[index].name;
+        loader_menu_start(name);
+    }
 }
 
 static void loader_menu_applications_callback(void* context, uint32_t index) {
@@ -67,8 +87,14 @@ static void loader_menu_applications_callback(void* context, uint32_t index) {
 
 static void loader_menu_settings_menu_callback(void* context, uint32_t index) {
     UNUSED(context);
-    const char* name = FLIPPER_SETTINGS_APPS[index].name;
-    loader_menu_start(name);
+
+    if(loader_menu_check_appid(index, true)) {
+        const char* name = FLIPPER_SETTINGS_APPS[index].appid;
+        loader_menu_start(name);
+    } else {
+        const char* name = FLIPPER_SETTINGS_APPS[index].name;
+        loader_menu_start(name);
+    }
 }
 
 static void loader_menu_switch_to_settings(void* context, uint32_t index) {
@@ -100,6 +126,7 @@ static void loader_menu_build_menu(LoaderMenuApp* app, LoaderMenu* menu) {
     }
     menu_add_item(
         app->primary_menu, "Settings", &A_Settings_14, i++, loader_menu_switch_to_settings, app);
+
     menu_add_item(
         app->primary_menu,
         LOADER_APPLICATIONS_NAME,
@@ -110,7 +137,8 @@ static void loader_menu_build_menu(LoaderMenuApp* app, LoaderMenu* menu) {
 };
 
 static void loader_menu_build_submenu(LoaderMenuApp* app, LoaderMenu* loader_menu) {
-    for(size_t i = 0; i < FLIPPER_SETTINGS_APPS_COUNT; i++) {
+    size_t i;
+    for(i = 0; i < FLIPPER_SETTINGS_APPS_COUNT; i++) {
         submenu_add_item(
             app->settings_menu,
             FLIPPER_SETTINGS_APPS[i].name,

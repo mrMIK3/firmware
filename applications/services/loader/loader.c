@@ -164,7 +164,6 @@ static Loader* loader_alloc() {
     loader->loader_applications = NULL;
     loader->app.args = NULL;
     loader->app.name = NULL;
-    loader->app.link = NULL;
     loader->app.thread = NULL;
     loader->app.insomniac = false;
 
@@ -365,7 +364,7 @@ static LoaderStatus loader_start_external_app(
 
 // process messages
 
-static void loader_do_menu_show(Loader* loader, bool settings) {
+static void loader_do_menu_show(Loader* loader) {
     if(!loader->loader_menu) {
         loader->loader_menu = loader_menu_alloc(loader_menu_closed_callback, loader);
     }
@@ -521,7 +520,7 @@ int32_t loader_srv(void* p) {
                 api_lock_unlock(message.api_lock);
                 break;
             case LoaderMessageTypeShowMenu:
-                loader_do_menu_show(loader, false);
+                loader_do_menu_show(loader);
                 break;
             case LoaderMessageTypeMenuClosed:
                 loader_do_menu_closed(loader);
