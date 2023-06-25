@@ -13,16 +13,16 @@
 
 #define TAG "DesktopSrv"
 
+#define ARKANOID_APP EXT_PATH("apps/Games/Arkanoid.fap")
 #define CLOCK_APP EXT_PATH("apps/Main/Dab_Timer.fap")
+#define DICE_APP EXT_PATH("apps/Games/Dice.fap")
+#define DOOM_APP EXT_PATH("apps/Games/DOOM.fap")
+#define HEAP_DEFENCE_APP EXT_PATH("apps/Games/Heap_Defence.fap")
+#define IMPROVED_2048_APP EXT_PATH("apps/Games/2048_improved.fap")
 #define PASSPORT_APP EXT_PATH("apps/Settings/Passport.fap")
 #define SNAKE_APP EXT_PATH("apps/Games/Snake.fap")
-#define IMPROVED_2048_APP EXT_PATH("apps/Games/2048_improved.fap")
-#define ZOMBIEZ_APP EXT_PATH("apps/Games/Zombiez.fap")
 #define TETRIS_APP EXT_PATH("apps/Games/Tetris.fap")
-#define DOOM_APP EXT_PATH("apps/Games/DOOM.fap")
-#define DICE_APP EXT_PATH("apps/Games/Dice.fap")
-#define ARKANOID_APP EXT_PATH("apps/Games/Arkanoid.fap")
-#define HEAP_DEFENCE_APP EXT_PATH("apps/Games/Heap_Defence.fap")
+#define ZOMBIEZ_APP EXT_PATH("apps/Games/Zombiez.fap")
 
 static void desktop_scene_main_new_idle_animation_callback(void* context) {
     furi_assert(context);
@@ -75,13 +75,15 @@ static void
 
 static void desktop_scene_main_open_app_or_profile(Desktop* desktop, const char* path) {
     if(loader_start_with_gui_error(desktop->loader, path, NULL) != LoaderStatusOk) {
-        loader_start(desktop->loader, "Passport", NULL, NULL);
+        loader_start(desktop->loader, PASSPORT_APP, NULL, NULL);
     }
 }
 
 static void desktop_scene_main_start_favorite(Desktop* desktop, FavoriteApp* application) {
     if(strlen(application->name_or_path) > 0) {
-        loader_start_with_gui_error(desktop->loader, application->name_or_path, NULL);
+        if(strcmp(application->name_or_path, "None (disable)") != 0) {
+            loader_start_with_gui_error(desktop->loader, application->name_or_path, NULL);
+        }
     } else {
         loader_start(desktop->loader, LOADER_APPLICATIONS_NAME, NULL, NULL);
     }

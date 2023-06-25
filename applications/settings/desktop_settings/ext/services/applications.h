@@ -15,7 +15,6 @@ typedef struct {
     const size_t stack_size;
     const Icon* icon;
     const FlipperInternalApplicationFlag flags;
-    const char* link;
 } FlipperInternalApplication;
 
 /* Apps list
@@ -24,27 +23,37 @@ typedef struct {
 const FlipperInternalApplication FLIPPER_APPS2[] = {
 
     {
-        .name = "Clock",
-    },
-
-    {
         .name = "Applications",
     },
 
     {
-        .name = "Sub-GHz",
+        .name = "Bad USB",
+        .appid = "/ext/apps/Main/bad_usb.fap",
     },
 
     {
-        .name = "Sub-GHz Remote",
+        .name = "Clock",
+        .appid = "/ext/apps/Main/Dab_Timer.fap",
     },
 
     {
-        .name = "Sub-GHz Playlist",
+        .name = "GPIO",
+        .appid = "/ext/apps/Main/gpio.fap",
     },
 
     {
-        .name = "125 kHz RFID",
+        .name = "iButton",
+        .appid = "/ext/apps/Main/iButton.fap",
+    },
+
+    {
+        .name = "Infrared",
+        .appid = "/ext/apps/Main/infrared.fap",
+    },
+
+    {
+        .name = "IR Remote",
+        .appid = "/ext/apps/Infrared/IR_Remote.fap",
     },
 
     {
@@ -52,26 +61,25 @@ const FlipperInternalApplication FLIPPER_APPS2[] = {
     },
 
     {
-        .name = "Infrared",
+        .name = "Sub-GHz",
     },
 
     {
-        .name = "IR Remote",
+        .name = "Sub-GHz Playlist",
+        .appid = "/ext/apps/Sub-GHz/SubGHz_Playlist.fap",
     },
 
     {
-        .name = "GPIO",
-    },
-
-    {
-        .name = "iButton",
-    },
-
-    {
-        .name = "Bad USB",
+        .name = "Sub-GHz Remote",
+        .appid = "/ext/apps/Sub-GHz/Subghz_Remote_Refactored.fap",
     },
 
     {
         .name = "U2F",
+        .appid = "/ext/apps/Main/u2f.fap",
+    },
+
+    {
+        .name = "125 kHz RFID",
     }};
 const size_t FLIPPER_APPS_COUNT2 = COUNT_OF(FLIPPER_APPS2);

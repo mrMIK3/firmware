@@ -58,9 +58,34 @@ static void archive_run_in_app(ArchiveBrowserView* browser, ArchiveFile_t* selec
             if(param != NULL) {
                 param++;
             }
-            loader_start_with_gui_error(loader, app_name, param);
+
+            if(strcmp(app_name, "U2F") == 0) {
+                loader_start_with_gui_error(
+                    loader, "/ext/apps/Main/U2F.fap", furi_string_get_cstr(selected->path));
+            } else {
+                loader_start_with_gui_error(loader, app_name, param);
+            }
         } else {
-            loader_start_with_gui_error(loader, app_name, furi_string_get_cstr(selected->path));
+            if(strcmp(app_name, "iButton") == 0) {
+                loader_start_with_gui_error(
+                    loader, "/ext/apps/Main/iButton.fap", furi_string_get_cstr(selected->path));
+            } else if(strcmp(app_name, "Bad USB") == 0) {
+                loader_start_with_gui_error(
+                    loader, "/ext/apps/Main/bad_usb.fap", furi_string_get_cstr(selected->path));
+            } else if(strcmp(app_name, "Infrared") == 0) {
+                loader_start_with_gui_error(
+                    loader, "/ext/apps/Main/infrared.fap", furi_string_get_cstr(selected->path));
+            }
+            /* Uncomment if 125 KHz RFID becomes a FAP again to make launching work
+			*else if(strcmp(app_name, "125 kHz RFID") == 0)
+			*{
+			*	loader_start_with_gui_error(loader, "/ext/apps/Main/lfrfid.fap", furi_string_get_cstr(selected->path));
+			*}
+			*/
+            else {
+                loader_start_with_gui_error(
+                    loader, app_name, furi_string_get_cstr(selected->path));
+            }
         }
     } else {
         loader_start_with_gui_error(loader, furi_string_get_cstr(selected->path), NULL);
