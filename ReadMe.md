@@ -29,7 +29,7 @@ This software is for experimental purposes only and is not meant for any illegal
 
 <a name="latest">
 
-## Latest Updates - [PATREON: Latest Release RM0623-1245-0.85.3-16b66ad](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release)
+## Latest Updates - [PATREON: Latest Release RM0625-0639-0.85.3-4ecf921](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release)
 
 - Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-06-25 06:08 EST`
 - Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-06-25 06:08 EST`
@@ -47,8 +47,11 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: Plugins: Fix furi_hal_bus issues in AVR Programmer and Signal Generator (fixes issue UL525)
 - UL: OFW PR 2783: SLIX2 emulation support / practical use for Dymo printers (by g3gg0)
 - UL: OFW PR 2782: NFC: Fix key invalidation logic (by AloneLiberty)
+- Updated: [Scope (By anfractuosity)](https://github.com/anfractuosity/flipperscope) (By xMasterX)
+- Updated: [Mifare Fuzzer (By spheeere98)](https://github.com/spheeere98/mifare_fuzzer) (By xMasterX)
 - OFW: [Loader refaptoring: second encounter #2779 (By DrZlo13)](https://github.com/flipperdevices/flipperzero-firmware/pull/2779)
 - [Fixes for FAP in Loader and Other areas #674 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/674)
+- CFW Fixes Pending
 
 <a name="release">
 
