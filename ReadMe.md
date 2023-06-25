@@ -49,6 +49,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [Scope (By anfractuosity)](https://github.com/anfractuosity/flipperscope) (By xMasterX)
 - Updated: [Mifare Fuzzer (By spheeere98)](https://github.com/spheeere98/mifare_fuzzer) (By xMasterX)
 - Updated: [WiFi (Marauder) v0.3.7 (By 0xchocolate & tcpassos)](https://github.com/0xchocolate/flipperzero-firmware-with-wifi-marauder-companion) [PR: UI Tweaks #20 (By michaeldufault)](https://github.com/0xchocolate/flipperzero-wifi-marauder/pull/20)
+- Added: [NFC Relay WIP (By leommxj)](https://github.com/leommxj/nfc_relay)
+- Updated: [Pomodoro 2 (By Th3Un1q3)](https://github.com/Th3Un1q3/flipp_pomodoro) Now with statistics!
 - OFW: [Loader refaptoring: second encounter #2779 (By DrZlo13)](https://github.com/flipperdevices/flipperzero-firmware/pull/2779)
 - [Fixes for FAP in Loader and Other areas #674 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/674)
 - CFW Fixes Pending
@@ -367,6 +369,7 @@ $ ./fbt dolphin_ext
 - [NFC Magic (By gornekich)](https://github.com/flipperdevices/flipperzero-firmware/pull/1966) with [NFC Magic Gen4 Support #2238 (By nullableVoidPtr)](https://github.com/flipperdevices/flipperzero-firmware/pull/2238)
 - [NFC Magic Gen1 (By gornekich)](https://github.com/flipperdevices/flipperzero-firmware/pull/1966)
 - [NFC Magic Gen4 app #2238 (By nullableVoidPtr)](https://github.com/flipperdevices/flipperzero-firmware/pull/2238) [(Updates By xMasterX)](https://github.com/xMasterX/unleashed-extra-pack)
+- [NFC Relay WIP (By leommxj)](https://github.com/leommxj/nfc_relay)
 - [Nightstand Clock (By nymda)](https://github.com/nymda/FlipperNightStand)
 - [Notes for FZ WIP (By AdrianN001)](https://github.com/AdrianN001/Flipper-Zero-Note-Application)
 - [NRF Sniff (By mothball187)](https://github.com/mothball187/flipperzero-nrf24/tree/main/nrfsniff) ([Pin Out](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/tree/420/applications/nrfsniff) from nocomp/Frog/UberGuidoZ) `Req: NRF24`
