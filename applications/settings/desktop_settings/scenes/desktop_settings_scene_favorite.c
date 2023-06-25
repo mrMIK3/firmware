@@ -1,12 +1,12 @@
 #include "../desktop_settings_app.h"
-#include "../ext/services/applications.h"
 #include "desktop_settings_scene.h"
+#include "../helpers/desktop_settings_applications.h"
 #include <storage/storage.h>
 #include <dialogs/dialogs.h>
 #include <flipper_application/flipper_application.h>
 
 #define NONE_APPLICATION_NAME ("None (disable)")
-#define NONE_APPLICATION_INDEX (FLIPPER_APPS_COUNT2 + 1)
+#define NONE_APPLICATION_INDEX (FLIPPER_APPS2_COUNT + 1)
 
 static bool favorite_fap_selector_item_callback(
     FuriString* file_path,
@@ -69,7 +69,7 @@ void desktop_settings_scene_favorite_on_enter(void* context) {
         return;
     }
 
-    for(size_t i = 0; i < FLIPPER_APPS_COUNT2; i++) {
+    for(size_t i = 0; i < FLIPPER_APPS2_COUNT; i++) {
         submenu_add_item(
             submenu,
             FLIPPER_APPS2[i].name,
@@ -80,16 +80,12 @@ void desktop_settings_scene_favorite_on_enter(void* context) {
         // Select favorite item in submenu
         if(!curr_favorite_app->is_external &&
            !strcmp(FLIPPER_APPS2[i].name, curr_favorite_app->name_or_path)) {
-            FURI_LOG_I("desktop_favs", "here1+%ul", i);
             pre_select_item = i;
-        } else if(!curr_favorite_app->is_external && (FLIPPER_APPS2[i].appid)) {
-            FURI_LOG_I("desktop_favs", "here2+%ul", i);
+        } else if(!curr_favorite_app->is_external && strcmp(FLIPPER_APPS2[i].appid, "NULL")) {
             if(!strcmp(FLIPPER_APPS2[i].appid, curr_favorite_app->name_or_path)) {
-                FURI_LOG_I("desktop_favs", "here3+%ul", i);
                 pre_select_item = i;
             }
         } else if(curr_favorite_app->is_external && !strcmp(FLIPPER_APPS2[i].name, "Applications")) {
-            FURI_LOG_I("desktop_favs", "here4+%ul", i);
             pre_select_item = i;
         }
     }
@@ -188,10 +184,8 @@ bool desktop_settings_scene_favorite_on_event(void* context, SceneManagerEvent e
                     MAX_APP_LENGTH);
                 consumed = true;
             }
-        } else if(FLIPPER_APPS2[event.event].appid) {
-            FURI_LOG_I("desktop_favs", "here5");
+        } else if(strcmp(FLIPPER_APPS2[event.event].appid, "NULL") != 0) {
             if(strstr(FLIPPER_APPS2[event.event].appid, ".fap")) {
-                FURI_LOG_I("desktop_favs", "here6");
                 curr_favorite_app->is_external = false;
                 strncpy(
                     curr_favorite_app->name_or_path,
@@ -200,7 +194,6 @@ bool desktop_settings_scene_favorite_on_event(void* context, SceneManagerEvent e
             }
             consumed = true;
         } else {
-            FURI_LOG_I("desktop_favs", "here7");
             curr_favorite_app->is_external = false;
             strncpy(
                 curr_favorite_app->name_or_path, FLIPPER_APPS2[event.event].name, MAX_APP_LENGTH);

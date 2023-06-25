@@ -357,6 +357,9 @@ class ApplicationsCGenerator:
             "FLIPPER_ON_SYSTEM_START",
         ),
     }
+    APP_TYPE_MAP_DESKTOP_SETTINGS = {
+        FlipperAppType.APP: ("DesktopSettingsApplication", "FLIPPER_APPS2")
+    }
 
     def __init__(self, buildset: AppBuildset, autorun_app: str = ""):
         self.buildset = buildset
@@ -374,7 +377,7 @@ class ApplicationsCGenerator:
             return f"""
     {{.app = NULL,
      .name = "{app.name}",
-     .appid = "{app.link}",
+     .appid = "{f"{app.link}" if app.link else "NULL"}",
      .stack_size = 0,
      .icon = {f"&{app.icon}" if app.icon else "NULL"},
      .flags = {'|'.join(f"FlipperInternalApplicationFlag{flag}" for flag in app.flags)}}}"""
@@ -382,7 +385,7 @@ class ApplicationsCGenerator:
             return f"""
     {{.app = NULL,
      .name = "{app.name}",
-     .appid = "{app.link}",
+     .appid = "{f"{app.link}" if app.link else "NULL"}",
      .stack_size = 0,
      .icon = {f"&{app.icon}" if app.icon else "NULL"},
      .flags = {'|'.join(f"FlipperInternalApplicationFlag{flag}" for flag in app.flags)}}}"""
@@ -393,7 +396,17 @@ class ApplicationsCGenerator:
      .stack_size = {app.stack_size},
      .icon = {f"&{app.icon}" if app.icon else "NULL"},
      .flags = {'|'.join(f"FlipperInternalApplicationFlag{flag}" for flag in app.flags)} }}"""
-
+     
+    def get_app_descr_desktop_settings(self, app: FlipperApplication):
+        if app.apptype == FlipperAppType.EXTMAINAPP:
+            return f"""
+    {{.name = "{app.name}",
+     .appid = "{f"{app.link}" if app.link else "NULL"}" }}"""
+        else:
+            return f"""
+    {{.name = "{app.name}",
+     .appid = "NULL" }}"""
+     
     def generate(self):
         contents = [
             '#include "applications.h"',
@@ -426,5 +439,22 @@ class ApplicationsCGenerator:
                     f"const FlipperInternalApplication FLIPPER_ARCHIVE = {self.get_app_descr(archive_app[0])};",
                 ]
             )
+
+        return "\n".join(contents)
+
+    def generate_desktop_settings(self):
+        contents = [
+            '#include "desktop_settings_applications.h"',
+            " "
+        ]
+        for apptype in self.APP_TYPE_MAP_DESKTOP_SETTINGS:
+            entry_type, entry_block = self.APP_TYPE_MAP_DESKTOP_SETTINGS[apptype]
+            apps = self.buildset.get_apps_of_type(FlipperAppType.APP) + self.buildset.get_apps_of_type(FlipperAppType.EXTMAINAPP)
+            contents.append(f"const {entry_type} {entry_block}[] = {{")
+            apps.sort(key=lambda app: app.order)
+            contents.append('\n\t{.name = "Applications",\n\t .appid = "NULL" },')
+            contents.append(",\n".join(map(self.get_app_descr_desktop_settings, apps)))
+            contents.append("};")
+            contents.append(f"const size_t {entry_block}_COUNT = COUNT_OF({entry_block});")
 
         return "\n".join(contents)
