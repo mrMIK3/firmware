@@ -47,7 +47,8 @@ This software is for experimental purposes only and is not meant for any illegal
 - UL: Plugins: Fix furi_hal_bus issues in AVR Programmer and Signal Generator (fixes issue UL525)
 - UL: OFW PR 2783: SLIX2 emulation support / practical use for Dymo printers (by g3gg0)
 - UL: OFW PR 2782: NFC: Fix key invalidation logic (by AloneLiberty)
-- OFW: Loader Refactor Coming Soon
+- OFW: [Loader refaptoring: second encounter #2779 (By DrZlo13)](https://github.com/flipperdevices/flipperzero-firmware/pull/2779)
+- [Fixes for FAP in Loader and Other areas #674 (By ESurge)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/pull/674)
 
 <a name="release">
 
