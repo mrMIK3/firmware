@@ -195,6 +195,18 @@ static Loader* loader_alloc() {
     return loader;
 }
 
+size_t loader_get_ext_main_app_list_size(Loader* loader) {
+    furi_assert(loader);
+    size_t ext_size = ExtMainAppList_size(loader->ext_main_apps);
+    return ext_size;
+}
+
+ExtMainApp* loader_get_ext_main_app_item(Loader* loader, size_t x) {
+    furi_assert(loader);
+    ExtMainApp* ext_app = ExtMainAppList_get(loader->ext_main_apps, x);
+    return ext_app;
+}
+
 static FlipperInternalApplication const* loader_find_application_by_name_in_list(
     const char* name,
     const FlipperInternalApplication* list,
