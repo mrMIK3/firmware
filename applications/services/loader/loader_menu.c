@@ -53,30 +53,16 @@ static void loader_menu_start(const char* name) {
     furi_record_close(RECORD_LOADER);
 }
 
-static bool loader_menu_check_appid(uint32_t index, bool settings) {
-    if(settings) {
-        if(strstr(FLIPPER_SETTINGS_APPS[index].appid, ".fap")) {
-            return true;
-        }
-    } else {
-        if(strstr(FLIPPER_APPS[index].appid, ".fap")) {
-            return true;
-        }
-    }
-
-    return false;
+static void loader_menu_apps_callback(void* context, uint32_t index) {
+    UNUSED(context);
+    const char* name = FLIPPER_APPS[index].name;
+    loader_menu_start(name);
 }
 
-static void loader_menu_callback(void* context, uint32_t index) {
+static void loader_menu_external_apps_callback(void* context, uint32_t index) {
     UNUSED(context);
-
-    if(loader_menu_check_appid(index, false)) {
-        const char* name = FLIPPER_APPS[index].appid;
-        loader_menu_start(name);
-    } else {
-        const char* name = FLIPPER_APPS[index].name;
-        loader_menu_start(name);
-    }
+    const char* path = FLIPPER_EXTERNAL_APPS[index].name;
+    loader_menu_start(path);
 }
 
 static void loader_menu_applications_callback(void* context, uint32_t index) {
@@ -86,22 +72,10 @@ static void loader_menu_applications_callback(void* context, uint32_t index) {
     loader_menu_start(name);
 }
 
-static void loader_menu_external_apps_callback(void* context, uint32_t index) {
-    UNUSED(context);
-    const char* path = (const char*)index;
-    loader_menu_start(path);
-}
-
 static void loader_menu_settings_menu_callback(void* context, uint32_t index) {
     UNUSED(context);
-
-    if(loader_menu_check_appid(index, true)) {
-        const char* name = FLIPPER_SETTINGS_APPS[index].appid;
-        loader_menu_start(name);
-    } else {
-        const char* name = FLIPPER_SETTINGS_APPS[index].name;
-        loader_menu_start(name);
-    }
+    const char* name = FLIPPER_SETTINGS_APPS[index].name;
+    loader_menu_start(name);
 }
 
 static void loader_menu_switch_to_settings(void* context, uint32_t index) {
@@ -123,61 +97,53 @@ static uint32_t loader_menu_exit(void* context) {
 static void loader_menu_build_menu(LoaderMenuApp* app, LoaderMenu* menu) {
     Loader* loader = furi_record_open(RECORD_LOADER);
     size_t i;
-    size_t manual = 0;
-    size_t ext = 0;
     size_t ext_apps_size = loader_get_ext_main_app_list_size(loader);
-    size_t total_items = FLIPPER_APPS_COUNT + ext_apps_size + MANUALLY_ADDED_ITEMS_COUNT;
 
-    for(i = 0; i < total_items; i++) {
-        if(i < FLIPPER_APPS_COUNT) {
-            menu_add_item(
-                app->primary_menu,
-                FLIPPER_APPS[i].name,
-                FLIPPER_APPS[i].icon,
-                i,
-                loader_menu_callback,
-                (void*)menu);
-        } else if(i >= FLIPPER_APPS_COUNT) {
-            if(i < (FLIPPER_APPS_COUNT + ext_apps_size)) {
-                const ExtMainApp* ext_app = loader_get_ext_main_app_item(loader, ext);
+    for(i = 0; i < FLIPPER_EXTERNAL_APPS_COUNT; i++) {
+        menu_add_item(
+            app->primary_menu,
+            FLIPPER_EXTERNAL_APPS[i].name,
+            FLIPPER_EXTERNAL_APPS[i].icon,
+            i,
+            loader_menu_external_apps_callback,
+            (void*)menu);
+    }
 
-                menu_add_item(
-                    app->primary_menu,
-                    ext_app->name,
-                    ext_app->icon,
-                    (uint32_t)ext_app->path,
-                    loader_menu_external_apps_callback,
-                    (void*)menu);
+    for(i = 0; i < FLIPPER_APPS_COUNT; i++) {
+        menu_add_item(
+            app->primary_menu,
+            FLIPPER_APPS[i].name,
+            FLIPPER_APPS[i].icon,
+            i,
+            loader_menu_apps_callback,
+            (void*)menu);
+    }
 
-                ext++;
-            } else if(i >= (FLIPPER_APPS_COUNT + ext_apps_size)) {
-                if(manual == 0) {
-                    menu_add_item(
-                        app->primary_menu,
-                        "Settings",
-                        &A_Settings_14,
-                        i,
-                        loader_menu_switch_to_settings,
-                        app);
-                    manual++;
-                } else {
-                    menu_add_item(
-                        app->primary_menu,
-                        LOADER_APPLICATIONS_NAME,
-                        &A_Plugins_14,
-                        i,
-                        loader_menu_applications_callback,
-                        (void*)menu);
-                }
-            }
-        }
+    for(i = 0; i < ext_apps_size; i++) {
+        const ExtMainApp* ext_app = loader_get_ext_main_app_item(loader, i);
+        menu_add_item(
+            app->primary_menu,
+            ext_app->name,
+            ext_app->icon,
+            (uint32_t)ext_app->path,
+            loader_menu_external_apps_callback,
+            (void*)menu);
     }
     furi_record_close(RECORD_LOADER);
-};
+
+    menu_add_item(
+        app->primary_menu, "Settings", &A_Settings_14, i++, loader_menu_switch_to_settings, app);
+    menu_add_item(
+        app->primary_menu,
+        LOADER_APPLICATIONS_NAME,
+        &A_Plugins_14,
+        i++,
+        loader_menu_applications_callback,
+        (void*)menu);
+}
 
 static void loader_menu_build_submenu(LoaderMenuApp* app, LoaderMenu* loader_menu) {
-    size_t i;
-    for(i = 0; i < FLIPPER_SETTINGS_APPS_COUNT; i++) {
+    for(size_t i = 0; i < FLIPPER_SETTINGS_APPS_COUNT; i++) {
         submenu_add_item(
             app->settings_menu,
             FLIPPER_SETTINGS_APPS[i].name,
