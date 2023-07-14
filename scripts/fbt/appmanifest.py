@@ -8,7 +8,6 @@ from typing import Callable, ClassVar, List, Optional, Tuple
 class FlipperManifestException(Exception):
     pass
 
-
 class FlipperAppType(Enum):
     SERVICE = "Service"
     SYSTEM = "System"
@@ -21,7 +20,6 @@ class FlipperAppType(Enum):
     MENUEXTERNAL = "MenuExternal"
     METAPACKAGE = "Package"
     PLUGIN = "Plugin"
-
 
 @dataclass
 class FlipperApplication:
@@ -55,7 +53,6 @@ class FlipperApplication:
     stack_size: int = 2048
     icon: Optional[str] = None
     order: int = 0
-    link: Optional[str] = ""
     sdk_headers: List[str] = field(default_factory=list)
     targets: List[str] = field(default_factory=lambda: ["all"])
 
@@ -410,9 +407,7 @@ class ApplicationsCGenerator:
             f'const char* FLIPPER_AUTORUN_APP_NAME = "{self.autorun}";',
         ]
         for apptype in self.APP_TYPE_MAP:
-            contents.extend(
-                map(self.get_app_ep_forward, self.buildset.get_apps_of_type(apptype))
-            )
+            contents.extend(map(self.get_app_ep_forward, self.buildset.get_apps_of_type(apptype)))
             entry_type, entry_block = self.APP_TYPE_MAP[apptype]
             contents.append(f"const {entry_type} {entry_block}[] = {{")
             contents.append(
@@ -421,9 +416,7 @@ class ApplicationsCGenerator:
                 )
             )
             contents.append("};")
-            contents.append(
-                f"const size_t {entry_block}_COUNT = COUNT_OF({entry_block});"
-            )
+            contents.append(f"const size_t {entry_block}_COUNT = COUNT_OF({entry_block});")
 
         archive_app = self.buildset.get_apps_of_type(FlipperAppType.ARCHIVE)
         if archive_app:
