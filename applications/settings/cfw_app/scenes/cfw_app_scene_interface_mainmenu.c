@@ -56,7 +56,8 @@ void cfw_app_scene_interface_mainmenu_on_enter(void* context) {
         CharList_size(app->start_point_names),
         cfw_app_scene_interface_mainmenu_start_point_changed,
         app);
-    if(cfw_settings->start_point) {
+    if((cfw_settings->start_point) &&
+       (cfw_settings->start_point < CharList_size(app->start_point_names))) {
         app->start_point_index = cfw_settings->start_point;
     } else {
         app->start_point_index = 0;
