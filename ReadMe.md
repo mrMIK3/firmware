@@ -31,8 +31,8 @@ This software is for experimental purposes only and is not meant for any illegal
 
 ## Latest Updates - [PATREON: Latest Release RM0714-0551-0.86.3-ce395ac](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release)
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-07-14 05:51 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-07-14 05:51 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-07-14 15:40 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-07-14 15:40 EST`
 - Added: [NFC Crocodile (By Firemoon777)](https://github.com/Firemoon777/NfcCrocodile)
 - [New FSociety Profile Image (By jmath3912)](https://github.com/jmath3912/flipperzero-firmware-fsocietyTheme)
 - Updated: [ESP32 Camera Suite (By CodyTolene)](https://github.com/CodyTolene/Flipper-Zero-Camera-Suite)
@@ -104,6 +104,12 @@ This software is for experimental purposes only and is not meant for any illegal
 - Added: [Chess Clock (By ihatecsv)](https://github.com/ihatecsv/flipper_chess_clock)
 - Added: [ESP32-C6 Gravity (By chris-bc)](https://github.com/chris-bc/Flipper-Gravity)
 - OFW: [Storage: explosive rename fix #2876 (By nminaylov)](https://github.com/flipperdevices/flipperzero-firmware/pull/2876)
+- OFW: [Update error code descriptions #2875 (By hedger)](https://github.com/flipperdevices/flipperzero-firmware/pull/2875)
+- OFW: [Badusb: Ducky script to auto install qFlipper #2346 (By DXVVAY)](https://github.com/flipperdevices/flipperzero-firmware/pull/2346)
+- UL: Keyboard fixes for NFC Maker & Marauder (By xMasterX)
+- UL: Update AC Assets (By amec0e)
+- UL: Archive Browser changes for SubGhz Remote support & File Browser Fixes (By gid9798)
+- Updated: [Sub-GHz Remote (Refactored) + Configurator (By gid9798)](https://github.com/DarkFlippers/unleashed-firmware/pull/477)
 - Reworked Loader to match better against OFW/UL (By RogueMaster)
 
 <a name="release">
