@@ -5,7 +5,7 @@
 #include <storage/storage.h>
 #include <dialogs/dialogs.h>
 
-#define APPS_COUNT (FLIPPER_APPS_COUNT + FLIPPER_EXTERNAL_APPS_COUNT)
+#define APPS_COUNT (FLIPPER_APPS_COUNT + FLIPPER_EXTERNAL_APPS_COUNT + FLIPPER_SETTINGS_APPS_COUNT)
 
 #define EXTERNAL_BROWSER_NAME ("Applications")
 #define EXTERNAL_BROWSER_INDEX (APPS_COUNT + 1)
@@ -21,8 +21,10 @@ static const char* favorite_fap_get_app_name(size_t i) {
     const char* name;
     if(i < FLIPPER_APPS_COUNT) {
         name = FLIPPER_APPS[i].name;
-    } else {
+    } else if(i < (FLIPPER_APPS_COUNT + FLIPPER_EXTERNAL_APPS_COUNT)) {
         name = FLIPPER_EXTERNAL_APPS[i - FLIPPER_APPS_COUNT].name;
+    } else {
+        name = FLIPPER_SETTINGS_APPS[i - (FLIPPER_APPS_COUNT + FLIPPER_EXTERNAL_APPS_COUNT)].name;
     }
 
     return name;
@@ -104,20 +106,22 @@ void desktop_settings_scene_favorite_on_enter(void* context) {
         desktop_settings_scene_favorite_submenu_callback,
         app);
 
-    if(pre_select_item == PRESELECTED_SPECIAL) {
-        if(curr_favorite_app->name_or_path[0] == '\0') {
-            pre_select_item = EXTERNAL_BROWSER_INDEX;
-        } else {
-            pre_select_item = EXTERNAL_APPLICATION_INDEX;
-        }
-    }
-
     submenu_add_item(
         submenu,
         "None (disable)",
         NONE_APPLICATION_INDEX,
         desktop_settings_scene_favorite_submenu_callback,
         app);
+
+    if(pre_select_item == PRESELECTED_SPECIAL) {
+        if(curr_favorite_app->name_or_path[0] == '\0') {
+            pre_select_item = EXTERNAL_BROWSER_INDEX;
+        } else if(strcmp(curr_favorite_app->name_or_path, "d") == 0) {
+            pre_select_item = NONE_APPLICATION_INDEX;
+        } else {
+            pre_select_item = EXTERNAL_APPLICATION_INDEX;
+        }
+    }
 
     if(primary_favorite == 0) {
         submenu_set_header(submenu, "Primary favorite app:");
