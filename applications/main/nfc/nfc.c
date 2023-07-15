@@ -1,4 +1,6 @@
 #include "nfc_i.h"
+#include "nfc_protocols.h"
+
 #include <furi_hal_nfc.h>
 #include <dolphin/dolphin.h>
 
