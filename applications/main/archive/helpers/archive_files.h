@@ -16,7 +16,7 @@ typedef enum {
     ArchiveFileTypeSubGhzRemote,
     ArchiveFileTypeLFRFID,
     ArchiveFileTypeInfrared,
-    ArchiveFileTypeBadUsb,
+    ArchiveFileTypeBadKb,
     ArchiveFileTypeU2f,
     ArchiveFileTypeApplication,
     ArchiveFileTypeUpdateManifest,

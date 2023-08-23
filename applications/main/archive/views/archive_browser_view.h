@@ -33,7 +33,7 @@ typedef enum {
     ArchiveTabNFC,
     ArchiveTabInfrared,
     ArchiveTabIButton,
-    ArchiveTabBadUsb,
+    ArchiveTabBadKb,
     ArchiveTabU2f,
     ArchiveTabApplications,
     ArchiveTabInternal,
