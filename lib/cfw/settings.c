@@ -11,6 +11,8 @@ CfwSettings cfw_settings = {
     .start_point = 0, // First Item
     .lock_menu_type = true, // Adv Grid VS FALSE=LIST
     .sort_dirs_first = true, // ON
+    .bad_bt = false, // OFF
+    .bad_bt_remember = false, // OFF
     .dark_mode = false, // OFF
     .charge_cap = 100, // 100%
     .spi_cc1101_handle = SpiDefault, // &furi_hal_spi_bus_handle_external

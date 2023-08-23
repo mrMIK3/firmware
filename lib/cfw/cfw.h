@@ -45,6 +45,8 @@ typedef struct {
     uint32_t start_point;
     bool lock_menu_type;
     bool sort_dirs_first;
+    bool bad_bt;
+    bool bad_bt_remember;
     bool dark_mode;
     uint32_t charge_cap;
     SpiHandle spi_cc1101_handle;

@@ -13,11 +13,12 @@
 #include "mousejacker_ducky.h"
 #include <dolphin/dolphin.h>
 #include "nrf24_mouse_jacker_icons.h"
+#include <assets_icons.h>
 
 #define TAG "mousejacker"
 #define LOGITECH_MAX_CHANNEL 85
 #define NRFSNIFF_APP_PATH_FOLDER_ADDRESSES EXT_PATH("apps_data/nrfsniff/addresses.txt")
-#define LOCAL_BADUSB_FOLDER EXT_PATH("badusb")
+#define BADKB_FOLDER EXT_PATH("badkb")
 #define MOUSEJACKER_APP_PATH_EXTENSION ".txt"
 #define MAX_ADDRS 100
 
@@ -116,11 +117,11 @@ static bool open_ducky_script(Stream* stream, PluginState* plugin_state) {
     bool result = false;
     FuriString* path;
     path = furi_string_alloc();
-    furi_string_set(path, LOCAL_BADUSB_FOLDER);
+    furi_string_set(path, BADKB_FOLDER);
 
     DialogsFileBrowserOptions browser_options;
     dialog_file_browser_set_basic_options(
-        &browser_options, MOUSEJACKER_APP_PATH_EXTENSION, &I_badusb_10px);
+        &browser_options, MOUSEJACKER_APP_PATH_EXTENSION, &I_badkb_10px);
     browser_options.hide_ext = false;
 
     bool ret = dialog_file_browser_show(dialogs, path, path, &browser_options);
