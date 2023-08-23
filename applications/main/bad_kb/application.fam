@@ -8,4 +8,5 @@ App(
     order=70,
     fap_category="USB",
     fap_icon="icon.png",
+    fap_icon_assets="images",
 )
