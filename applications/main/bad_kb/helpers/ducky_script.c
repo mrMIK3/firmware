@@ -688,8 +688,7 @@ void bad_kb_config_refresh(BadKbApp* app) {
 
     // Update settings
     CfwSettings* cfw_settings = CFW_SETTINGS();
-    if(cfw_settings->bad_bt != app->is_bt ||
-       cfw_settings->bad_bt_remember != app->bt_remember) {
+    if(cfw_settings->bad_bt != app->is_bt || cfw_settings->bad_bt_remember != app->bt_remember) {
         cfw_settings->bad_bt = app->is_bt;
         cfw_settings->bad_bt_remember = app->bt_remember;
         CFW_SETTINGS_SAVE();
