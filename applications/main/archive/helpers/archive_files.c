@@ -20,7 +20,7 @@ void archive_set_file_type(ArchiveFile_t* file, const char* path, bool is_folder
                     if(furi_string_search(file->path, archive_get_default_path(ArchiveTabBadKb)) ==
                        0) {
                         file->type = i;
-                        return; // *.txt file is a BadUSB script only if it is in BadUSB folder
+                        return; // *.txt file is a BadKB script only if it is in BadKB folder
                     }
                 } else if(i == ArchiveFileTypeSubGhzRemote) {
                     if(furi_string_search(
