@@ -17,7 +17,7 @@ static void
 void cfw_app_scene_interface_gamemenu_add_main_on_enter(void* context) {
     CfwApp* app = context;
     Submenu* submenu = app->submenu;
-
+    // TODO: THIS IS PROBABLY BROKEN
     for(size_t i = 0; i < FLIPPER_GAME_APPS_COUNT; i++) {
         submenu_add_item(
             submenu,

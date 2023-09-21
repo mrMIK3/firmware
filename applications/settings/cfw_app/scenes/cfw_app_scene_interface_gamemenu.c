@@ -103,14 +103,14 @@ void cfw_app_scene_interface_gamemenu_on_enter(void* context) {
         app);
     if((cfw_settings->game_start_point) &&
        (cfw_settings->game_start_point < CharList_size(app->gamemenu_app_names))) {
-        app->start_point_index = cfw_settings->game_start_point;
+        app->game_start_point_index = cfw_settings->game_start_point;
     } else {
-        app->start_point_index = 0;
+        app->game_start_point_index = 0;
     }
-    variable_item_set_current_value_index(item, app->start_point_index);
+    variable_item_set_current_value_index(item, app->game_start_point_index);
     if(CharList_size(app->gamemenu_app_names)) {
         variable_item_set_current_value_text(
-            item, *CharList_get(app->gamemenu_app_names, app->start_point_index));
+            item, *CharList_get(app->gamemenu_app_names, app->game_start_point_index));
     } else {
         variable_item_set_current_value_text(item, "None");
     }

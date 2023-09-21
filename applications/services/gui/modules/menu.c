@@ -11,6 +11,7 @@
 #include <m-array.h>
 #include <cfw.h>
 #include <m-string.h>
+#include "applications/settings/desktop_settings/desktop_settings_app.h"
 
 struct Menu {
     View* view;
@@ -34,6 +35,7 @@ typedef struct {
     size_t position;
     size_t scroll_counter;
     size_t vertical_offset;
+    MenuStyle my_menu_style;
 } MenuModel;
 
 static void menu_process_up(Menu* menu);
@@ -93,11 +95,12 @@ static void menu_draw_callback(Canvas* canvas, void* _model) {
 
     size_t position = model->position;
     size_t items_count = MenuItemArray_size(model->items);
+    MenuStyle my_menu_style = model->my_menu_style;
     if(items_count) {
         MenuItem* item;
         size_t shift_position;
         FuriString* name = furi_string_alloc();
-        switch(CFW_SETTINGS()->menu_style) {
+        switch(my_menu_style) {
         case MenuStyleList: {
             for(uint8_t i = 0; i < 3; i++) {
                 canvas_set_font(canvas, i == 1 ? FontPrimary : FontSecondary);
@@ -401,7 +404,19 @@ static void menu_draw_callback(Canvas* canvas, void* _model) {
 static bool menu_input_callback(InputEvent* event, void* context) {
     Menu* menu = context;
     bool consumed = true;
-    if(CFW_SETTINGS()->menu_style == MenuStyleVertical &&
+    
+    // TODO: THIS PROBABLY SHOULD BE REMOVED AND CHANGED
+    DesktopSettings* desktop_settings = malloc(sizeof(DesktopSettings));
+    DESKTOP_SETTINGS_LOAD(desktop_settings);
+    MenuStyle this_menu_style;
+    if(desktop_settings->is_dumbmode) {
+        this_menu_style = CFW_SETTINGS()->game_menu_style;
+    } else {
+        this_menu_style = CFW_SETTINGS()->menu_style;
+    }
+    free(desktop_settings);
+
+    if(this_menu_style == MenuStyleVertical &&
        furi_hal_rtc_is_flag_set(FuriHalRtcFlagHandOrient)) {
         if(event->key == InputKeyLeft) {
             event->key = InputKeyRight;
@@ -509,12 +524,23 @@ Menu* menu_pos_alloc(size_t pos) {
 
     menu->scroll_timer = furi_timer_alloc(menu_scroll_timer_callback, FuriTimerTypePeriodic, menu);
 
+    DesktopSettings* desktop_settings = malloc(sizeof(DesktopSettings));
+    DESKTOP_SETTINGS_LOAD(desktop_settings);
+    MenuStyle this_menu_style;
+    if(desktop_settings->is_dumbmode) {
+        this_menu_style = CFW_SETTINGS()->game_menu_style;
+    } else {
+        this_menu_style = CFW_SETTINGS()->menu_style;
+    }
+    free(desktop_settings);
+
     with_view_model(
         menu->view,
         MenuModel * model,
         {
             MenuItemArray_init(model->items);
             model->position = pos;
+            model->my_menu_style = this_menu_style;
         },
         true);
 
@@ -663,8 +689,9 @@ static void menu_process_down(Menu* menu) {
             position = model->position;
             size_t count = MenuItemArray_size(model->items);
             size_t vertical_offset = model->vertical_offset;
+            MenuStyle my_menu_style = model->my_menu_style;
 
-            switch(CFW_SETTINGS()->menu_style) {
+            switch(my_menu_style) {
             case MenuStyleList:
             case MenuStyleEurocorp:
                 if(position < count - 1) {
@@ -713,8 +740,9 @@ static void menu_process_left(Menu* menu) {
             position = model->position;
             size_t count = MenuItemArray_size(model->items);
             size_t vertical_offset = model->vertical_offset;
+            MenuStyle my_menu_style = model->my_menu_style;
 
-            switch(CFW_SETTINGS()->menu_style) {
+            switch(my_menu_style) {
             case MenuStyleWii:
                 if(position < 2) {
                     if(count % 2) {
@@ -775,8 +803,9 @@ static void menu_process_right(Menu* menu) {
             position = model->position;
             size_t count = MenuItemArray_size(model->items);
             size_t vertical_offset = model->vertical_offset;
+            MenuStyle my_menu_style = model->my_menu_style;
 
-            switch(CFW_SETTINGS()->menu_style) {
+            switch(my_menu_style) {
             case MenuStyleWii:
                 if(count % 2) {
                     if(position == count - 1) {
