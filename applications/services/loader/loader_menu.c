@@ -192,8 +192,8 @@ static LoaderMenuApp* loader_gamesmenu_app_alloc(LoaderMenu* loader_menu) {
     app->view_dispatcher = view_dispatcher_alloc();
 
     Loader* loader = furi_record_open(RECORD_LOADER);
-    GameMenuList_t* gamemenu_apps = loader_get_gamesmenu_apps(loader);
-    size_t APP_COUNT = GameMenuList_size(*gamemenu_apps);
+    GamesMenuList_t* gamemenu_apps = loader_get_gamesmenu_apps(loader);
+    size_t APP_COUNT = GamesMenuList_size(*gamemenu_apps);
     furi_record_close(RECORD_LOADER);
 
     uint32_t my_start_point = CLAMP(CFW_SETTINGS()->game_start_point, APP_COUNT - 1, 0U);
