@@ -216,11 +216,11 @@ CfwApp* cfw_app_alloc() {
     CharList_init(app->gamemenu_app_paths);
 
     Loader* loader = furi_record_open(RECORD_LOADER);
-    GameMenuList_t* gamemenu_apps = loader_get_gamesmenu_apps(loader);
+    GamesMenuList_t* gamemenu_apps = loader_get_gamesmenu_apps(loader);
     furi_record_close(RECORD_LOADER);
 
     for(size_t i = 0; i < GamesMenuList_size(*gamemenu_apps); i++) {
-        const MainMenuApp* game_menu_item = MainMenuList_get(*gamemenu_apps, i);
+        const GamesMenuApp* game_menu_item = GamesMenuList_get(*gamemenu_apps, i);
         CharList_push_back(app->gamemenu_app_names, strdup(game_menu_item->name));
         CharList_push_back(app->gamemenu_app_paths, strdup(game_menu_item->path));
     }
