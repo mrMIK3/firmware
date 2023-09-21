@@ -202,7 +202,6 @@ CfwApp* cfw_app_alloc() {
 
     Loader* loader = furi_record_open(RECORD_LOADER);
     MainMenuList_t* mainmenu_apps = loader_get_mainmenu_apps(loader);
-    furi_record_close(RECORD_LOADER);
 
     for(size_t i = 0; i < MainMenuList_size(*mainmenu_apps); i++) {
         const MainMenuApp* menu_item = MainMenuList_get(*mainmenu_apps, i);
@@ -215,7 +214,6 @@ CfwApp* cfw_app_alloc() {
     CharList_init(app->gamemenu_app_names);
     CharList_init(app->gamemenu_app_paths);
 
-    Loader* loader = furi_record_open(RECORD_LOADER);
     GamesMenuList_t* gamemenu_apps = loader_get_gamesmenu_apps(loader);
     furi_record_close(RECORD_LOADER);
 
