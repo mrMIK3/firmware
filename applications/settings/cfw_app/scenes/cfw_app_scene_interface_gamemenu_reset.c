@@ -30,7 +30,7 @@ bool cfw_app_scene_interface_gamemenu_reset_on_event(void* context, SceneManager
     if(event.type == SceneManagerEventTypeCustom) {
         switch(event.event) {
         case DialogExResultRight:
-            storage_common_remove(furi_record_open(RECORD_STORAGE), CFW_MENU_PATH);
+            storage_common_remove(furi_record_open(RECORD_STORAGE), CFW_MENU_GAMESMODE_PATH);
             furi_record_close(RECORD_STORAGE);
             app->save_gamemenu_apps = false;
             app->require_reboot = true;
