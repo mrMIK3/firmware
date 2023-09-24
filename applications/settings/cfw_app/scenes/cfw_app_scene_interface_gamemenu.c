@@ -93,7 +93,8 @@ void cfw_app_scene_interface_gamemenu_on_enter(void* context) {
         cfw_app_scene_interface_gamemenu_menu_style_changed,
         app);
     variable_item_set_current_value_index(item, cfw_settings->game_menu_style);
-    variable_item_set_current_value_text(item, game_menu_style_names[cfw_settings->game_menu_style]);
+    variable_item_set_current_value_text(
+        item, game_menu_style_names[cfw_settings->game_menu_style]);
 
     item = variable_item_list_add(
         var_item_list,
