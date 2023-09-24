@@ -11,11 +11,11 @@
 #include <m-array.h>
 #include <cfw.h>
 #include <m-string.h>
-#include "applications/settings/desktop_settings/desktop_settings_app.h"
 
 struct Menu {
     View* view;
     FuriTimer* scroll_timer;
+    bool gamemode;
 };
 
 typedef struct {
@@ -36,6 +36,7 @@ typedef struct {
     size_t scroll_counter;
     size_t vertical_offset;
     MenuStyle my_menu_style;
+    bool gamemode;
 } MenuModel;
 
 static void menu_process_up(Menu* menu);
@@ -404,17 +405,13 @@ static void menu_draw_callback(Canvas* canvas, void* _model) {
 static bool menu_input_callback(InputEvent* event, void* context) {
     Menu* menu = context;
     bool consumed = true;
-    
-    // TODO: THIS PROBABLY SHOULD BE REMOVED AND CHANGED
-    DesktopSettings* desktop_settings = malloc(sizeof(DesktopSettings));
-    DESKTOP_SETTINGS_LOAD(desktop_settings);
+
     MenuStyle this_menu_style;
-    if(desktop_settings->is_dumbmode) {
+    if(menu->gamemode) {
         this_menu_style = CFW_SETTINGS()->game_menu_style;
     } else {
         this_menu_style = CFW_SETTINGS()->menu_style;
     }
-    free(desktop_settings);
 
     if(this_menu_style == MenuStyleVertical &&
        furi_hal_rtc_is_flag_set(FuriHalRtcFlagHandOrient)) {
@@ -509,10 +506,10 @@ static void menu_exit(void* context) {
 }
 
 Menu* menu_alloc() {
-    return menu_pos_alloc(0);
+    return menu_pos_alloc(0, 0);
 }
 
-Menu* menu_pos_alloc(size_t pos) {
+Menu* menu_pos_alloc(size_t pos, bool gamemode) {
     Menu* menu = malloc(sizeof(Menu));
     menu->view = view_alloc(menu->view);
     view_set_context(menu->view, menu);
@@ -523,16 +520,14 @@ Menu* menu_pos_alloc(size_t pos) {
     view_set_exit_callback(menu->view, menu_exit);
 
     menu->scroll_timer = furi_timer_alloc(menu_scroll_timer_callback, FuriTimerTypePeriodic, menu);
+    menu->gamemode = gamemode;
 
-    DesktopSettings* desktop_settings = malloc(sizeof(DesktopSettings));
-    DESKTOP_SETTINGS_LOAD(desktop_settings);
     MenuStyle this_menu_style;
-    if(desktop_settings->is_dumbmode) {
+    if(menu->gamemode) {
         this_menu_style = CFW_SETTINGS()->game_menu_style;
     } else {
         this_menu_style = CFW_SETTINGS()->menu_style;
     }
-    free(desktop_settings);
 
     with_view_model(
         menu->view,
@@ -541,6 +536,7 @@ Menu* menu_pos_alloc(size_t pos) {
             MenuItemArray_init(model->items);
             model->position = pos;
             model->my_menu_style = this_menu_style;
+            model->gamemode = menu->gamemode;
         },
         true);
 
@@ -639,8 +635,9 @@ static void menu_process_up(Menu* menu) {
             position = model->position;
             size_t count = MenuItemArray_size(model->items);
             size_t vertical_offset = model->vertical_offset;
+            MenuStyle my_menu_style = model->my_menu_style;
 
-            switch(CFW_SETTINGS()->menu_style) {
+            switch(my_menu_style) {
             case MenuStyleList:
             case MenuStyleEurocorp:
                 if(position > 0) {

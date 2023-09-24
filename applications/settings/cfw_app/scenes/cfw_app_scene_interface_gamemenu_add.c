@@ -1,9 +1,6 @@
 #include "../cfw_app.h"
 
-enum SubmenuIndex {
-    SubmenuIndexMainApp,
-    SubmenuIndexExternalApp,
-};
+#define GAMES_FOLDER EXT_PATH("apps/Games")
 
 static bool fap_selector_item_callback(
     FuriString* file_path,
@@ -17,34 +14,26 @@ static bool fap_selector_item_callback(
     return success;
 }
 
-static void cfw_app_scene_interface_gamemenu_add_submenu_callback(void* context, uint32_t index) {
+void cfw_app_scene_interface_gamemenu_add_on_enter(void* context) {
     CfwApp* app = context;
-    scene_manager_set_scene_state(app->scene_manager, CfwAppSceneInterfaceGamemenuAdd, index);
+    const DialogsFileBrowserOptions browser_options = {
+        .extension = ".fap",
+        .icon = &I_unknown_10px,
+        .skip_assets = true,
+        .hide_ext = true,
+        .hide_dot_files = true,
+        .item_loader_callback = fap_selector_item_callback,
+        .item_loader_context = app,
+        .base_path = GAMES_FOLDER,
+    };
+    FuriString* temp_path = furi_string_alloc_set_str(GAMES_FOLDER);
+    FuriString* filename = furi_string_alloc();
+    if(dialog_file_browser_show(app->dialogs, temp_path, temp_path, &browser_options)) {
+        Storage* storage = furi_record_open(RECORD_STORAGE);
+        uint8_t* icon_buf = malloc(MENU_ICON_MAX_SIZE);
 
-    switch(index) {
-    case SubmenuIndexMainApp:
-        scene_manager_next_scene(app->scene_manager, CfwAppSceneInterfaceGamemenuAddMain);
-        break;
-    case SubmenuIndexExternalApp: {
-        const DialogsFileBrowserOptions browser_options = {
-            .extension = ".fap",
-            .icon = &I_unknown_10px,
-            .skip_assets = true,
-            .hide_ext = true,
-            .item_loader_callback = fap_selector_item_callback,
-            .item_loader_context = app,
-            .base_path = EXT_PATH("apps"),
-        };
-        FuriString* temp_path = furi_string_alloc_set_str(EXT_PATH("apps"));
-        FuriString* filename = furi_string_alloc();
-        if(dialog_file_browser_show(app->dialogs, temp_path, temp_path, &browser_options)) {
-            Storage* storage = furi_record_open(RECORD_STORAGE);
-            uint8_t* icon_buf = malloc(MENU_ICON_MAX_SIZE);
-
-            if(!flipper_application_load_name_and_icon(temp_path, storage, &icon_buf, filename)) {
-                free(icon_buf);
-            } else {
-                free(icon_buf);
+        if(strstr(furi_string_get_cstr(temp_path), GAMES_FOLDER)) {
+            if(flipper_application_load_name_and_icon(temp_path, storage, &icon_buf, filename)) {
                 CharList_push_back(
                     app->gamemenu_app_names, strdup(furi_string_get_cstr(filename)));
                 CharList_push_back(
@@ -53,40 +42,14 @@ static void cfw_app_scene_interface_gamemenu_add_submenu_callback(void* context,
                 app->save_gamemenu_apps = true;
                 app->require_reboot = true;
             }
-            furi_record_close(RECORD_STORAGE);
-            furi_string_free(temp_path);
-            furi_string_free(filename);
         }
-        scene_manager_search_and_switch_to_previous_scene(
-            app->scene_manager, CfwAppSceneInterfaceGamemenu);
-        break;
+        free(icon_buf);
+        furi_record_close(RECORD_STORAGE);
+        furi_string_free(temp_path);
+        furi_string_free(filename);
     }
-    default:
-        break;
-    }
-}
-
-void cfw_app_scene_interface_gamemenu_add_on_enter(void* context) {
-    CfwApp* app = context;
-    Submenu* submenu = app->submenu;
-
-    submenu_add_item(
-        submenu,
-        "Main App",
-        SubmenuIndexMainApp,
-        cfw_app_scene_interface_gamemenu_add_submenu_callback,
-        app);
-
-    submenu_add_item(
-        submenu,
-        "External App",
-        SubmenuIndexExternalApp,
-        cfw_app_scene_interface_gamemenu_add_submenu_callback,
-        app);
-
-    submenu_set_header(submenu, "Add Game Menu App:");
-
-    view_dispatcher_switch_to_view(app->view_dispatcher, CfwAppViewSubmenu);
+    scene_manager_search_and_switch_to_previous_scene(
+        app->scene_manager, CfwAppSceneInterfaceGamemenu);
 }
 
 bool cfw_app_scene_interface_gamemenu_add_on_event(void* context, SceneManagerEvent event) {
@@ -101,6 +64,5 @@ bool cfw_app_scene_interface_gamemenu_add_on_event(void* context, SceneManagerEv
 }
 
 void cfw_app_scene_interface_gamemenu_add_on_exit(void* context) {
-    CfwApp* app = context;
-    submenu_reset(app->submenu);
+    UNUSED(context);
 }
