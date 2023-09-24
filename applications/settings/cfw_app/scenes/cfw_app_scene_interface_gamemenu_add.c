@@ -32,16 +32,14 @@ void cfw_app_scene_interface_gamemenu_add_on_enter(void* context) {
         Storage* storage = furi_record_open(RECORD_STORAGE);
         uint8_t* icon_buf = malloc(MENU_ICON_MAX_SIZE);
 
-        if(strstr(furi_string_get_cstr(temp_path), GAMES_FOLDER)) {
-            if(flipper_application_load_name_and_icon(temp_path, storage, &icon_buf, filename)) {
-                CharList_push_back(
-                    app->gamemenu_app_names, strdup(furi_string_get_cstr(filename)));
-                CharList_push_back(
-                    app->gamemenu_app_paths, strdup(furi_string_get_cstr(temp_path)));
-                app->gamemenu_app_index = CharList_size(app->gamemenu_app_names) - 1;
-                app->save_gamemenu_apps = true;
-                app->require_reboot = true;
-            }
+        if(flipper_application_load_name_and_icon(temp_path, storage, &icon_buf, filename)) {
+            CharList_push_back(
+                app->gamemenu_app_names, strdup(furi_string_get_cstr(filename)));
+            CharList_push_back(
+                app->gamemenu_app_paths, strdup(furi_string_get_cstr(temp_path)));
+            app->gamemenu_app_index = CharList_size(app->gamemenu_app_names) - 1;
+            app->save_gamemenu_apps = true;
+            app->require_reboot = true;
         }
         free(icon_buf);
         furi_record_close(RECORD_STORAGE);
