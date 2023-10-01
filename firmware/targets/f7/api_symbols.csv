@@ -1,46 +1,46 @@
 entry,status,name,type,params
-Version,+,39.2,,
-Header,+,applications/drivers/subghz/cc1101_ext/cc1101_ext_interconnect.h,,
-Header,+,applications/services/bt/bt_service/bt.h,,
-Header,+,applications/services/cli/cli.h,,
-Header,+,applications/services/cli/cli_vcp.h,,
-Header,+,applications/services/desktop/desktop_settings.h,,
-Header,+,applications/services/desktop/helpers/pin.h,,
-Header,+,applications/services/desktop/views/desktop_view_pin_input.h,,
-Header,+,applications/services/dialogs/dialogs.h,,
-Header,+,applications/services/dolphin/dolphin.h,,
-Header,+,applications/services/dolphin/helpers/dolphin_state.h,,
-Header,+,applications/services/gui/elements.h,,
-Header,+,applications/services/gui/gui.h,,
-Header,+,applications/services/gui/icon_i.h,,
-Header,+,applications/services/gui/modules/button_menu.h,,
-Header,+,applications/services/gui/modules/button_panel.h,,
-Header,+,applications/services/gui/modules/byte_input.h,,
-Header,+,applications/services/gui/modules/dialog_ex.h,,
-Header,+,applications/services/gui/modules/empty_screen.h,,
-Header,+,applications/services/gui/modules/file_browser.h,,
-Header,+,applications/services/gui/modules/file_browser_worker.h,,
-Header,+,applications/services/gui/modules/loading.h,,
-Header,+,applications/services/gui/modules/menu.h,,
-Header,+,applications/services/gui/modules/popup.h,,
-Header,+,applications/services/gui/modules/submenu.h,,
-Header,+,applications/services/gui/modules/text_box.h,,
-Header,+,applications/services/gui/modules/text_input.h,,
-Header,+,applications/services/gui/modules/validators.h,,
-Header,+,applications/services/gui/modules/variable_item_list.h,,
-Header,+,applications/services/gui/modules/widget.h,,
-Header,+,applications/services/gui/modules/widget_elements/widget_element.h,,
-Header,+,applications/services/gui/view_dispatcher.h,,
-Header,+,applications/services/gui/view_stack.h,,
-Header,+,applications/services/input/input.h,,
-Header,+,applications/services/loader/firmware_api/firmware_api.h,,
-Header,+,applications/services/loader/loader.h,,
-Header,+,applications/services/locale/locale.h,,
-Header,+,applications/services/notification/notification.h,,
-Header,+,applications/services/notification/notification_messages.h,,
-Header,+,applications/services/power/power_service/power.h,,
-Header,+,applications/services/rpc/rpc_app.h,,
-Header,+,applications/services/storage/storage.h,,
+Version,v,40.1,,
+Header,?,applications/drivers/subghz/cc1101_ext/cc1101_ext_interconnect.h,,
+Header,?,applications/services/bt/bt_service/bt.h,,
+Header,?,applications/services/cli/cli.h,,
+Header,?,applications/services/cli/cli_vcp.h,,
+Header,?,applications/services/desktop/desktop_settings.h,,
+Header,?,applications/services/desktop/helpers/pin.h,,
+Header,?,applications/services/desktop/views/desktop_view_pin_input.h,,
+Header,?,applications/services/dialogs/dialogs.h,,
+Header,?,applications/services/dolphin/dolphin.h,,
+Header,?,applications/services/dolphin/helpers/dolphin_state.h,,
+Header,?,applications/services/gui/elements.h,,
+Header,?,applications/services/gui/gui.h,,
+Header,?,applications/services/gui/icon_i.h,,
+Header,?,applications/services/gui/modules/button_menu.h,,
+Header,?,applications/services/gui/modules/button_panel.h,,
+Header,?,applications/services/gui/modules/byte_input.h,,
+Header,?,applications/services/gui/modules/dialog_ex.h,,
+Header,?,applications/services/gui/modules/empty_screen.h,,
+Header,?,applications/services/gui/modules/file_browser.h,,
+Header,?,applications/services/gui/modules/file_browser_worker.h,,
+Header,?,applications/services/gui/modules/loading.h,,
+Header,?,applications/services/gui/modules/menu.h,,
+Header,?,applications/services/gui/modules/popup.h,,
+Header,?,applications/services/gui/modules/submenu.h,,
+Header,?,applications/services/gui/modules/text_box.h,,
+Header,?,applications/services/gui/modules/text_input.h,,
+Header,?,applications/services/gui/modules/validators.h,,
+Header,?,applications/services/gui/modules/variable_item_list.h,,
+Header,?,applications/services/gui/modules/widget.h,,
+Header,?,applications/services/gui/modules/widget_elements/widget_element.h,,
+Header,?,applications/services/gui/view_dispatcher.h,,
+Header,?,applications/services/gui/view_stack.h,,
+Header,?,applications/services/input/input.h,,
+Header,?,applications/services/loader/firmware_api/firmware_api.h,,
+Header,?,applications/services/loader/loader.h,,
+Header,?,applications/services/locale/locale.h,,
+Header,?,applications/services/notification/notification.h,,
+Header,?,applications/services/notification/notification_messages.h,,
+Header,?,applications/services/power/power_service/power.h,,
+Header,?,applications/services/rpc/rpc_app.h,,
+Header,?,applications/services/storage/storage.h,,
 Header,+,firmware/targets/f7/furi_hal/furi_hal_bus.h,,
 Header,+,firmware/targets/f7/furi_hal/furi_hal_clock.h,,
 Header,+,firmware/targets/f7/furi_hal/furi_hal_console.h,,
@@ -622,50 +622,50 @@ Function,+,ble_glue_start,_Bool,
 Function,+,ble_glue_thread_stop,void,
 Function,+,ble_glue_wait_for_c2_start,_Bool,int32_t
 Function,-,bsearch,void*,"const void*, const void*, size_t, size_t, __compar_fn_t"
-Function,+,bt_close_rpc_connection,void,Bt*
-Function,+,bt_disable_peer_key_update,void,Bt*
-Function,+,bt_disconnect,void,Bt*
-Function,+,bt_enable_peer_key_update,void,Bt*
-Function,+,bt_forget_bonded_devices,void,Bt*
-Function,+,bt_get_profile_adv_name,const char*,Bt*
-Function,+,bt_get_profile_mac_address,const uint8_t*,Bt*
-Function,+,bt_get_profile_pairing_method,GapPairing,Bt*
-Function,+,bt_get_status,BtStatus,Bt*
-Function,+,bt_keys_storage_set_default_path,void,Bt*
-Function,+,bt_keys_storage_set_storage_path,void,"Bt*, const char*"
-Function,+,bt_open_rpc_connection,void,Bt*
-Function,+,bt_remote_rssi,_Bool,"Bt*, uint8_t*"
-Function,+,bt_set_profile,_Bool,"Bt*, BtProfile"
-Function,+,bt_set_profile_adv_name,void,"Bt*, const char*, ..."
-Function,+,bt_set_profile_mac_address,void,"Bt*, const uint8_t[6]"
-Function,+,bt_set_profile_pairing_method,void,"Bt*, GapPairing"
-Function,+,bt_set_status_changed_callback,void,"Bt*, BtStatusChangedCallback, void*"
+Function,?,bt_close_rpc_connection,void,Bt*
+Function,?,bt_disable_peer_key_update,void,Bt*
+Function,?,bt_disconnect,void,Bt*
+Function,?,bt_enable_peer_key_update,void,Bt*
+Function,?,bt_forget_bonded_devices,void,Bt*
+Function,?,bt_get_profile_adv_name,const char*,Bt*
+Function,?,bt_get_profile_mac_address,const uint8_t*,Bt*
+Function,?,bt_get_profile_pairing_method,GapPairing,Bt*
+Function,?,bt_get_status,BtStatus,Bt*
+Function,?,bt_keys_storage_set_default_path,void,Bt*
+Function,?,bt_keys_storage_set_storage_path,void,"Bt*, const char*"
+Function,?,bt_open_rpc_connection,void,Bt*
+Function,?,bt_remote_rssi,_Bool,"Bt*, uint8_t*"
+Function,?,bt_set_profile,_Bool,"Bt*, BtProfile"
+Function,?,bt_set_profile_adv_name,void,"Bt*, const char*, ..."
+Function,?,bt_set_profile_mac_address,void,"Bt*, const uint8_t[6]"
+Function,?,bt_set_profile_pairing_method,void,"Bt*, GapPairing"
+Function,?,bt_set_status_changed_callback,void,"Bt*, BtStatusChangedCallback, void*"
 Function,+,buffered_file_stream_alloc,Stream*,Storage*
 Function,+,buffered_file_stream_close,_Bool,Stream*
 Function,+,buffered_file_stream_get_error,FS_Error,Stream*
 Function,+,buffered_file_stream_open,_Bool,"Stream*, const char*, FS_AccessMode, FS_OpenMode"
 Function,+,buffered_file_stream_sync,_Bool,Stream*
-Function,+,button_menu_add_item,ButtonMenuItem*,"ButtonMenu*, const char*, int32_t, ButtonMenuItemCallback, ButtonMenuItemType, void*"
-Function,+,button_menu_alloc,ButtonMenu*,
-Function,+,button_menu_free,void,ButtonMenu*
-Function,+,button_menu_get_view,View*,ButtonMenu*
-Function,+,button_menu_reset,void,ButtonMenu*
-Function,+,button_menu_set_header,void,"ButtonMenu*, const char*"
-Function,+,button_menu_set_selected_item,void,"ButtonMenu*, uint32_t"
-Function,+,button_panel_add_icon,void,"ButtonPanel*, uint16_t, uint16_t, const Icon*"
-Function,+,button_panel_add_item,void,"ButtonPanel*, uint32_t, uint16_t, uint16_t, uint16_t, uint16_t, const Icon*, const Icon*, ButtonItemCallback, void*"
-Function,+,button_panel_add_label,void,"ButtonPanel*, uint16_t, uint16_t, Font, const char*"
-Function,+,button_panel_alloc,ButtonPanel*,
-Function,+,button_panel_free,void,ButtonPanel*
-Function,+,button_panel_get_view,View*,ButtonPanel*
-Function,+,button_panel_reserve,void,"ButtonPanel*, size_t, size_t"
-Function,+,button_panel_reset,void,ButtonPanel*
-Function,+,button_panel_reset_selection,void,ButtonPanel*
-Function,+,byte_input_alloc,ByteInput*,
-Function,+,byte_input_free,void,ByteInput*
-Function,+,byte_input_get_view,View*,ByteInput*
-Function,+,byte_input_set_header_text,void,"ByteInput*, const char*"
-Function,+,byte_input_set_result_callback,void,"ByteInput*, ByteInputCallback, ByteChangedCallback, void*, uint8_t*, uint16_t"
+Function,?,button_menu_add_item,ButtonMenuItem*,"ButtonMenu*, const char*, int32_t, ButtonMenuItemCallback, ButtonMenuItemType, void*"
+Function,?,button_menu_alloc,ButtonMenu*,
+Function,?,button_menu_free,void,ButtonMenu*
+Function,?,button_menu_get_view,View*,ButtonMenu*
+Function,?,button_menu_reset,void,ButtonMenu*
+Function,?,button_menu_set_header,void,"ButtonMenu*, const char*"
+Function,?,button_menu_set_selected_item,void,"ButtonMenu*, uint32_t"
+Function,?,button_panel_add_icon,void,"ButtonPanel*, uint16_t, uint16_t, const Icon*"
+Function,?,button_panel_add_item,void,"ButtonPanel*, uint32_t, uint16_t, uint16_t, uint16_t, uint16_t, const Icon*, const Icon*, ButtonItemCallback, void*"
+Function,?,button_panel_add_label,void,"ButtonPanel*, uint16_t, uint16_t, Font, const char*"
+Function,?,button_panel_alloc,ButtonPanel*,
+Function,?,button_panel_free,void,ButtonPanel*
+Function,?,button_panel_get_view,View*,ButtonPanel*
+Function,?,button_panel_reserve,void,"ButtonPanel*, size_t, size_t"
+Function,?,button_panel_reset,void,ButtonPanel*
+Function,?,button_panel_reset_selection,void,ButtonPanel*
+Function,?,byte_input_alloc,ByteInput*,
+Function,?,byte_input_free,void,ByteInput*
+Function,?,byte_input_get_view,View*,ByteInput*
+Function,?,byte_input_set_header_text,void,"ByteInput*, const char*"
+Function,?,byte_input_set_result_callback,void,"ByteInput*, ByteInputCallback, ByteChangedCallback, void*, uint8_t*, uint16_t"
 Function,-,bzero,void,"void*, size_t"
 Function,-,calloc,void*,"size_t, size_t"
 Function,+,canvas_clear,void,Canvas*
@@ -711,18 +711,18 @@ Function,-,ceill,long double,long double
 Function,-,cfree,void,void*
 Function,-,clearerr,void,FILE*
 Function,-,clearerr_unlocked,void,FILE*
-Function,+,cli_add_command,void,"Cli*, const char*, CliCommandFlag, CliCallback, void*"
-Function,+,cli_cmd_interrupt_received,_Bool,Cli*
-Function,+,cli_delete_command,void,"Cli*, const char*"
-Function,+,cli_getc,char,Cli*
-Function,+,cli_is_connected,_Bool,Cli*
-Function,+,cli_nl,void,
-Function,+,cli_print_usage,void,"const char*, const char*, const char*"
-Function,+,cli_read,size_t,"Cli*, uint8_t*, size_t"
-Function,+,cli_read_timeout,size_t,"Cli*, uint8_t*, size_t, uint32_t"
-Function,+,cli_session_close,void,Cli*
-Function,+,cli_session_open,void,"Cli*, void*"
-Function,+,cli_write,void,"Cli*, const uint8_t*, size_t"
+Function,?,cli_add_command,void,"Cli*, const char*, CliCommandFlag, CliCallback, void*"
+Function,?,cli_cmd_interrupt_received,_Bool,Cli*
+Function,?,cli_delete_command,void,"Cli*, const char*"
+Function,?,cli_getc,char,Cli*
+Function,?,cli_is_connected,_Bool,Cli*
+Function,?,cli_nl,void,
+Function,?,cli_print_usage,void,"const char*, const char*, const char*"
+Function,?,cli_read,size_t,"Cli*, uint8_t*, size_t"
+Function,?,cli_read_timeout,size_t,"Cli*, uint8_t*, size_t, uint32_t"
+Function,?,cli_session_close,void,Cli*
+Function,?,cli_session_open,void,"Cli*, void*"
+Function,?,cli_write,void,"Cli*, const uint8_t*, size_t"
 Function,-,clock,clock_t,
 Function,+,composite_api_resolver_add,void,"CompositeApiResolver*, const ElfApiInterface*"
 Function,+,composite_api_resolver_alloc,CompositeApiResolver*,
@@ -758,42 +758,42 @@ Function,-,ctermid,char*,char*
 Function,-,ctime,char*,const time_t*
 Function,-,ctime_r,char*,"const time_t*, char*"
 Function,-,cuserid,char*,char*
-Function,-,desktop_api_get_status_pubsub,FuriPubSub*,Desktop*
-Function,-,desktop_api_is_locked,_Bool,Desktop*
-Function,-,desktop_api_unlock,void,Desktop*
-Function,+,desktop_pin_compare,_Bool,"const PinCode*, const PinCode*"
-Function,+,desktop_pin_lock_error_notify,void,
-Function,-,desktop_pin_lock_get_fail_timeout,uint32_t,
-Function,+,desktop_view_pin_input_alloc,DesktopViewPinInput*,
-Function,+,desktop_view_pin_input_free,void,DesktopViewPinInput*
-Function,+,desktop_view_pin_input_get_view,View*,DesktopViewPinInput*
-Function,-,desktop_view_pin_input_hide_pin,void,"DesktopViewPinInput*, _Bool"
-Function,+,desktop_view_pin_input_lock_input,void,DesktopViewPinInput*
-Function,+,desktop_view_pin_input_reset_pin,void,DesktopViewPinInput*
-Function,+,desktop_view_pin_input_set_back_callback,void,"DesktopViewPinInput*, DesktopViewPinInputCallback"
-Function,+,desktop_view_pin_input_set_context,void,"DesktopViewPinInput*, void*"
-Function,+,desktop_view_pin_input_set_done_callback,void,"DesktopViewPinInput*, DesktopViewPinInputDoneCallback"
-Function,+,desktop_view_pin_input_set_label_button,void,"DesktopViewPinInput*, const char*"
-Function,+,desktop_view_pin_input_set_label_primary,void,"DesktopViewPinInput*, uint8_t, uint8_t, const char*"
-Function,+,desktop_view_pin_input_set_label_secondary,void,"DesktopViewPinInput*, uint8_t, uint8_t, const char*"
-Function,+,desktop_view_pin_input_set_pin,void,"DesktopViewPinInput*, const PinCode*"
-Function,+,desktop_view_pin_input_set_pin_position,void,"DesktopViewPinInput*, uint8_t, uint8_t"
-Function,-,desktop_view_pin_input_set_timeout_callback,void,"DesktopViewPinInput*, DesktopViewPinInputCallback"
-Function,+,desktop_view_pin_input_unlock_input,void,DesktopViewPinInput*
-Function,+,dialog_ex_alloc,DialogEx*,
-Function,+,dialog_ex_disable_extended_events,void,DialogEx*
-Function,+,dialog_ex_enable_extended_events,void,DialogEx*
-Function,+,dialog_ex_free,void,DialogEx*
-Function,+,dialog_ex_get_view,View*,DialogEx*
-Function,+,dialog_ex_reset,void,DialogEx*
-Function,+,dialog_ex_set_center_button_text,void,"DialogEx*, const char*"
-Function,+,dialog_ex_set_context,void,"DialogEx*, void*"
-Function,+,dialog_ex_set_header,void,"DialogEx*, const char*, uint8_t, uint8_t, Align, Align"
-Function,+,dialog_ex_set_icon,void,"DialogEx*, uint8_t, uint8_t, const Icon*"
-Function,+,dialog_ex_set_left_button_text,void,"DialogEx*, const char*"
-Function,+,dialog_ex_set_result_callback,void,"DialogEx*, DialogExResultCallback"
-Function,+,dialog_ex_set_right_button_text,void,"DialogEx*, const char*"
-Function,+,dialog_ex_set_text,void,"DialogEx*, const char*, uint8_t, uint8_t, Align, Align"
+Function,?,desktop_api_get_status_pubsub,FuriPubSub*,Desktop*
+Function,?,desktop_api_is_locked,_Bool,Desktop*
+Function,?,desktop_api_unlock,void,Desktop*
+Function,?,desktop_pin_compare,_Bool,"const PinCode*, const PinCode*"
+Function,?,desktop_pin_lock_error_notify,void,
+Function,?,desktop_pin_lock_get_fail_timeout,uint32_t,
+Function,?,desktop_view_pin_input_alloc,DesktopViewPinInput*,
+Function,?,desktop_view_pin_input_free,void,DesktopViewPinInput*
+Function,?,desktop_view_pin_input_get_view,View*,DesktopViewPinInput*
+Function,?,desktop_view_pin_input_hide_pin,void,"DesktopViewPinInput*, _Bool"
+Function,?,desktop_view_pin_input_lock_input,void,DesktopViewPinInput*
+Function,?,desktop_view_pin_input_reset_pin,void,DesktopViewPinInput*
+Function,?,desktop_view_pin_input_set_back_callback,void,"DesktopViewPinInput*, DesktopViewPinInputCallback"
+Function,?,desktop_view_pin_input_set_context,void,"DesktopViewPinInput*, void*"
+Function,?,desktop_view_pin_input_set_done_callback,void,"DesktopViewPinInput*, DesktopViewPinInputDoneCallback"
+Function,?,desktop_view_pin_input_set_label_button,void,"DesktopViewPinInput*, const char*"
+Function,?,desktop_view_pin_input_set_label_primary,void,"DesktopViewPinInput*, uint8_t, uint8_t, const char*"
+Function,?,desktop_view_pin_input_set_label_secondary,void,"DesktopViewPinInput*, uint8_t, uint8_t, const char*"
+Function,?,desktop_view_pin_input_set_pin,void,"DesktopViewPinInput*, const PinCode*"
+Function,?,desktop_view_pin_input_set_pin_position,void,"DesktopViewPinInput*, uint8_t, uint8_t"
+Function,?,desktop_view_pin_input_set_timeout_callback,void,"DesktopViewPinInput*, DesktopViewPinInputCallback"
+Function,?,desktop_view_pin_input_unlock_input,void,DesktopViewPinInput*
+Function,?,dialog_ex_alloc,DialogEx*,
+Function,?,dialog_ex_disable_extended_events,void,DialogEx*
+Function,?,dialog_ex_enable_extended_events,void,DialogEx*
+Function,?,dialog_ex_free,void,DialogEx*
+Function,?,dialog_ex_get_view,View*,DialogEx*
+Function,?,dialog_ex_reset,void,DialogEx*
+Function,?,dialog_ex_set_center_button_text,void,"DialogEx*, const char*"
+Function,?,dialog_ex_set_context,void,"DialogEx*, void*"
+Function,?,dialog_ex_set_header,void,"DialogEx*, const char*, uint8_t, uint8_t, Align, Align"
+Function,?,dialog_ex_set_icon,void,"DialogEx*, uint8_t, uint8_t, const Icon*"
+Function,?,dialog_ex_set_left_button_text,void,"DialogEx*, const char*"
+Function,?,dialog_ex_set_result_callback,void,"DialogEx*, DialogExResultCallback"
+Function,?,dialog_ex_set_right_button_text,void,"DialogEx*, const char*"
+Function,?,dialog_ex_set_text,void,"DialogEx*, const char*, uint8_t, uint8_t, Align, Align"
 Function,+,dialog_file_browser_set_basic_options,void,"DialogsFileBrowserOptions*, const char*, const Icon*"
 Function,+,dialog_file_browser_show,_Bool,"DialogsApp*, FuriString*, FuriString*, const DialogsFileBrowserOptions*"
 Function,+,dialog_message_alloc,DialogMessage*,
@@ -833,61 +833,61 @@ Function,+,dir_walk_read,DirWalkResult,"DirWalk*, FuriString*, FileInfo*"
 Function,+,dir_walk_set_filter_cb,void,"DirWalk*, DirWalkFilterCb, void*"
 Function,+,dir_walk_set_recursive,void,"DirWalk*, _Bool"
 Function,-,div,div_t,"int, int"
-Function,+,dolphin_deed,void,DolphinDeed
-Function,+,dolphin_deed_get_app,DolphinApp,DolphinDeed
-Function,+,dolphin_deed_get_app_limit,uint8_t,DolphinApp
-Function,+,dolphin_deed_get_weight,uint8_t,DolphinDeed
-Function,+,dolphin_flush,void,Dolphin*
-Function,+,dolphin_get_level,uint8_t,int
-Function,+,dolphin_get_levels,const int*,
-Function,+,dolphin_get_pubsub,FuriPubSub*,Dolphin*
-Function,-,dolphin_state_alloc,DolphinState*,
-Function,-,dolphin_state_butthurted,void,DolphinState*
-Function,-,dolphin_state_clear_limits,void,DolphinState*
-Function,-,dolphin_state_free,void,DolphinState*
-Function,-,dolphin_state_increase_level,void,DolphinState*
-Function,-,dolphin_state_is_levelup,_Bool,int
-Function,-,dolphin_state_load,_Bool,DolphinState*
-Function,+,dolphin_state_max_level,int,
-Function,-,dolphin_state_on_deed,void,"DolphinState*, DolphinDeed"
-Function,-,dolphin_state_save,_Bool,DolphinState*
-Function,-,dolphin_state_timestamp,uint64_t,
-Function,+,dolphin_state_xp_above_last_levelup,uint32_t,int
-Function,+,dolphin_state_xp_to_levelup,uint32_t,int
-Function,+,dolphin_stats,DolphinStats,Dolphin*
-Function,+,dolphin_upgrade_level,void,Dolphin*
+Function,?,dolphin_deed,void,DolphinDeed
+Function,?,dolphin_deed_get_app,DolphinApp,DolphinDeed
+Function,?,dolphin_deed_get_app_limit,uint8_t,DolphinApp
+Function,?,dolphin_deed_get_weight,uint8_t,DolphinDeed
+Function,?,dolphin_flush,void,Dolphin*
+Function,?,dolphin_get_level,uint8_t,int
+Function,?,dolphin_get_levels,const int*,
+Function,?,dolphin_get_pubsub,FuriPubSub*,Dolphin*
+Function,?,dolphin_state_alloc,DolphinState*,
+Function,?,dolphin_state_butthurted,void,DolphinState*
+Function,?,dolphin_state_clear_limits,void,DolphinState*
+Function,?,dolphin_state_free,void,DolphinState*
+Function,?,dolphin_state_increase_level,void,DolphinState*
+Function,?,dolphin_state_is_levelup,_Bool,int
+Function,?,dolphin_state_load,_Bool,DolphinState*
+Function,?,dolphin_state_max_level,int,
+Function,?,dolphin_state_on_deed,void,"DolphinState*, DolphinDeed"
+Function,?,dolphin_state_save,_Bool,DolphinState*
+Function,?,dolphin_state_timestamp,uint64_t,
+Function,?,dolphin_state_xp_above_last_levelup,uint32_t,int
+Function,?,dolphin_state_xp_to_levelup,uint32_t,int
+Function,?,dolphin_stats,DolphinStats,Dolphin*
+Function,?,dolphin_upgrade_level,void,Dolphin*
 Function,-,dprintf,int,"int, const char*, ..."
 Function,-,drand48,double,
 Function,-,drem,double,"double, double"
 Function,-,dremf,float,"float, float"
 Function,-,eTaskConfirmSleepModeStatus,eSleepModeStatus,
 Function,-,eTaskGetState,eTaskState,TaskHandle_t
-Function,+,elements_bold_rounded_frame,void,"Canvas*, uint8_t, uint8_t, uint8_t, uint8_t"
-Function,+,elements_bubble,void,"Canvas*, uint8_t, uint8_t, uint8_t, uint8_t"
-Function,+,elements_bubble_str,void,"Canvas*, uint8_t, uint8_t, const char*, Align, Align"
-Function,+,elements_button_center,void,"Canvas*, const char*"
-Function,+,elements_button_left,void,"Canvas*, const char*"
-Function,+,elements_button_right,void,"Canvas*, const char*"
-Function,+,elements_frame,void,"Canvas*, uint8_t, uint8_t, uint8_t, uint8_t"
-Function,+,elements_multiline_text,void,"Canvas*, uint8_t, uint8_t, const char*"
-Function,+,elements_multiline_text_aligned,void,"Canvas*, uint8_t, uint8_t, Align, Align, const char*"
-Function,+,elements_multiline_text_framed,void,"Canvas*, uint8_t, uint8_t, const char*"
-Function,+,elements_progress_bar,void,"Canvas*, uint8_t, uint8_t, uint8_t, float"
-Function,+,elements_progress_bar_with_text,void,"Canvas*, uint8_t, uint8_t, uint8_t, float, const char*"
-Function,+,elements_scrollable_text_line,void,"Canvas*, uint8_t, uint8_t, uint8_t, FuriString*, size_t, _Bool, _Bool"
-Function,+,elements_scrollable_text_line_str,void,"Canvas*, uint8_t, uint8_t, uint8_t, const char*, size_t, _Bool, _Bool"
-Function,+,elements_scrollbar,void,"Canvas*, uint16_t, uint16_t"
-Function,+,elements_scrollbar_horizontal,void,"Canvas*, uint8_t, uint8_t, uint8_t, uint16_t, uint16_t"
-Function,+,elements_scrollbar_pos,void,"Canvas*, uint8_t, uint8_t, uint8_t, uint16_t, uint16_t"
-Function,+,elements_slightly_rounded_box,void,"Canvas*, uint8_t, uint8_t, uint8_t, uint8_t"
-Function,+,elements_slightly_rounded_frame,void,"Canvas*, uint8_t, uint8_t, uint8_t, uint8_t"
-Function,+,elements_string_fit_width,void,"Canvas*, FuriString*, uint8_t"
-Function,+,elements_text_box,void,"Canvas*, uint8_t, uint8_t, uint8_t, uint8_t, Align, Align, const char*, _Bool"
+Function,?,elements_bold_rounded_frame,void,"Canvas*, uint8_t, uint8_t, uint8_t, uint8_t"
+Function,?,elements_bubble,void,"Canvas*, uint8_t, uint8_t, uint8_t, uint8_t"
+Function,?,elements_bubble_str,void,"Canvas*, uint8_t, uint8_t, const char*, Align, Align"
+Function,?,elements_button_center,void,"Canvas*, const char*"
+Function,?,elements_button_left,void,"Canvas*, const char*"
+Function,?,elements_button_right,void,"Canvas*, const char*"
+Function,?,elements_frame,void,"Canvas*, uint8_t, uint8_t, uint8_t, uint8_t"
+Function,?,elements_multiline_text,void,"Canvas*, uint8_t, uint8_t, const char*"
+Function,?,elements_multiline_text_aligned,void,"Canvas*, uint8_t, uint8_t, Align, Align, const char*"
+Function,?,elements_multiline_text_framed,void,"Canvas*, uint8_t, uint8_t, const char*"
+Function,?,elements_progress_bar,void,"Canvas*, uint8_t, uint8_t, uint8_t, float"
+Function,?,elements_progress_bar_with_text,void,"Canvas*, uint8_t, uint8_t, uint8_t, float, const char*"
+Function,?,elements_scrollable_text_line,void,"Canvas*, uint8_t, uint8_t, uint8_t, FuriString*, size_t, _Bool, _Bool"
+Function,?,elements_scrollable_text_line_str,void,"Canvas*, uint8_t, uint8_t, uint8_t, const char*, size_t, _Bool, _Bool"
+Function,?,elements_scrollbar,void,"Canvas*, uint16_t, uint16_t"
+Function,?,elements_scrollbar_horizontal,void,"Canvas*, uint8_t, uint8_t, uint8_t, uint16_t, uint16_t"
+Function,?,elements_scrollbar_pos,void,"Canvas*, uint8_t, uint8_t, uint8_t, uint16_t, uint16_t"
+Function,?,elements_slightly_rounded_box,void,"Canvas*, uint8_t, uint8_t, uint8_t, uint8_t"
+Function,?,elements_slightly_rounded_frame,void,"Canvas*, uint8_t, uint8_t, uint8_t, uint8_t"
+Function,?,elements_string_fit_width,void,"Canvas*, FuriString*, uint8_t"
+Function,?,elements_text_box,void,"Canvas*, uint8_t, uint8_t, uint8_t, uint8_t, Align, Align, const char*, _Bool"
 Function,+,elf_resolve_from_hashtable,_Bool,"const ElfApiInterface*, uint32_t, Elf32_Addr*"
 Function,+,elf_symbolname_hash,uint32_t,const char*
-Function,+,empty_screen_alloc,EmptyScreen*,
-Function,+,empty_screen_free,void,EmptyScreen*
-Function,+,empty_screen_get_view,View*,EmptyScreen*
+Function,?,empty_screen_alloc,EmptyScreen*,
+Function,?,empty_screen_free,void,EmptyScreen*
+Function,?,empty_screen_get_view,View*,EmptyScreen*
 Function,-,emv_card_emulation,_Bool,FuriHalNfcTxRxContext*
 Function,-,emv_read_bank_card,_Bool,"FuriHalNfcTxRxContext*, EmvApplication*"
 Function,-,erand48,double,unsigned short[3]
@@ -958,19 +958,19 @@ Function,+,file_browser_set_callback,void,"FileBrowser*, FileBrowserCallback, vo
 Function,+,file_browser_set_item_callback,void,"FileBrowser*, FileBrowserLoadItemCallback, void*"
 Function,+,file_browser_start,void,"FileBrowser*, FuriString*"
 Function,+,file_browser_stop,void,FileBrowser*
-Function,+,file_browser_worker_alloc,BrowserWorker*,"FuriString*, const char*, const char*, _Bool, _Bool"
-Function,+,file_browser_worker_folder_enter,void,"BrowserWorker*, FuriString*, int32_t"
-Function,+,file_browser_worker_folder_exit,void,BrowserWorker*
-Function,+,file_browser_worker_folder_refresh,void,"BrowserWorker*, int32_t"
-Function,+,file_browser_worker_free,void,BrowserWorker*
-Function,+,file_browser_worker_is_in_start_folder,_Bool,BrowserWorker*
-Function,+,file_browser_worker_load,void,"BrowserWorker*, uint32_t, uint32_t"
-Function,+,file_browser_worker_set_callback_context,void,"BrowserWorker*, void*"
-Function,+,file_browser_worker_set_config,void,"BrowserWorker*, FuriString*, const char*, _Bool, _Bool"
-Function,+,file_browser_worker_set_folder_callback,void,"BrowserWorker*, BrowserWorkerFolderOpenCallback"
-Function,+,file_browser_worker_set_item_callback,void,"BrowserWorker*, BrowserWorkerListItemCallback"
-Function,+,file_browser_worker_set_list_callback,void,"BrowserWorker*, BrowserWorkerListLoadCallback"
-Function,+,file_browser_worker_set_long_load_callback,void,"BrowserWorker*, BrowserWorkerLongLoadCallback"
+Function,?,file_browser_worker_alloc,BrowserWorker*,"FuriString*, const char*, const char*, _Bool, _Bool"
+Function,?,file_browser_worker_folder_enter,void,"BrowserWorker*, FuriString*, int32_t"
+Function,?,file_browser_worker_folder_exit,void,BrowserWorker*
+Function,?,file_browser_worker_folder_refresh,void,"BrowserWorker*, int32_t"
+Function,?,file_browser_worker_free,void,BrowserWorker*
+Function,?,file_browser_worker_is_in_start_folder,_Bool,BrowserWorker*
+Function,?,file_browser_worker_load,void,"BrowserWorker*, uint32_t, uint32_t"
+Function,?,file_browser_worker_set_callback_context,void,"BrowserWorker*, void*"
+Function,?,file_browser_worker_set_config,void,"BrowserWorker*, FuriString*, const char*, _Bool, _Bool"
+Function,?,file_browser_worker_set_folder_callback,void,"BrowserWorker*, BrowserWorkerFolderOpenCallback"
+Function,?,file_browser_worker_set_item_callback,void,"BrowserWorker*, BrowserWorkerListItemCallback"
+Function,?,file_browser_worker_set_list_callback,void,"BrowserWorker*, BrowserWorkerListLoadCallback"
+Function,?,file_browser_worker_set_long_load_callback,void,"BrowserWorker*, BrowserWorkerLongLoadCallback"
 Function,+,file_info_is_dir,_Bool,const FileInfo*
 Function,+,file_stream_alloc,Stream*,Storage*
 Function,+,file_stream_close,_Bool,Stream*
@@ -1769,7 +1769,7 @@ Function,-,gap_init,_Bool,"GapConfig*, GapEventCallback, void*"
 Function,-,gap_start_advertising,void,
 Function,-,gap_stop_advertising,void,
 Function,-,gap_thread_stop,void,
-Function,+,getRandomDeed,DolphinDeed,
+Function,?,getRandomDeed,DolphinDeed,
 Function,-,getc,int,FILE*
 Function,-,getc_unlocked,int,FILE*
 Function,-,getchar,int,
@@ -1780,18 +1780,18 @@ Function,-,getsubopt,int,"char**, char**, char**"
 Function,-,getw,int,FILE*
 Function,-,gmtime,tm*,const time_t*
 Function,-,gmtime_r,tm*,"const time_t*, tm*"
-Function,+,gui_add_framebuffer_callback,void,"Gui*, GuiCanvasCommitCallback, void*"
-Function,+,gui_add_view_port,void,"Gui*, ViewPort*, GuiLayer"
-Function,+,gui_direct_draw_acquire,Canvas*,Gui*
-Function,+,gui_direct_draw_release,void,Gui*
-Function,-,gui_get_count_of_enabled_view_port_in_layer,uint8_t,"Gui*, GuiLayer"
-Function,+,gui_get_framebuffer_size,size_t,const Gui*
-Function,+,gui_remove_framebuffer_callback,void,"Gui*, GuiCanvasCommitCallback, void*"
-Function,+,gui_remove_view_port,void,"Gui*, ViewPort*"
-Function,-,gui_set_hide_statusbar,void,"Gui*, _Bool"
-Function,+,gui_set_lockdown,void,"Gui*, _Bool"
-Function,-,gui_view_port_send_to_back,void,"Gui*, ViewPort*"
-Function,+,gui_view_port_send_to_front,void,"Gui*, ViewPort*"
+Function,?,gui_add_framebuffer_callback,void,"Gui*, GuiCanvasCommitCallback, void*"
+Function,?,gui_add_view_port,void,"Gui*, ViewPort*, GuiLayer"
+Function,?,gui_direct_draw_acquire,Canvas*,Gui*
+Function,?,gui_direct_draw_release,void,Gui*
+Function,?,gui_get_count_of_enabled_view_port_in_layer,uint8_t,"Gui*, GuiLayer"
+Function,?,gui_get_framebuffer_size,size_t,const Gui*
+Function,?,gui_remove_framebuffer_callback,void,"Gui*, GuiCanvasCommitCallback, void*"
+Function,?,gui_remove_view_port,void,"Gui*, ViewPort*"
+Function,?,gui_set_hide_statusbar,void,"Gui*, _Bool"
+Function,?,gui_set_lockdown,void,"Gui*, _Bool"
+Function,?,gui_view_port_send_to_back,void,"Gui*, ViewPort*"
+Function,?,gui_view_port_send_to_front,void,"Gui*, ViewPort*"
 Function,+,hex_char_to_hex_nibble,_Bool,"char, uint8_t*"
 Function,+,hex_char_to_uint8,_Bool,"char, char, uint8_t*"
 Function,+,hex_chars_to_uint64,_Bool,"const char*, uint64_t*"
@@ -1983,29 +1983,29 @@ Function,-,llrintl,long long int,long double
 Function,-,llround,long long int,double
 Function,-,llroundf,long long int,float
 Function,-,llroundl,long long int,long double
-Function,+,loader_get_gamesmenu_apps,GamesMenuList_t*,Loader*
-Function,+,loader_get_mainmenu_apps,MainMenuList_t*,Loader*
-Function,+,loader_get_pubsub,FuriPubSub*,Loader*
-Function,+,loader_is_locked,_Bool,Loader*
-Function,+,loader_lock,_Bool,Loader*
-Function,+,loader_show_gamesmenu,void,Loader*
-Function,+,loader_show_menu,void,Loader*
-Function,+,loader_start,LoaderStatus,"Loader*, const char*, const char*, FuriString*"
-Function,+,loader_start_with_gui_error,LoaderStatus,"Loader*, const char*, const char*"
-Function,+,loader_unlock,void,Loader*
-Function,+,loading_alloc,Loading*,
-Function,+,loading_free,void,Loading*
-Function,+,loading_get_view,View*,Loading*
-Function,+,locale_celsius_to_fahrenheit,float,float
-Function,+,locale_fahrenheit_to_celsius,float,float
-Function,+,locale_format_date,void,"FuriString*, const FuriHalRtcDateTime*, const LocaleDateFormat, const char*"
-Function,+,locale_format_time,void,"FuriString*, const FuriHalRtcDateTime*, const LocaleTimeFormat, const _Bool"
-Function,+,locale_get_date_format,LocaleDateFormat,
-Function,+,locale_get_measurement_unit,LocaleMeasurementUnits,
-Function,+,locale_get_time_format,LocaleTimeFormat,
-Function,+,locale_set_date_format,void,LocaleDateFormat
-Function,+,locale_set_measurement_unit,void,LocaleMeasurementUnits
-Function,+,locale_set_time_format,void,LocaleTimeFormat
+Function,?,loader_get_gamesmenu_apps,GamesMenuList_t*,Loader*
+Function,?,loader_get_mainmenu_apps,MainMenuList_t*,Loader*
+Function,?,loader_get_pubsub,FuriPubSub*,Loader*
+Function,?,loader_is_locked,_Bool,Loader*
+Function,?,loader_lock,_Bool,Loader*
+Function,?,loader_show_gamesmenu,void,Loader*
+Function,?,loader_show_menu,void,Loader*
+Function,?,loader_start,LoaderStatus,"Loader*, const char*, const char*, FuriString*"
+Function,?,loader_start_with_gui_error,LoaderStatus,"Loader*, const char*, const char*"
+Function,?,loader_unlock,void,Loader*
+Function,?,loading_alloc,Loading*,
+Function,?,loading_free,void,Loading*
+Function,?,loading_get_view,View*,Loading*
+Function,?,locale_celsius_to_fahrenheit,float,float
+Function,?,locale_fahrenheit_to_celsius,float,float
+Function,?,locale_format_date,void,"FuriString*, const FuriHalRtcDateTime*, const LocaleDateFormat, const char*"
+Function,?,locale_format_time,void,"FuriString*, const FuriHalRtcDateTime*, const LocaleTimeFormat, const _Bool"
+Function,?,locale_get_date_format,LocaleDateFormat,
+Function,?,locale_get_measurement_unit,LocaleMeasurementUnits,
+Function,?,locale_get_time_format,LocaleTimeFormat,
+Function,?,locale_set_date_format,void,LocaleDateFormat
+Function,?,locale_set_measurement_unit,void,LocaleMeasurementUnits
+Function,?,locale_set_time_format,void,LocaleTimeFormat
 Function,-,localtime,tm*,const time_t*
 Function,-,localtime_r,tm*,"const time_t*, tm*"
 Function,-,log,double,double
@@ -2094,13 +2094,13 @@ Function,+,memmove,void*,"void*, const void*, size_t"
 Function,-,mempcpy,void*,"void*, const void*, size_t"
 Function,-,memrchr,void*,"const void*, int, size_t"
 Function,+,memset,void*,"void*, int, size_t"
-Function,+,menu_add_item,void,"Menu*, const char*, const Icon*, uint32_t, MenuItemCallback, void*"
-Function,+,menu_alloc,Menu*,
-Function,+,menu_free,void,Menu*
-Function,+,menu_get_view,View*,Menu*
-Function,+,menu_pos_alloc,Menu*,"size_t, _Bool"
-Function,+,menu_reset,void,Menu*
-Function,+,menu_set_selected_item,void,"Menu*, uint32_t"
+Function,?,menu_add_item,void,"Menu*, const char*, const Icon*, uint32_t, MenuItemCallback, void*"
+Function,?,menu_alloc,Menu*,
+Function,?,menu_free,void,Menu*
+Function,?,menu_get_view,View*,Menu*
+Function,?,menu_pos_alloc,Menu*,"size_t, _Bool"
+Function,?,menu_reset,void,Menu*
+Function,?,menu_set_selected_item,void,"Menu*, uint32_t"
 Function,-,mf_classic_auth_attempt,_Bool,"FuriHalNfcTxRxContext*, Crypto1*, MfClassicAuthContext*, uint64_t"
 Function,-,mf_classic_auth_init_context,void,"MfClassicAuthContext*, uint8_t"
 Function,-,mf_classic_auth_write_block,_Bool,"FuriHalNfcTxRxContext*, MfClassicBlock*, uint8_t, MfClassicKey, uint64_t"
@@ -2330,10 +2330,10 @@ Function,-,nfcv_inventory,ReturnCode,uint8_t*
 Function,-,nfcv_read_blocks,ReturnCode,"NfcVReader*, NfcVData*"
 Function,-,nfcv_read_card,_Bool,"NfcVReader*, FuriHalNfcDevData*, NfcVData*"
 Function,-,nfcv_read_sysinfo,ReturnCode,"FuriHalNfcDevData*, NfcVData*"
-Function,+,notification_internal_message,void,"NotificationApp*, const NotificationSequence*"
-Function,+,notification_internal_message_block,void,"NotificationApp*, const NotificationSequence*"
-Function,+,notification_message,void,"NotificationApp*, const NotificationSequence*"
-Function,+,notification_message_block,void,"NotificationApp*, const NotificationSequence*"
+Function,?,notification_internal_message,void,"NotificationApp*, const NotificationSequence*"
+Function,?,notification_internal_message_block,void,"NotificationApp*, const NotificationSequence*"
+Function,?,notification_message,void,"NotificationApp*, const NotificationSequence*"
+Function,?,notification_message_block,void,"NotificationApp*, const NotificationSequence*"
 Function,-,nrand48,long,unsigned short[3]
 Function,-,on_exit,int,"void (*)(int, void*), void*"
 Function,+,onewire_host_alloc,OneWireHost*,const GpioPin*
@@ -2390,30 +2390,30 @@ Function,+,plugin_manager_get_ep,const void*,"PluginManager*, uint32_t"
 Function,+,plugin_manager_load_all,PluginManagerError,"PluginManager*, const char*"
 Function,+,plugin_manager_load_single,PluginManagerError,"PluginManager*, const char*"
 Function,-,popen,FILE*,"const char*, const char*"
-Function,+,popup_alloc,Popup*,
-Function,+,popup_disable_timeout,void,Popup*
-Function,+,popup_enable_timeout,void,Popup*
-Function,+,popup_free,void,Popup*
-Function,+,popup_get_view,View*,Popup*
-Function,+,popup_reset,void,Popup*
-Function,+,popup_set_callback,void,"Popup*, PopupCallback"
-Function,+,popup_set_context,void,"Popup*, void*"
-Function,+,popup_set_header,void,"Popup*, const char*, uint8_t, uint8_t, Align, Align"
-Function,+,popup_set_icon,void,"Popup*, uint8_t, uint8_t, const Icon*"
-Function,+,popup_set_text,void,"Popup*, const char*, uint8_t, uint8_t, Align, Align"
-Function,+,popup_set_timeout,void,"Popup*, uint32_t"
+Function,?,popup_alloc,Popup*,
+Function,?,popup_disable_timeout,void,Popup*
+Function,?,popup_enable_timeout,void,Popup*
+Function,?,popup_free,void,Popup*
+Function,?,popup_get_view,View*,Popup*
+Function,?,popup_reset,void,Popup*
+Function,?,popup_set_callback,void,"Popup*, PopupCallback"
+Function,?,popup_set_context,void,"Popup*, void*"
+Function,?,popup_set_header,void,"Popup*, const char*, uint8_t, uint8_t, Align, Align"
+Function,?,popup_set_icon,void,"Popup*, uint8_t, uint8_t, const Icon*"
+Function,?,popup_set_text,void,"Popup*, const char*, uint8_t, uint8_t, Align, Align"
+Function,?,popup_set_timeout,void,"Popup*, uint32_t"
 Function,-,posix_memalign,int,"void**, size_t, size_t"
 Function,-,pow,double,"double, double"
 Function,-,pow10,double,double
 Function,-,pow10f,float,float
-Function,+,power_enable_low_battery_level_notification,void,"Power*, _Bool"
-Function,+,power_get_info,void,"Power*, PowerInfo*"
-Function,+,power_get_pubsub,FuriPubSub*,Power*
-Function,+,power_get_settings_events_pubsub,FuriPubSub*,Power*
-Function,+,power_is_battery_healthy,_Bool,Power*
-Function,+,power_off,void,Power*
-Function,+,power_reboot,void,PowerBootMode
-Function,+,power_update_viewport,void,Power*
+Function,?,power_enable_low_battery_level_notification,void,"Power*, _Bool"
+Function,?,power_get_info,void,"Power*, PowerInfo*"
+Function,?,power_get_pubsub,FuriPubSub*,Power*
+Function,?,power_get_settings_events_pubsub,FuriPubSub*,Power*
+Function,?,power_is_battery_healthy,_Bool,Power*
+Function,?,power_off,void,Power*
+Function,?,power_reboot,void,PowerBootMode
+Function,?,power_update_viewport,void,Power*
 Function,+,powf,float,"float, float"
 Function,-,powl,long double,"long double, long double"
 Function,+,pretty_format_bytes_hex_canonical,void,"FuriString*, size_t, const char*, const uint8_t*, size_t"
@@ -2679,26 +2679,26 @@ Function,-,rintl,long double,long double
 Function,-,round,double,double
 Function,+,roundf,float,float
 Function,-,roundl,long double,long double
-Function,+,rpc_session_close,void,RpcSession*
-Function,+,rpc_session_feed,size_t,"RpcSession*, uint8_t*, size_t, TickType_t"
-Function,+,rpc_session_get_available_size,size_t,RpcSession*
-Function,+,rpc_session_get_owner,RpcOwner,RpcSession*
-Function,+,rpc_session_open,RpcSession*,"Rpc*, RpcOwner"
-Function,+,rpc_session_set_buffer_is_empty_callback,void,"RpcSession*, RpcBufferIsEmptyCallback"
-Function,+,rpc_session_set_close_callback,void,"RpcSession*, RpcSessionClosedCallback"
-Function,+,rpc_session_set_context,void,"RpcSession*, void*"
-Function,+,rpc_session_set_send_bytes_callback,void,"RpcSession*, RpcSendBytesCallback"
-Function,+,rpc_session_set_terminated_callback,void,"RpcSession*, RpcSessionTerminatedCallback"
-Function,+,rpc_system_app_confirm,void,"RpcAppSystem*, RpcAppSystemEvent, _Bool"
-Function,+,rpc_system_app_error_reset,void,RpcAppSystem*
-Function,+,rpc_system_app_exchange_data,void,"RpcAppSystem*, const uint8_t*, size_t"
-Function,+,rpc_system_app_get_data,const char*,RpcAppSystem*
-Function,+,rpc_system_app_send_exited,void,RpcAppSystem*
-Function,+,rpc_system_app_send_started,void,RpcAppSystem*
-Function,+,rpc_system_app_set_callback,void,"RpcAppSystem*, RpcAppSystemCallback, void*"
-Function,+,rpc_system_app_set_data_exchange_callback,void,"RpcAppSystem*, RpcAppSystemDataExchangeCallback, void*"
-Function,+,rpc_system_app_set_error_code,void,"RpcAppSystem*, uint32_t"
-Function,+,rpc_system_app_set_error_text,void,"RpcAppSystem*, const char*"
+Function,?,rpc_session_close,void,RpcSession*
+Function,?,rpc_session_feed,size_t,"RpcSession*, uint8_t*, size_t, TickType_t"
+Function,?,rpc_session_get_available_size,size_t,RpcSession*
+Function,?,rpc_session_get_owner,RpcOwner,RpcSession*
+Function,?,rpc_session_open,RpcSession*,"Rpc*, RpcOwner"
+Function,?,rpc_session_set_buffer_is_empty_callback,void,"RpcSession*, RpcBufferIsEmptyCallback"
+Function,?,rpc_session_set_close_callback,void,"RpcSession*, RpcSessionClosedCallback"
+Function,?,rpc_session_set_context,void,"RpcSession*, void*"
+Function,?,rpc_session_set_send_bytes_callback,void,"RpcSession*, RpcSendBytesCallback"
+Function,?,rpc_session_set_terminated_callback,void,"RpcSession*, RpcSessionTerminatedCallback"
+Function,?,rpc_system_app_confirm,void,"RpcAppSystem*, RpcAppSystemEvent, _Bool"
+Function,?,rpc_system_app_error_reset,void,RpcAppSystem*
+Function,?,rpc_system_app_exchange_data,void,"RpcAppSystem*, const uint8_t*, size_t"
+Function,?,rpc_system_app_get_data,const char*,RpcAppSystem*
+Function,?,rpc_system_app_send_exited,void,RpcAppSystem*
+Function,?,rpc_system_app_send_started,void,RpcAppSystem*
+Function,?,rpc_system_app_set_callback,void,"RpcAppSystem*, RpcAppSystemCallback, void*"
+Function,?,rpc_system_app_set_data_exchange_callback,void,"RpcAppSystem*, RpcAppSystemDataExchangeCallback, void*"
+Function,?,rpc_system_app_set_error_code,void,"RpcAppSystem*, uint32_t"
+Function,?,rpc_system_app_set_error_text,void,"RpcAppSystem*, const char*"
 Function,-,rpmatch,int,const char*
 Function,+,saved_struct_get_payload_size,_Bool,"const char*, uint8_t, uint8_t, size_t*"
 Function,+,saved_struct_load,_Bool,"const char*, void*, size_t, uint8_t, uint8_t"
@@ -2710,20 +2710,20 @@ Function,-,scalbn,double,"double, int"
 Function,+,scalbnf,float,"float, int"
 Function,-,scalbnl,long double,"long double, int"
 Function,-,scanf,int,"const char*, ..."
-Function,+,scene_manager_alloc,SceneManager*,"const SceneManagerHandlers*, void*"
-Function,+,scene_manager_free,void,SceneManager*
-Function,+,scene_manager_get_scene_state,uint32_t,"const SceneManager*, uint32_t"
-Function,+,scene_manager_handle_back_event,_Bool,SceneManager*
-Function,+,scene_manager_handle_custom_event,_Bool,"SceneManager*, uint32_t"
-Function,+,scene_manager_handle_tick_event,void,SceneManager*
-Function,+,scene_manager_has_previous_scene,_Bool,"const SceneManager*, uint32_t"
-Function,+,scene_manager_next_scene,void,"SceneManager*, uint32_t"
-Function,+,scene_manager_previous_scene,_Bool,SceneManager*
-Function,+,scene_manager_search_and_switch_to_another_scene,_Bool,"SceneManager*, uint32_t"
-Function,+,scene_manager_search_and_switch_to_previous_scene,_Bool,"SceneManager*, uint32_t"
-Function,+,scene_manager_search_and_switch_to_previous_scene_one_of,_Bool,"SceneManager*, const uint32_t*, size_t"
-Function,+,scene_manager_set_scene_state,void,"SceneManager*, uint32_t, uint32_t"
-Function,+,scene_manager_stop,void,SceneManager*
+Function,?,scene_manager_alloc,SceneManager*,"const SceneManagerHandlers*, void*"
+Function,?,scene_manager_free,void,SceneManager*
+Function,?,scene_manager_get_scene_state,uint32_t,"const SceneManager*, uint32_t"
+Function,?,scene_manager_handle_back_event,_Bool,SceneManager*
+Function,?,scene_manager_handle_custom_event,_Bool,"SceneManager*, uint32_t"
+Function,?,scene_manager_handle_tick_event,void,SceneManager*
+Function,?,scene_manager_has_previous_scene,_Bool,"const SceneManager*, uint32_t"
+Function,?,scene_manager_next_scene,void,"SceneManager*, uint32_t"
+Function,?,scene_manager_previous_scene,_Bool,SceneManager*
+Function,?,scene_manager_search_and_switch_to_another_scene,_Bool,"SceneManager*, uint32_t"
+Function,?,scene_manager_search_and_switch_to_previous_scene,_Bool,"SceneManager*, uint32_t"
+Function,?,scene_manager_search_and_switch_to_previous_scene_one_of,_Bool,"SceneManager*, const uint32_t*, size_t"
+Function,?,scene_manager_set_scene_state,void,"SceneManager*, uint32_t, uint32_t"
+Function,?,scene_manager_stop,void,SceneManager*
 Function,+,sd_api_get_fs_type_text,const char*,SDFsType
 Function,-,secure_getenv,char*,const char*
 Function,-,seed48,unsigned short*,unsigned short[3]
@@ -2921,7 +2921,7 @@ Function,+,subghz_custom_btn_get_original,uint8_t,
 Function,+,subghz_custom_btn_is_allowed,_Bool,
 Function,+,subghz_custom_btn_set,_Bool,uint8_t
 Function,+,subghz_custom_btns_reset,void,
-Function,-,subghz_device_cc1101_ext_ep,const FlipperAppPluginDescriptor*,
+Function,?,subghz_device_cc1101_ext_ep,const FlipperAppPluginDescriptor*,
 Function,+,subghz_devices_begin,_Bool,const SubGhzDevice*
 Function,+,subghz_devices_deinit,void,
 Function,+,subghz_devices_end,void,const SubGhzDevice*
@@ -3089,15 +3089,15 @@ Function,+,subghz_worker_set_overrun_callback,void,"SubGhzWorker*, SubGhzWorkerO
 Function,+,subghz_worker_set_pair_callback,void,"SubGhzWorker*, SubGhzWorkerPairCallback"
 Function,+,subghz_worker_start,void,SubGhzWorker*
 Function,+,subghz_worker_stop,void,SubGhzWorker*
-Function,+,submenu_add_item,void,"Submenu*, const char*, uint32_t, SubmenuItemCallback, void*"
-Function,+,submenu_add_lockable_item,void,"Submenu*, const char*, uint32_t, SubmenuItemCallback, void*, _Bool, const char*"
-Function,+,submenu_alloc,Submenu*,
-Function,+,submenu_free,void,Submenu*
-Function,+,submenu_get_view,View*,Submenu*
-Function,+,submenu_reset,void,Submenu*
-Function,+,submenu_set_header,void,"Submenu*, const char*"
-Function,+,submenu_set_orientation,void,"Submenu*, ViewOrientation"
-Function,+,submenu_set_selected_item,void,"Submenu*, uint32_t"
+Function,?,submenu_add_item,void,"Submenu*, const char*, uint32_t, SubmenuItemCallback, void*"
+Function,?,submenu_add_lockable_item,void,"Submenu*, const char*, uint32_t, SubmenuItemCallback, void*, _Bool, const char*"
+Function,?,submenu_alloc,Submenu*,
+Function,?,submenu_free,void,Submenu*
+Function,?,submenu_get_view,View*,Submenu*
+Function,?,submenu_reset,void,Submenu*
+Function,?,submenu_set_header,void,"Submenu*, const char*"
+Function,?,submenu_set_orientation,void,"Submenu*, ViewOrientation"
+Function,?,submenu_set_selected_item,void,"Submenu*, uint32_t"
 Function,-,system,int,const char*
 Function,+,t5577_write,void,LFRFIDT5577*
 Function,+,t5577_write_page_block_pass,void,"uint8_t, uint8_t, _Bool, uint32_t, _Bool, uint32_t"
@@ -3126,23 +3126,23 @@ Function,+,tar_archive_store_data,_Bool,"TarArchive*, const char*, const uint8_t
 Function,+,tar_archive_unpack_file,_Bool,"TarArchive*, const char*, const char*"
 Function,+,tar_archive_unpack_to,_Bool,"TarArchive*, const char*, Storage_name_converter"
 Function,-,tempnam,char*,"const char*, const char*"
-Function,+,text_box_alloc,TextBox*,
-Function,+,text_box_free,void,TextBox*
-Function,+,text_box_get_view,View*,TextBox*
-Function,+,text_box_reset,void,TextBox*
-Function,+,text_box_set_focus,void,"TextBox*, TextBoxFocus"
-Function,+,text_box_set_font,void,"TextBox*, TextBoxFont"
-Function,+,text_box_set_text,void,"TextBox*, const char*"
-Function,+,text_input_alloc,TextInput*,
-Function,+,text_input_free,void,TextInput*
-Function,+,text_input_get_validator_callback,TextInputValidatorCallback,TextInput*
-Function,+,text_input_get_validator_callback_context,void*,TextInput*
-Function,+,text_input_get_view,View*,TextInput*
-Function,+,text_input_reset,void,TextInput*
-Function,+,text_input_set_header_text,void,"TextInput*, const char*"
-Function,+,text_input_set_minimum_length,void,"TextInput*, size_t"
-Function,+,text_input_set_result_callback,void,"TextInput*, TextInputCallback, void*, char*, size_t, _Bool"
-Function,+,text_input_set_validator,void,"TextInput*, TextInputValidatorCallback, void*"
+Function,?,text_box_alloc,TextBox*,
+Function,?,text_box_free,void,TextBox*
+Function,?,text_box_get_view,View*,TextBox*
+Function,?,text_box_reset,void,TextBox*
+Function,?,text_box_set_focus,void,"TextBox*, TextBoxFocus"
+Function,?,text_box_set_font,void,"TextBox*, TextBoxFont"
+Function,?,text_box_set_text,void,"TextBox*, const char*"
+Function,?,text_input_alloc,TextInput*,
+Function,?,text_input_free,void,TextInput*
+Function,?,text_input_get_validator_callback,TextInputValidatorCallback,TextInput*
+Function,?,text_input_get_validator_callback_context,void*,TextInput*
+Function,?,text_input_get_view,View*,TextInput*
+Function,?,text_input_reset,void,TextInput*
+Function,?,text_input_set_header_text,void,"TextInput*, const char*"
+Function,?,text_input_set_minimum_length,void,"TextInput*, size_t"
+Function,?,text_input_set_result_callback,void,"TextInput*, TextInputCallback, void*, char*, size_t, _Bool"
+Function,?,text_input_set_validator,void,"TextInput*, TextInputValidatorCallback, void*"
 Function,-,tgamma,double,double
 Function,-,tgammaf,float,float
 Function,-,tgammal,long double,long double
@@ -3247,28 +3247,28 @@ Function,-,vTaskSwitchContext,void,
 Function,-,vTimerSetReloadMode,void,"TimerHandle_t, const BaseType_t"
 Function,-,vTimerSetTimerID,void,"TimerHandle_t, void*"
 Function,-,vTimerSetTimerNumber,void,"TimerHandle_t, UBaseType_t"
-Function,+,validator_is_file_alloc_init,ValidatorIsFile*,"const char*, const char*, const char*"
-Function,+,validator_is_file_callback,_Bool,"const char*, FuriString*, void*"
-Function,+,validator_is_file_free,void,ValidatorIsFile*
+Function,?,validator_is_file_alloc_init,ValidatorIsFile*,"const char*, const char*, const char*"
+Function,?,validator_is_file_callback,_Bool,"const char*, FuriString*, void*"
+Function,?,validator_is_file_free,void,ValidatorIsFile*
 Function,+,value_index_bool,uint8_t,"const _Bool, const _Bool[], uint8_t"
 Function,+,value_index_float,uint8_t,"const float, const float[], uint8_t"
 Function,+,value_index_int32,uint8_t,"const int32_t, const int32_t[], uint8_t"
 Function,+,value_index_uint32,uint8_t,"const uint32_t, const uint32_t[], uint8_t"
-Function,+,variable_item_get_context,void*,VariableItem*
-Function,+,variable_item_get_current_value_index,uint8_t,VariableItem*
-Function,+,variable_item_list_add,VariableItem*,"VariableItemList*, const char*, uint8_t, VariableItemChangeCallback, void*"
-Function,+,variable_item_list_alloc,VariableItemList*,
-Function,+,variable_item_list_free,void,VariableItemList*
-Function,+,variable_item_list_get_selected_item_index,uint8_t,VariableItemList*
-Function,+,variable_item_list_get_view,View*,VariableItemList*
-Function,+,variable_item_list_reset,void,VariableItemList*
-Function,+,variable_item_list_set_enter_callback,void,"VariableItemList*, VariableItemListEnterCallback, void*"
-Function,+,variable_item_list_set_selected_item,void,"VariableItemList*, uint8_t"
-Function,+,variable_item_set_current_value_index,void,"VariableItem*, uint8_t"
-Function,+,variable_item_set_current_value_text,void,"VariableItem*, const char*"
-Function,+,variable_item_set_item_label,void,"VariableItem*, const char*"
-Function,+,variable_item_set_locked,void,"VariableItem*, _Bool, const char*"
-Function,+,variable_item_set_values_count,void,"VariableItem*, uint8_t"
+Function,?,variable_item_get_context,void*,VariableItem*
+Function,?,variable_item_get_current_value_index,uint8_t,VariableItem*
+Function,?,variable_item_list_add,VariableItem*,"VariableItemList*, const char*, uint8_t, VariableItemChangeCallback, void*"
+Function,?,variable_item_list_alloc,VariableItemList*,
+Function,?,variable_item_list_free,void,VariableItemList*
+Function,?,variable_item_list_get_selected_item_index,uint8_t,VariableItemList*
+Function,?,variable_item_list_get_view,View*,VariableItemList*
+Function,?,variable_item_list_reset,void,VariableItemList*
+Function,?,variable_item_list_set_enter_callback,void,"VariableItemList*, VariableItemListEnterCallback, void*"
+Function,?,variable_item_list_set_selected_item,void,"VariableItemList*, uint8_t"
+Function,?,variable_item_set_current_value_index,void,"VariableItem*, uint8_t"
+Function,?,variable_item_set_current_value_text,void,"VariableItem*, const char*"
+Function,?,variable_item_set_item_label,void,"VariableItem*, const char*"
+Function,?,variable_item_set_locked,void,"VariableItem*, _Bool, const char*"
+Function,?,variable_item_set_values_count,void,"VariableItem*, uint8_t"
 Function,-,vasiprintf,int,"char**, const char*, __gnuc_va_list"
 Function,-,vasniprintf,char*,"char*, size_t*, const char*, __gnuc_va_list"
 Function,-,vasnprintf,char*,"char*, size_t*, const char*, __gnuc_va_list"
@@ -3294,38 +3294,38 @@ Function,-,vfscanf,int,"FILE*, const char*, __gnuc_va_list"
 Function,+,view_alloc,View*,
 Function,+,view_allocate_model,void,"View*, ViewModelType, size_t"
 Function,+,view_commit_model,void,"View*, _Bool"
-Function,+,view_dispatcher_add_view,void,"ViewDispatcher*, uint32_t, View*"
-Function,+,view_dispatcher_alloc,ViewDispatcher*,
-Function,+,view_dispatcher_attach_to_gui,void,"ViewDispatcher*, Gui*, ViewDispatcherType"
-Function,+,view_dispatcher_enable_queue,void,ViewDispatcher*
-Function,+,view_dispatcher_free,void,ViewDispatcher*
-Function,+,view_dispatcher_remove_view,void,"ViewDispatcher*, uint32_t"
-Function,+,view_dispatcher_run,void,ViewDispatcher*
-Function,+,view_dispatcher_send_custom_event,void,"ViewDispatcher*, uint32_t"
-Function,+,view_dispatcher_send_to_back,void,ViewDispatcher*
-Function,+,view_dispatcher_send_to_front,void,ViewDispatcher*
-Function,+,view_dispatcher_set_custom_event_callback,void,"ViewDispatcher*, ViewDispatcherCustomEventCallback"
-Function,+,view_dispatcher_set_event_callback_context,void,"ViewDispatcher*, void*"
-Function,+,view_dispatcher_set_navigation_event_callback,void,"ViewDispatcher*, ViewDispatcherNavigationEventCallback"
-Function,+,view_dispatcher_set_tick_event_callback,void,"ViewDispatcher*, ViewDispatcherTickEventCallback, uint32_t"
-Function,+,view_dispatcher_stop,void,ViewDispatcher*
-Function,+,view_dispatcher_switch_to_view,void,"ViewDispatcher*, uint32_t"
+Function,?,view_dispatcher_add_view,void,"ViewDispatcher*, uint32_t, View*"
+Function,?,view_dispatcher_alloc,ViewDispatcher*,
+Function,?,view_dispatcher_attach_to_gui,void,"ViewDispatcher*, Gui*, ViewDispatcherType"
+Function,?,view_dispatcher_enable_queue,void,ViewDispatcher*
+Function,?,view_dispatcher_free,void,ViewDispatcher*
+Function,?,view_dispatcher_remove_view,void,"ViewDispatcher*, uint32_t"
+Function,?,view_dispatcher_run,void,ViewDispatcher*
+Function,?,view_dispatcher_send_custom_event,void,"ViewDispatcher*, uint32_t"
+Function,?,view_dispatcher_send_to_back,void,ViewDispatcher*
+Function,?,view_dispatcher_send_to_front,void,ViewDispatcher*
+Function,?,view_dispatcher_set_custom_event_callback,void,"ViewDispatcher*, ViewDispatcherCustomEventCallback"
+Function,?,view_dispatcher_set_event_callback_context,void,"ViewDispatcher*, void*"
+Function,?,view_dispatcher_set_navigation_event_callback,void,"ViewDispatcher*, ViewDispatcherNavigationEventCallback"
+Function,?,view_dispatcher_set_tick_event_callback,void,"ViewDispatcher*, ViewDispatcherTickEventCallback, uint32_t"
+Function,?,view_dispatcher_stop,void,ViewDispatcher*
+Function,?,view_dispatcher_switch_to_view,void,"ViewDispatcher*, uint32_t"
 Function,+,view_free,void,View*
 Function,+,view_free_model,void,View*
 Function,+,view_get_model,void*,View*
-Function,+,view_port_alloc,ViewPort*,
-Function,+,view_port_draw_callback_set,void,"ViewPort*, ViewPortDrawCallback, void*"
-Function,+,view_port_enabled_set,void,"ViewPort*, _Bool"
-Function,+,view_port_free,void,ViewPort*
-Function,+,view_port_get_height,uint8_t,const ViewPort*
-Function,+,view_port_get_orientation,ViewPortOrientation,const ViewPort*
-Function,+,view_port_get_width,uint8_t,const ViewPort*
-Function,+,view_port_input_callback_set,void,"ViewPort*, ViewPortInputCallback, void*"
-Function,+,view_port_is_enabled,_Bool,const ViewPort*
-Function,+,view_port_set_height,void,"ViewPort*, uint8_t"
-Function,+,view_port_set_orientation,void,"ViewPort*, ViewPortOrientation"
-Function,+,view_port_set_width,void,"ViewPort*, uint8_t"
-Function,+,view_port_update,void,ViewPort*
+Function,?,view_port_alloc,ViewPort*,
+Function,?,view_port_draw_callback_set,void,"ViewPort*, ViewPortDrawCallback, void*"
+Function,?,view_port_enabled_set,void,"ViewPort*, _Bool"
+Function,?,view_port_free,void,ViewPort*
+Function,?,view_port_get_height,uint8_t,const ViewPort*
+Function,?,view_port_get_orientation,ViewPortOrientation,const ViewPort*
+Function,?,view_port_get_width,uint8_t,const ViewPort*
+Function,?,view_port_input_callback_set,void,"ViewPort*, ViewPortInputCallback, void*"
+Function,?,view_port_is_enabled,_Bool,const ViewPort*
+Function,?,view_port_set_height,void,"ViewPort*, uint8_t"
+Function,?,view_port_set_orientation,void,"ViewPort*, ViewPortOrientation"
+Function,?,view_port_set_width,void,"ViewPort*, uint8_t"
+Function,?,view_port_update,void,ViewPort*
 Function,+,view_set_context,void,"View*, void*"
 Function,+,view_set_custom_callback,void,"View*, ViewCustomCallback"
 Function,+,view_set_draw_callback,void,"View*, ViewDrawCallback"
@@ -3336,11 +3336,11 @@ Function,+,view_set_orientation,void,"View*, ViewOrientation"
 Function,+,view_set_previous_callback,void,"View*, ViewNavigationCallback"
 Function,+,view_set_update_callback,void,"View*, ViewUpdateCallback"
 Function,+,view_set_update_callback_context,void,"View*, void*"
-Function,+,view_stack_add_view,void,"ViewStack*, View*"
-Function,+,view_stack_alloc,ViewStack*,
-Function,+,view_stack_free,void,ViewStack*
-Function,+,view_stack_get_view,View*,ViewStack*
-Function,+,view_stack_remove_view,void,"ViewStack*, View*"
+Function,?,view_stack_add_view,void,"ViewStack*, View*"
+Function,?,view_stack_alloc,ViewStack*,
+Function,?,view_stack_free,void,ViewStack*
+Function,?,view_stack_get_view,View*,ViewStack*
+Function,?,view_stack_remove_view,void,"ViewStack*, View*"
 Function,+,view_tie_icon_animation,void,"View*, IconAnimation*"
 Function,-,viprintf,int,"const char*, __gnuc_va_list"
 Function,-,viscanf,int,"const char*, __gnuc_va_list"
@@ -3354,17 +3354,17 @@ Function,-,vsprintf,int,"char*, const char*, __gnuc_va_list"
 Function,-,vsscanf,int,"const char*, const char*, __gnuc_va_list"
 Function,-,wcstombs,size_t,"char*, const wchar_t*, size_t"
 Function,-,wctomb,int,"char*, wchar_t"
-Function,+,widget_add_button_element,void,"Widget*, GuiButtonType, const char*, ButtonCallback, void*"
-Function,+,widget_add_frame_element,void,"Widget*, uint8_t, uint8_t, uint8_t, uint8_t, uint8_t"
-Function,+,widget_add_icon_element,void,"Widget*, uint8_t, uint8_t, const Icon*"
-Function,+,widget_add_string_element,void,"Widget*, uint8_t, uint8_t, Align, Align, Font, const char*"
-Function,+,widget_add_string_multiline_element,void,"Widget*, uint8_t, uint8_t, Align, Align, Font, const char*"
-Function,+,widget_add_text_box_element,void,"Widget*, uint8_t, uint8_t, uint8_t, uint8_t, Align, Align, const char*, _Bool"
-Function,+,widget_add_text_scroll_element,void,"Widget*, uint8_t, uint8_t, uint8_t, uint8_t, const char*"
-Function,+,widget_alloc,Widget*,
-Function,+,widget_free,void,Widget*
-Function,+,widget_get_view,View*,Widget*
-Function,+,widget_reset,void,Widget*
+Function,?,widget_add_button_element,void,"Widget*, GuiButtonType, const char*, ButtonCallback, void*"
+Function,?,widget_add_frame_element,void,"Widget*, uint8_t, uint8_t, uint8_t, uint8_t, uint8_t"
+Function,?,widget_add_icon_element,void,"Widget*, uint8_t, uint8_t, const Icon*"
+Function,?,widget_add_string_element,void,"Widget*, uint8_t, uint8_t, Align, Align, Font, const char*"
+Function,?,widget_add_string_multiline_element,void,"Widget*, uint8_t, uint8_t, Align, Align, Font, const char*"
+Function,?,widget_add_text_box_element,void,"Widget*, uint8_t, uint8_t, uint8_t, uint8_t, Align, Align, const char*, _Bool"
+Function,?,widget_add_text_scroll_element,void,"Widget*, uint8_t, uint8_t, uint8_t, uint8_t, const char*"
+Function,?,widget_alloc,Widget*,
+Function,?,widget_free,void,Widget*
+Function,?,widget_get_view,View*,Widget*
+Function,?,widget_reset,void,Widget*
 Function,-,xPortGetFreeHeapSize,size_t,
 Function,-,xPortGetMinimumEverFreeHeapSize,size_t,
 Function,-,xPortStartScheduler,BaseType_t,
@@ -3412,22 +3412,22 @@ Variable,-,AHBPrescTable,const uint32_t[16],
 Variable,-,AID,AIDSet,
 Variable,-,APBPrescTable,const uint32_t[8],
 Variable,-,EF,const EFFormat,
-Variable,+,FLIPPER_APPS,const FlipperInternalApplication[],
-Variable,+,FLIPPER_APPS_COUNT,const size_t,
-Variable,+,FLIPPER_ARCHIVE,const FlipperInternalApplication,
-Variable,+,FLIPPER_AUTORUN_APP_NAME,const char*,
-Variable,+,FLIPPER_DEBUG_APPS,const FlipperInternalApplication[],
-Variable,+,FLIPPER_DEBUG_APPS_COUNT,const size_t,
-Variable,+,FLIPPER_EXTERNAL_APPS,const FlipperExternalApplication[],
-Variable,+,FLIPPER_EXTERNAL_APPS_COUNT,const size_t,
-Variable,+,FLIPPER_ON_SYSTEM_START,const FlipperInternalOnStartHook[],
-Variable,+,FLIPPER_ON_SYSTEM_START_COUNT,const size_t,
-Variable,+,FLIPPER_SERVICES,const FlipperInternalApplication[],
-Variable,+,FLIPPER_SERVICES_COUNT,const size_t,
-Variable,+,FLIPPER_SETTINGS_APPS,const FlipperInternalApplication[],
-Variable,+,FLIPPER_SETTINGS_APPS_COUNT,const size_t,
-Variable,+,FLIPPER_SYSTEM_APPS,const FlipperInternalApplication[],
-Variable,+,FLIPPER_SYSTEM_APPS_COUNT,const size_t,
+Variable,?,FLIPPER_APPS,const FlipperInternalApplication[],
+Variable,?,FLIPPER_APPS_COUNT,const size_t,
+Variable,?,FLIPPER_ARCHIVE,const FlipperInternalApplication,
+Variable,?,FLIPPER_AUTORUN_APP_NAME,const char*,
+Variable,?,FLIPPER_DEBUG_APPS,const FlipperInternalApplication[],
+Variable,?,FLIPPER_DEBUG_APPS_COUNT,const size_t,
+Variable,?,FLIPPER_EXTERNAL_APPS,const FlipperExternalApplication[],
+Variable,?,FLIPPER_EXTERNAL_APPS_COUNT,const size_t,
+Variable,?,FLIPPER_ON_SYSTEM_START,const FlipperInternalOnStartHook[],
+Variable,?,FLIPPER_ON_SYSTEM_START_COUNT,const size_t,
+Variable,?,FLIPPER_SERVICES,const FlipperInternalApplication[],
+Variable,?,FLIPPER_SERVICES_COUNT,const size_t,
+Variable,?,FLIPPER_SETTINGS_APPS,const FlipperInternalApplication[],
+Variable,?,FLIPPER_SETTINGS_APPS_COUNT,const size_t,
+Variable,?,FLIPPER_SYSTEM_APPS,const FlipperInternalApplication[],
+Variable,?,FLIPPER_SYSTEM_APPS_COUNT,const size_t,
 Variable,-,ITM_RxBuffer,volatile int32_t,
 Variable,-,MSIRangeTable,const uint32_t[16],
 Variable,-,SmpsPrescalerTable,const uint32_t[4][6],
@@ -3440,8 +3440,8 @@ Variable,-,_sys_errlist,const char*[],
 Variable,-,_sys_nerr,int,
 Variable,-,_timezone,long,
 Variable,-,_tzname,char*[2],
-Variable,+,cli_vcp,CliSession,
-Variable,+,firmware_api_interface,const ElfApiInterface*,
+Variable,?,cli_vcp,CliSession,
+Variable,?,firmware_api_interface,const ElfApiInterface*,
 Variable,+,furi_hal_i2c_bus_external,FuriHalI2cBus,
 Variable,+,furi_hal_i2c_bus_power,FuriHalI2cBus,
 Variable,+,furi_hal_i2c_handle_external,FuriHalI2cBusHandle,
@@ -3513,203 +3513,203 @@ Variable,+,gpio_vibro,const GpioPin,
 Variable,+,input_pins,const InputPin[],
 Variable,+,input_pins_count,const size_t,
 Variable,+,lfrfid_protocols,const ProtocolBase*[],
-Variable,+,message_blink_set_color_blue,const NotificationMessage,
-Variable,+,message_blink_set_color_cyan,const NotificationMessage,
-Variable,+,message_blink_set_color_green,const NotificationMessage,
-Variable,+,message_blink_set_color_magenta,const NotificationMessage,
-Variable,+,message_blink_set_color_red,const NotificationMessage,
-Variable,+,message_blink_set_color_white,const NotificationMessage,
-Variable,+,message_blink_set_color_yellow,const NotificationMessage,
-Variable,+,message_blink_start_10,const NotificationMessage,
-Variable,+,message_blink_start_100,const NotificationMessage,
-Variable,+,message_blink_stop,const NotificationMessage,
-Variable,+,message_blue_0,const NotificationMessage,
-Variable,+,message_blue_255,const NotificationMessage,
-Variable,+,message_click,const NotificationMessage,
-Variable,+,message_delay_1,const NotificationMessage,
-Variable,+,message_delay_10,const NotificationMessage,
-Variable,+,message_delay_100,const NotificationMessage,
-Variable,+,message_delay_1000,const NotificationMessage,
-Variable,+,message_delay_25,const NotificationMessage,
-Variable,+,message_delay_250,const NotificationMessage,
-Variable,+,message_delay_50,const NotificationMessage,
-Variable,+,message_delay_500,const NotificationMessage,
-Variable,+,message_display_backlight_enforce_auto,const NotificationMessage,
-Variable,+,message_display_backlight_enforce_on,const NotificationMessage,
-Variable,+,message_display_backlight_off,const NotificationMessage,
-Variable,+,message_display_backlight_on,const NotificationMessage,
-Variable,+,message_do_not_reset,const NotificationMessage,
-Variable,+,message_force_display_brightness_setting_1f,const NotificationMessage,
-Variable,+,message_force_speaker_volume_setting_1f,const NotificationMessage,
-Variable,+,message_force_vibro_setting_off,const NotificationMessage,
-Variable,+,message_force_vibro_setting_on,const NotificationMessage,
-Variable,+,message_green_0,const NotificationMessage,
-Variable,+,message_green_255,const NotificationMessage,
-Variable,+,message_lcd_contrast_update,const NotificationMessage,
-Variable,+,message_note_a0,const NotificationMessage,
-Variable,+,message_note_a1,const NotificationMessage,
-Variable,+,message_note_a2,const NotificationMessage,
-Variable,+,message_note_a3,const NotificationMessage,
-Variable,+,message_note_a4,const NotificationMessage,
-Variable,+,message_note_a5,const NotificationMessage,
-Variable,+,message_note_a6,const NotificationMessage,
-Variable,+,message_note_a7,const NotificationMessage,
-Variable,+,message_note_a8,const NotificationMessage,
-Variable,+,message_note_as0,const NotificationMessage,
-Variable,+,message_note_as1,const NotificationMessage,
-Variable,+,message_note_as2,const NotificationMessage,
-Variable,+,message_note_as3,const NotificationMessage,
-Variable,+,message_note_as4,const NotificationMessage,
-Variable,+,message_note_as5,const NotificationMessage,
-Variable,+,message_note_as6,const NotificationMessage,
-Variable,+,message_note_as7,const NotificationMessage,
-Variable,+,message_note_as8,const NotificationMessage,
-Variable,+,message_note_b0,const NotificationMessage,
-Variable,+,message_note_b1,const NotificationMessage,
-Variable,+,message_note_b2,const NotificationMessage,
-Variable,+,message_note_b3,const NotificationMessage,
-Variable,+,message_note_b4,const NotificationMessage,
-Variable,+,message_note_b5,const NotificationMessage,
-Variable,+,message_note_b6,const NotificationMessage,
-Variable,+,message_note_b7,const NotificationMessage,
-Variable,+,message_note_b8,const NotificationMessage,
-Variable,+,message_note_c0,const NotificationMessage,
-Variable,+,message_note_c1,const NotificationMessage,
-Variable,+,message_note_c2,const NotificationMessage,
-Variable,+,message_note_c3,const NotificationMessage,
-Variable,+,message_note_c4,const NotificationMessage,
-Variable,+,message_note_c5,const NotificationMessage,
-Variable,+,message_note_c6,const NotificationMessage,
-Variable,+,message_note_c7,const NotificationMessage,
-Variable,+,message_note_c8,const NotificationMessage,
-Variable,+,message_note_cs0,const NotificationMessage,
-Variable,+,message_note_cs1,const NotificationMessage,
-Variable,+,message_note_cs2,const NotificationMessage,
-Variable,+,message_note_cs3,const NotificationMessage,
-Variable,+,message_note_cs4,const NotificationMessage,
-Variable,+,message_note_cs5,const NotificationMessage,
-Variable,+,message_note_cs6,const NotificationMessage,
-Variable,+,message_note_cs7,const NotificationMessage,
-Variable,+,message_note_cs8,const NotificationMessage,
-Variable,+,message_note_d0,const NotificationMessage,
-Variable,+,message_note_d1,const NotificationMessage,
-Variable,+,message_note_d2,const NotificationMessage,
-Variable,+,message_note_d3,const NotificationMessage,
-Variable,+,message_note_d4,const NotificationMessage,
-Variable,+,message_note_d5,const NotificationMessage,
-Variable,+,message_note_d6,const NotificationMessage,
-Variable,+,message_note_d7,const NotificationMessage,
-Variable,+,message_note_d8,const NotificationMessage,
-Variable,+,message_note_ds0,const NotificationMessage,
-Variable,+,message_note_ds1,const NotificationMessage,
-Variable,+,message_note_ds2,const NotificationMessage,
-Variable,+,message_note_ds3,const NotificationMessage,
-Variable,+,message_note_ds4,const NotificationMessage,
-Variable,+,message_note_ds5,const NotificationMessage,
-Variable,+,message_note_ds6,const NotificationMessage,
-Variable,+,message_note_ds7,const NotificationMessage,
-Variable,+,message_note_ds8,const NotificationMessage,
-Variable,+,message_note_e0,const NotificationMessage,
-Variable,+,message_note_e1,const NotificationMessage,
-Variable,+,message_note_e2,const NotificationMessage,
-Variable,+,message_note_e3,const NotificationMessage,
-Variable,+,message_note_e4,const NotificationMessage,
-Variable,+,message_note_e5,const NotificationMessage,
-Variable,+,message_note_e6,const NotificationMessage,
-Variable,+,message_note_e7,const NotificationMessage,
-Variable,+,message_note_e8,const NotificationMessage,
-Variable,+,message_note_f0,const NotificationMessage,
-Variable,+,message_note_f1,const NotificationMessage,
-Variable,+,message_note_f2,const NotificationMessage,
-Variable,+,message_note_f3,const NotificationMessage,
-Variable,+,message_note_f4,const NotificationMessage,
-Variable,+,message_note_f5,const NotificationMessage,
-Variable,+,message_note_f6,const NotificationMessage,
-Variable,+,message_note_f7,const NotificationMessage,
-Variable,+,message_note_f8,const NotificationMessage,
-Variable,+,message_note_fs0,const NotificationMessage,
-Variable,+,message_note_fs1,const NotificationMessage,
-Variable,+,message_note_fs2,const NotificationMessage,
-Variable,+,message_note_fs3,const NotificationMessage,
-Variable,+,message_note_fs4,const NotificationMessage,
-Variable,+,message_note_fs5,const NotificationMessage,
-Variable,+,message_note_fs6,const NotificationMessage,
-Variable,+,message_note_fs7,const NotificationMessage,
-Variable,+,message_note_fs8,const NotificationMessage,
-Variable,+,message_note_g0,const NotificationMessage,
-Variable,+,message_note_g1,const NotificationMessage,
-Variable,+,message_note_g2,const NotificationMessage,
-Variable,+,message_note_g3,const NotificationMessage,
-Variable,+,message_note_g4,const NotificationMessage,
-Variable,+,message_note_g5,const NotificationMessage,
-Variable,+,message_note_g6,const NotificationMessage,
-Variable,+,message_note_g7,const NotificationMessage,
-Variable,+,message_note_g8,const NotificationMessage,
-Variable,+,message_note_gs0,const NotificationMessage,
-Variable,+,message_note_gs1,const NotificationMessage,
-Variable,+,message_note_gs2,const NotificationMessage,
-Variable,+,message_note_gs3,const NotificationMessage,
-Variable,+,message_note_gs4,const NotificationMessage,
-Variable,+,message_note_gs5,const NotificationMessage,
-Variable,+,message_note_gs6,const NotificationMessage,
-Variable,+,message_note_gs7,const NotificationMessage,
-Variable,+,message_note_gs8,const NotificationMessage,
-Variable,+,message_red_0,const NotificationMessage,
-Variable,+,message_red_255,const NotificationMessage,
-Variable,+,message_sound_off,const NotificationMessage,
-Variable,+,message_vibro_off,const NotificationMessage,
-Variable,+,message_vibro_on,const NotificationMessage,
+Variable,?,message_blink_set_color_blue,const NotificationMessage,
+Variable,?,message_blink_set_color_cyan,const NotificationMessage,
+Variable,?,message_blink_set_color_green,const NotificationMessage,
+Variable,?,message_blink_set_color_magenta,const NotificationMessage,
+Variable,?,message_blink_set_color_red,const NotificationMessage,
+Variable,?,message_blink_set_color_white,const NotificationMessage,
+Variable,?,message_blink_set_color_yellow,const NotificationMessage,
+Variable,?,message_blink_start_10,const NotificationMessage,
+Variable,?,message_blink_start_100,const NotificationMessage,
+Variable,?,message_blink_stop,const NotificationMessage,
+Variable,?,message_blue_0,const NotificationMessage,
+Variable,?,message_blue_255,const NotificationMessage,
+Variable,?,message_click,const NotificationMessage,
+Variable,?,message_delay_1,const NotificationMessage,
+Variable,?,message_delay_10,const NotificationMessage,
+Variable,?,message_delay_100,const NotificationMessage,
+Variable,?,message_delay_1000,const NotificationMessage,
+Variable,?,message_delay_25,const NotificationMessage,
+Variable,?,message_delay_250,const NotificationMessage,
+Variable,?,message_delay_50,const NotificationMessage,
+Variable,?,message_delay_500,const NotificationMessage,
+Variable,?,message_display_backlight_enforce_auto,const NotificationMessage,
+Variable,?,message_display_backlight_enforce_on,const NotificationMessage,
+Variable,?,message_display_backlight_off,const NotificationMessage,
+Variable,?,message_display_backlight_on,const NotificationMessage,
+Variable,?,message_do_not_reset,const NotificationMessage,
+Variable,?,message_force_display_brightness_setting_1f,const NotificationMessage,
+Variable,?,message_force_speaker_volume_setting_1f,const NotificationMessage,
+Variable,?,message_force_vibro_setting_off,const NotificationMessage,
+Variable,?,message_force_vibro_setting_on,const NotificationMessage,
+Variable,?,message_green_0,const NotificationMessage,
+Variable,?,message_green_255,const NotificationMessage,
+Variable,?,message_lcd_contrast_update,const NotificationMessage,
+Variable,?,message_note_a0,const NotificationMessage,
+Variable,?,message_note_a1,const NotificationMessage,
+Variable,?,message_note_a2,const NotificationMessage,
+Variable,?,message_note_a3,const NotificationMessage,
+Variable,?,message_note_a4,const NotificationMessage,
+Variable,?,message_note_a5,const NotificationMessage,
+Variable,?,message_note_a6,const NotificationMessage,
+Variable,?,message_note_a7,const NotificationMessage,
+Variable,?,message_note_a8,const NotificationMessage,
+Variable,?,message_note_as0,const NotificationMessage,
+Variable,?,message_note_as1,const NotificationMessage,
+Variable,?,message_note_as2,const NotificationMessage,
+Variable,?,message_note_as3,const NotificationMessage,
+Variable,?,message_note_as4,const NotificationMessage,
+Variable,?,message_note_as5,const NotificationMessage,
+Variable,?,message_note_as6,const NotificationMessage,
+Variable,?,message_note_as7,const NotificationMessage,
+Variable,?,message_note_as8,const NotificationMessage,
+Variable,?,message_note_b0,const NotificationMessage,
+Variable,?,message_note_b1,const NotificationMessage,
+Variable,?,message_note_b2,const NotificationMessage,
+Variable,?,message_note_b3,const NotificationMessage,
+Variable,?,message_note_b4,const NotificationMessage,
+Variable,?,message_note_b5,const NotificationMessage,
+Variable,?,message_note_b6,const NotificationMessage,
+Variable,?,message_note_b7,const NotificationMessage,
+Variable,?,message_note_b8,const NotificationMessage,
+Variable,?,message_note_c0,const NotificationMessage,
+Variable,?,message_note_c1,const NotificationMessage,
+Variable,?,message_note_c2,const NotificationMessage,
+Variable,?,message_note_c3,const NotificationMessage,
+Variable,?,message_note_c4,const NotificationMessage,
+Variable,?,message_note_c5,const NotificationMessage,
+Variable,?,message_note_c6,const NotificationMessage,
+Variable,?,message_note_c7,const NotificationMessage,
+Variable,?,message_note_c8,const NotificationMessage,
+Variable,?,message_note_cs0,const NotificationMessage,
+Variable,?,message_note_cs1,const NotificationMessage,
+Variable,?,message_note_cs2,const NotificationMessage,
+Variable,?,message_note_cs3,const NotificationMessage,
+Variable,?,message_note_cs4,const NotificationMessage,
+Variable,?,message_note_cs5,const NotificationMessage,
+Variable,?,message_note_cs6,const NotificationMessage,
+Variable,?,message_note_cs7,const NotificationMessage,
+Variable,?,message_note_cs8,const NotificationMessage,
+Variable,?,message_note_d0,const NotificationMessage,
+Variable,?,message_note_d1,const NotificationMessage,
+Variable,?,message_note_d2,const NotificationMessage,
+Variable,?,message_note_d3,const NotificationMessage,
+Variable,?,message_note_d4,const NotificationMessage,
+Variable,?,message_note_d5,const NotificationMessage,
+Variable,?,message_note_d6,const NotificationMessage,
+Variable,?,message_note_d7,const NotificationMessage,
+Variable,?,message_note_d8,const NotificationMessage,
+Variable,?,message_note_ds0,const NotificationMessage,
+Variable,?,message_note_ds1,const NotificationMessage,
+Variable,?,message_note_ds2,const NotificationMessage,
+Variable,?,message_note_ds3,const NotificationMessage,
+Variable,?,message_note_ds4,const NotificationMessage,
+Variable,?,message_note_ds5,const NotificationMessage,
+Variable,?,message_note_ds6,const NotificationMessage,
+Variable,?,message_note_ds7,const NotificationMessage,
+Variable,?,message_note_ds8,const NotificationMessage,
+Variable,?,message_note_e0,const NotificationMessage,
+Variable,?,message_note_e1,const NotificationMessage,
+Variable,?,message_note_e2,const NotificationMessage,
+Variable,?,message_note_e3,const NotificationMessage,
+Variable,?,message_note_e4,const NotificationMessage,
+Variable,?,message_note_e5,const NotificationMessage,
+Variable,?,message_note_e6,const NotificationMessage,
+Variable,?,message_note_e7,const NotificationMessage,
+Variable,?,message_note_e8,const NotificationMessage,
+Variable,?,message_note_f0,const NotificationMessage,
+Variable,?,message_note_f1,const NotificationMessage,
+Variable,?,message_note_f2,const NotificationMessage,
+Variable,?,message_note_f3,const NotificationMessage,
+Variable,?,message_note_f4,const NotificationMessage,
+Variable,?,message_note_f5,const NotificationMessage,
+Variable,?,message_note_f6,const NotificationMessage,
+Variable,?,message_note_f7,const NotificationMessage,
+Variable,?,message_note_f8,const NotificationMessage,
+Variable,?,message_note_fs0,const NotificationMessage,
+Variable,?,message_note_fs1,const NotificationMessage,
+Variable,?,message_note_fs2,const NotificationMessage,
+Variable,?,message_note_fs3,const NotificationMessage,
+Variable,?,message_note_fs4,const NotificationMessage,
+Variable,?,message_note_fs5,const NotificationMessage,
+Variable,?,message_note_fs6,const NotificationMessage,
+Variable,?,message_note_fs7,const NotificationMessage,
+Variable,?,message_note_fs8,const NotificationMessage,
+Variable,?,message_note_g0,const NotificationMessage,
+Variable,?,message_note_g1,const NotificationMessage,
+Variable,?,message_note_g2,const NotificationMessage,
+Variable,?,message_note_g3,const NotificationMessage,
+Variable,?,message_note_g4,const NotificationMessage,
+Variable,?,message_note_g5,const NotificationMessage,
+Variable,?,message_note_g6,const NotificationMessage,
+Variable,?,message_note_g7,const NotificationMessage,
+Variable,?,message_note_g8,const NotificationMessage,
+Variable,?,message_note_gs0,const NotificationMessage,
+Variable,?,message_note_gs1,const NotificationMessage,
+Variable,?,message_note_gs2,const NotificationMessage,
+Variable,?,message_note_gs3,const NotificationMessage,
+Variable,?,message_note_gs4,const NotificationMessage,
+Variable,?,message_note_gs5,const NotificationMessage,
+Variable,?,message_note_gs6,const NotificationMessage,
+Variable,?,message_note_gs7,const NotificationMessage,
+Variable,?,message_note_gs8,const NotificationMessage,
+Variable,?,message_red_0,const NotificationMessage,
+Variable,?,message_red_255,const NotificationMessage,
+Variable,?,message_sound_off,const NotificationMessage,
+Variable,?,message_vibro_off,const NotificationMessage,
+Variable,?,message_vibro_on,const NotificationMessage,
 Variable,+,nfc_generators,const NfcGenerator*[],
 Variable,-,nfc_supported_card,NfcSupportedCard[NfcSupportedCardTypeEnd],
-Variable,+,sequence_audiovisual_alert,const NotificationSequence,
-Variable,+,sequence_blink_blue_10,const NotificationSequence,
-Variable,+,sequence_blink_blue_100,const NotificationSequence,
-Variable,+,sequence_blink_cyan_10,const NotificationSequence,
-Variable,+,sequence_blink_cyan_100,const NotificationSequence,
-Variable,+,sequence_blink_green_10,const NotificationSequence,
-Variable,+,sequence_blink_green_100,const NotificationSequence,
-Variable,+,sequence_blink_magenta_10,const NotificationSequence,
-Variable,+,sequence_blink_magenta_100,const NotificationSequence,
-Variable,+,sequence_blink_red_10,const NotificationSequence,
-Variable,+,sequence_blink_red_100,const NotificationSequence,
-Variable,+,sequence_blink_start_blue,const NotificationSequence,
-Variable,+,sequence_blink_start_cyan,const NotificationSequence,
-Variable,+,sequence_blink_start_green,const NotificationSequence,
-Variable,+,sequence_blink_start_magenta,const NotificationSequence,
-Variable,+,sequence_blink_start_red,const NotificationSequence,
-Variable,+,sequence_blink_start_yellow,const NotificationSequence,
-Variable,+,sequence_blink_stop,const NotificationSequence,
-Variable,+,sequence_blink_white_100,const NotificationSequence,
-Variable,+,sequence_blink_yellow_10,const NotificationSequence,
-Variable,+,sequence_blink_yellow_100,const NotificationSequence,
-Variable,+,sequence_charged,const NotificationSequence,
-Variable,+,sequence_charging,const NotificationSequence,
-Variable,+,sequence_display_backlight_enforce_auto,const NotificationSequence,
-Variable,+,sequence_display_backlight_enforce_on,const NotificationSequence,
-Variable,+,sequence_display_backlight_off,const NotificationSequence,
-Variable,+,sequence_display_backlight_off_delay_1000,const NotificationSequence,
-Variable,+,sequence_display_backlight_on,const NotificationSequence,
-Variable,+,sequence_double_vibro,const NotificationSequence,
-Variable,+,sequence_error,const NotificationSequence,
-Variable,+,sequence_lcd_contrast_update,const NotificationSequence,
-Variable,+,sequence_not_charging,const NotificationSequence,
-Variable,+,sequence_reset_blue,const NotificationSequence,
-Variable,+,sequence_reset_display,const NotificationSequence,
-Variable,+,sequence_reset_green,const NotificationSequence,
-Variable,+,sequence_reset_red,const NotificationSequence,
-Variable,+,sequence_reset_rgb,const NotificationSequence,
-Variable,+,sequence_reset_sound,const NotificationSequence,
-Variable,+,sequence_reset_vibro,const NotificationSequence,
-Variable,+,sequence_set_blue_255,const NotificationSequence,
-Variable,+,sequence_set_green_255,const NotificationSequence,
-Variable,+,sequence_set_only_blue_255,const NotificationSequence,
-Variable,+,sequence_set_only_green_255,const NotificationSequence,
-Variable,+,sequence_set_only_red_255,const NotificationSequence,
-Variable,+,sequence_set_red_255,const NotificationSequence,
-Variable,+,sequence_set_vibro_on,const NotificationSequence,
-Variable,+,sequence_single_vibro,const NotificationSequence,
-Variable,+,sequence_solid_yellow,const NotificationSequence,
-Variable,+,sequence_success,const NotificationSequence,
+Variable,?,sequence_audiovisual_alert,const NotificationSequence,
+Variable,?,sequence_blink_blue_10,const NotificationSequence,
+Variable,?,sequence_blink_blue_100,const NotificationSequence,
+Variable,?,sequence_blink_cyan_10,const NotificationSequence,
+Variable,?,sequence_blink_cyan_100,const NotificationSequence,
+Variable,?,sequence_blink_green_10,const NotificationSequence,
+Variable,?,sequence_blink_green_100,const NotificationSequence,
+Variable,?,sequence_blink_magenta_10,const NotificationSequence,
+Variable,?,sequence_blink_magenta_100,const NotificationSequence,
+Variable,?,sequence_blink_red_10,const NotificationSequence,
+Variable,?,sequence_blink_red_100,const NotificationSequence,
+Variable,?,sequence_blink_start_blue,const NotificationSequence,
+Variable,?,sequence_blink_start_cyan,const NotificationSequence,
+Variable,?,sequence_blink_start_green,const NotificationSequence,
+Variable,?,sequence_blink_start_magenta,const NotificationSequence,
+Variable,?,sequence_blink_start_red,const NotificationSequence,
+Variable,?,sequence_blink_start_yellow,const NotificationSequence,
+Variable,?,sequence_blink_stop,const NotificationSequence,
+Variable,?,sequence_blink_white_100,const NotificationSequence,
+Variable,?,sequence_blink_yellow_10,const NotificationSequence,
+Variable,?,sequence_blink_yellow_100,const NotificationSequence,
+Variable,?,sequence_charged,const NotificationSequence,
+Variable,?,sequence_charging,const NotificationSequence,
+Variable,?,sequence_display_backlight_enforce_auto,const NotificationSequence,
+Variable,?,sequence_display_backlight_enforce_on,const NotificationSequence,
+Variable,?,sequence_display_backlight_off,const NotificationSequence,
+Variable,?,sequence_display_backlight_off_delay_1000,const NotificationSequence,
+Variable,?,sequence_display_backlight_on,const NotificationSequence,
+Variable,?,sequence_double_vibro,const NotificationSequence,
+Variable,?,sequence_error,const NotificationSequence,
+Variable,?,sequence_lcd_contrast_update,const NotificationSequence,
+Variable,?,sequence_not_charging,const NotificationSequence,
+Variable,?,sequence_reset_blue,const NotificationSequence,
+Variable,?,sequence_reset_display,const NotificationSequence,
+Variable,?,sequence_reset_green,const NotificationSequence,
+Variable,?,sequence_reset_red,const NotificationSequence,
+Variable,?,sequence_reset_rgb,const NotificationSequence,
+Variable,?,sequence_reset_sound,const NotificationSequence,
+Variable,?,sequence_reset_vibro,const NotificationSequence,
+Variable,?,sequence_set_blue_255,const NotificationSequence,
+Variable,?,sequence_set_green_255,const NotificationSequence,
+Variable,?,sequence_set_only_blue_255,const NotificationSequence,
+Variable,?,sequence_set_only_green_255,const NotificationSequence,
+Variable,?,sequence_set_only_red_255,const NotificationSequence,
+Variable,?,sequence_set_red_255,const NotificationSequence,
+Variable,?,sequence_set_vibro_on,const NotificationSequence,
+Variable,?,sequence_single_vibro,const NotificationSequence,
+Variable,?,sequence_solid_yellow,const NotificationSequence,
+Variable,?,sequence_success,const NotificationSequence,
 Variable,-,subghz_device_cc1101_int,const SubGhzDevice,
 Variable,+,subghz_device_cc1101_preset_2fsk_dev2_38khz_async_regs,const uint8_t[],
 Variable,+,subghz_device_cc1101_preset_2fsk_dev47_6khz_async_regs,const uint8_t[],
