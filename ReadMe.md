@@ -49,6 +49,9 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [XRemote v1.0.3 (By kala13x)](https://github.com/kala13x/flipper-xremote)
 - Updated: [HEX Viewer v1.2 (By QtRoS)](https://github.com/QtRoS/flipperzero-firmware)
 - Updated: [GPS v1.2 (By ezod)](https://github.com/ezod/flipperzero-gps) `Req: NMEA 0183` (Updates By ezod & Sil333033 (Using xMasterX code))
+- SubGhz protocol integrations (Weather, Pocsag, TPMS) (By htotoo)
+- Add GPS support for SubGHz (By Sil333033)
+- CFW Settings - favorite_timeout (By WillyJL)
 
 <a name="release">
 
