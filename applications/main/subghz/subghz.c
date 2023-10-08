@@ -5,6 +5,8 @@
 #include <lib/toolbox/path.h>
 #include <float_tools.h>
 #include "subghz_i.h"
+#include <applications/main/archive/helpers/archive_helpers_ext.h>
+#include <cfw.h>
 
 #define TAG "SubGhzApp"
 
@@ -56,6 +58,7 @@ static void subghz_load_custom_presets(SubGhzSetting* setting) {
     furi_assert(setting);
 
     const char* presets[][2] = {
+        // FM95
         {"FM95",
          "02 0D 0B 06 08 32 07 04 14 00 13 02 12 04 11 83 10 67 15 24 18 18 19 16 1D 91 1C 00 1B 07 20 FB 22 10 21 56 00 00 C0 00 00 00 00 00 00 00"},
 
@@ -241,6 +244,11 @@ SubGhz* subghz_alloc(bool alloc_for_tx_only) {
     //Init Error_str
     subghz->error_str = furi_string_alloc();
 
+    subghz->gps = subghz_gps_init();
+    if(subghz->last_settings->gps_enabled) {
+        subghz_gps_start(subghz->gps);
+    }
+
     return subghz;
 }
 
@@ -312,8 +320,6 @@ void subghz_free(SubGhz* subghz, bool alloc_for_tx_only) {
     furi_record_close(RECORD_GUI);
     subghz->gui = NULL;
 
-    subghz_last_settings_free(subghz->last_settings);
-
     // threshold rssi
     subghz_threshold_rssi_free(subghz->threshold_rssi);
 
@@ -337,11 +343,19 @@ void subghz_free(SubGhz* subghz, bool alloc_for_tx_only) {
     furi_string_free(subghz->file_path);
     furi_string_free(subghz->file_path_tmp);
 
+    // GPS
+    if(subghz->last_settings->gps_enabled) {
+        subghz_gps_stop(subghz->gps);
+    }
+    subghz_gps_deinit(subghz->gps);
+
+    subghz_last_settings_free(subghz->last_settings);
+
     // The rest
     free(subghz);
 }
 
-int32_t subghz_app(void* p) {
+int32_t subghz_app(char* p) {
     bool alloc_for_tx;
     if(p && strlen(p)) {
         alloc_for_tx = true;
@@ -358,6 +372,7 @@ int32_t subghz_app(void* p) {
     }
 
     // Check argument and run corresponding scene
+    bool is_favorite = process_favorite_launch(&p) && CFW_SETTINGS()->favorite_timeout;
     if(p && strlen(p)) {
         uint32_t rpc_ctx = 0;
 
@@ -374,6 +389,7 @@ int32_t subghz_app(void* p) {
             if(subghz_key_load(subghz, p, true)) {
                 furi_string_set(subghz->file_path, (const char*)p);
 
+                subghz->fav_timeout = is_favorite;
                 if(subghz_get_load_type_file(subghz) == SubGhzLoadTypeFileRaw) {
                     //Load Raw TX
                     subghz_rx_key_state_set(subghz, SubGhzRxKeyStateRAWLoad);
@@ -407,6 +423,11 @@ int32_t subghz_app(void* p) {
     furi_hal_power_suppress_charge_enter();
 
     view_dispatcher_run(subghz->view_dispatcher);
+
+    if(subghz->fav_timer) {
+        furi_timer_stop(subghz->fav_timer);
+        furi_timer_free(subghz->fav_timer);
+    }
 
     furi_hal_power_suppress_charge_exit();
 

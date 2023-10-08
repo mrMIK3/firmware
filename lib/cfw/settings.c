@@ -14,6 +14,7 @@ CfwSettings cfw_settings = {
     .lock_menu_type = true, // Adv Grid VS FALSE=LIST
     .sort_dirs_first = true, // ON
     .dark_mode = false, // OFF
+    .favorite_timeout = 0, // OFF
     .charge_cap = 100, // 100%
     .spi_cc1101_handle = SpiDefault, // &furi_hal_spi_bus_handle_external
     .spi_nrf24_handle = SpiDefault, // &furi_hal_spi_bus_handle_external
@@ -45,6 +46,8 @@ void CFW_SETTINGS_LOAD() {
         flipper_format_read_bool(file, "sort_dirs_first", &x->sort_dirs_first, 1);
         flipper_format_rewind(file);
         flipper_format_read_bool(file, "dark_mode", &x->dark_mode, 1);
+        flipper_format_rewind(file);
+        flipper_format_read_uint32(file, "favorite_timeout", &x->favorite_timeout, 1);
         flipper_format_rewind(file);
         flipper_format_read_uint32(file, "charge_cap", &x->charge_cap, 1);
         flipper_format_rewind(file);
@@ -88,6 +91,7 @@ void CFW_SETTINGS_SAVE() {
         flipper_format_write_bool(file, "lock_menu_type", &x->lock_menu_type, 1);
         flipper_format_write_bool(file, "sort_dirs_first", &x->sort_dirs_first, 1);
         flipper_format_write_bool(file, "dark_mode", &x->dark_mode, 1);
+        flipper_format_write_uint32(file, "favorite_timeout", &x->favorite_timeout, 1);
         flipper_format_write_uint32(file, "charge_cap", &x->charge_cap, 1);
         flipper_format_write_uint32(
             file, "spi_cc1101_handle", (uint32_t*)&x->spi_cc1101_handle, 1);

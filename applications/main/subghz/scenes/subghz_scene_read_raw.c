@@ -125,6 +125,21 @@ void subghz_scene_read_raw_on_enter(void* context) {
     furi_string_free(file_name);
 
     view_dispatcher_switch_to_view(subghz->view_dispatcher, SubGhzViewIdReadRAW);
+
+    // Start sending immediately with favorites
+    if(subghz->fav_timeout) {
+        scene_manager_handle_custom_event(
+            subghz->scene_manager, SubGhzCustomEventViewReadRAWSendStart);
+        // with_view_model(
+        //     subghz->subghz_read_raw->view,
+        //     SubGhzReadRAWModel * model,
+        //     {
+        //         scene_manager_handle_custom_event(
+        //             subghz->scene_manager, SubGhzCustomEventViewReadRAWSendStart);
+        //         model->status = SubGhzReadRAWStatusTXRepeat;
+        //     },
+        //     true);
+    }
 }
 
 bool subghz_scene_read_raw_on_event(void* context, SceneManagerEvent event) {
@@ -245,6 +260,13 @@ bool subghz_scene_read_raw_on_event(void* context, SceneManagerEvent event) {
             subghz->state_notifications = SubGhzNotificationStateIDLE;
             subghz_txrx_stop(subghz->txrx);
             subghz_read_raw_stop_send(subghz->subghz_read_raw);
+
+            // Exit / stop with favorites
+            if(subghz->fav_timeout) {
+                while(scene_manager_handle_back_event(subghz->scene_manager))
+                    ;
+                view_dispatcher_stop(subghz->view_dispatcher);
+            }
             consumed = true;
             break;
 

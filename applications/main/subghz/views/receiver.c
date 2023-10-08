@@ -1,8 +1,6 @@
 #include "receiver.h"
 #include "../subghz_i.h"
-#include <assets_icons.h>
 #include <math.h>
-
 #include <input/input.h>
 #include <gui/elements.h>
 #include <m-array.h>

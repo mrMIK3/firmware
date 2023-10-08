@@ -49,6 +49,7 @@ typedef struct {
     bool lock_menu_type;
     bool sort_dirs_first;
     bool dark_mode;
+    uint32_t favorite_timeout;
     uint32_t charge_cap;
     SpiHandle spi_cc1101_handle;
     SpiHandle spi_nrf24_handle;
