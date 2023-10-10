@@ -34,6 +34,9 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [ESP32-C6 Gravity v0.6 (By chris-bc)](https://github.com/chris-bc/Flipper-Gravity)
 - Updated: [DAP Link v1.1 (By DrZlo13)-OFW](https://github.com/flipperdevices/flipperzero-firmware/pull/1897)
 - Updated: [GPS v1.2 (By ezod)](https://github.com/ezod/flipperzero-gps) `Req: NMEA 0183` (Changes By xMasterX)
+- SubGhz protocol integrations (Weather, Pocsag, TPMS) (By htotoo)
+- Add GPS support for SubGHz (By Sil333033)
+- CFW Settings - favorite_timeout (By WillyJL)
 
 <a name="release">
 
