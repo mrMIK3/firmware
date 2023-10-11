@@ -29,11 +29,15 @@ This software is for experimental purposes only and is not meant for any illegal
 
 ## Latest Updates - [PATREON: Latest Release RM1010-1900-0.93.1-3f6f92d](https://www.patreon.com/RogueMaster?filters[tag]=Latest%20Release)
 
-- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-10-10 19:00 EST`
-- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-10-10 19:00 EST`
+- Last Synced/Checked Unleashed, changes in [changelog](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/blob/420/CHANGELOG.md) and in [commits](https://github.com/DarkFlippers/unleashed-firmware/commits/dev): `2023-10-11 12:15 EST`
+- Last Synced/Checked OFW, changes in [commits](https://github.com/flipperdevices/flipperzero-firmware/commits/dev): `2023-10-11 12:15 EST`
 - Updated: [ESP32-C6 Gravity v0.6 (By chris-bc)](https://github.com/chris-bc/Flipper-Gravity)
 - Updated: [DAP Link v1.1 (By DrZlo13)-OFW](https://github.com/flipperdevices/flipperzero-firmware/pull/1897)
 - Updated: [GPS v1.2 (By ezod)](https://github.com/ezod/flipperzero-gps) `Req: NMEA 0183` (Changes By xMasterX)
+- Updated: [Dab Timer v1.2 (By RogueMaster)](https://github.com/RogueMaster/flipperzero-dabtimer) Added Binary Clock Face (By RogueMaster)
+- Updated: [FM Radio v1.1 (By coolshrimp)](https://github.com/coolshrimp/flipperzero-firmware-wPlugins/tree/420/applications/external/FM_Radio)
+- Updated: [Pokemon Trading v1.3 (By EstebanFuentealba)](https://github.com/EstebanFuentealba/Flipper-Zero-Game-Boy-Trading-Pokemons)
+- Updated: [Atomic Dice Roller v1.1 (By nmrr)](https://github.com/nmrr/flipperzero-atomicdiceroller)
 - SubGhz protocol integrations (Weather, Pocsag, TPMS) (By htotoo)
 - Add GPS support for SubGHz (By Sil333033)
 - CFW Settings - favorite_timeout (By WillyJL)
@@ -277,7 +281,7 @@ $ ./fbt dolphin_ext
 - [Analog Clock v1.1 (By scrolltex)](https://github.com/scrolltex/flipper_analog_clock)
 - [Apple BLE Spam v1.2 (By Willy-JL & ECTO-1A with research from xMasterX; OFW API thanks to noproto)](https://github.com/noproto/apple_ble_spam_ofw)
 - [APRS Cln Hello World (By NSV47)](https://github.com/NSV47/APRS_hello_world_clean)
-- [Atomic Dice Roller (By nmrr)](https://github.com/nmrr/flipperzero-atomicdiceroller)
+- [Atomic Dice Roller v1.1 (By nmrr)](https://github.com/nmrr/flipperzero-atomicdiceroller)
 - [Authenticator/TOTP v5.5.0 (By akopachov)](https://github.com/akopachov/flipper-zero_authenticator)
 - [AVR Flasher (By Skorpionm)](https://github.com/flipperdevices/flipperzero-firmware/pull/2475)
 - [AZERTY Mouse Jacker (By mothball187)](https://github.com/mothball187/flipperzero-nrf24/tree/main/mousejacker) `Req: NRF24` (Uses AZERTY keyboard - Source Unknown)
@@ -306,7 +310,7 @@ $ ./fbt dolphin_ext
 - [Count Down Timer v1.2 (By 0w0mewo)](https://github.com/0w0mewo/fpz_cntdown_timer)
 - [Counter v1.2 (By Krulknul)](https://github.com/Krulknul/dolphin-counter) [Improved (By plasticuproject)](https://github.com/plasticuproject/dolphin-better-counter)
 - [Cross Remote WIP (By leedave)](https://github.com/leedave/Leeds-Flipper-Zero-Applications/tree/feature/xremote)
-- [Dab Timer v1.1 (By RogueMaster)](https://github.com/RogueMaster/flipperzero-dabtimer)
+- [Dab Timer v1.2 (By RogueMaster)](https://github.com/RogueMaster/flipperzero-dabtimer)
 - [DAP Link v1.1 (By DrZlo13)-OFW](https://github.com/flipperdevices/flipperzero-firmware/pull/1897)
 - [DCF77 Transmitter v1.1 (By arha)](https://github.com/arha/flipper-dcf77)
 - [Deauther PWNDTOOLS V2.6.0 (By HEX0DAYS)](https://github.com/HEX0DAYS/FlipperZero-PWNDTOOLS) `Req: ESP8266` [Original](https://github.com/SpacehuhnTech/esp8266_deauther)
@@ -337,7 +341,7 @@ $ ./fbt dolphin_ext
 - [Flipagotchi WIP (By Matt-London)](https://github.com/Matt-London/pwnagotchi-flipper)
 - [FlipBIP Crypto Wallet v1.13 (By xtruan)](https://github.com/xtruan/FlipBIP)
 - [Flizzer Tracker (By LTVA1)](https://github.com/LTVA1/flizzer_tracker)
-- [FM Radio (By coolshrimp)](https://github.com/coolshrimp/flipperzero-firmware-wPlugins/tree/420/applications/external/FM_Radio)
+- [FM Radio v1.1 (By coolshrimp)](https://github.com/coolshrimp/flipperzero-firmware-wPlugins/tree/420/applications/external/FM_Radio)
 - [GPIO Controller (By Lokno)](https://github.com/Lokno/gpio_controller)
 - [GPIO Reader (biotinker) (By biotinker)](https://github.com/biotinker/flipperzero-gpioreader)
 - [GPIO Reader v1.1 (Aurelilc) (By aureli1c)](https://github.com/aureli1c/flipperzero_GPIO_read)
@@ -408,7 +412,6 @@ $ ./fbt dolphin_ext
 - [QR Code (By bmatcuk)](https://github.com/bmatcuk/flipperzero-qrcode)
 - [Radar Scanner v2.0 (By MatthewKuKanich)](https://github.com/MatthewKuKanich/flipper-radar) `Req: RCWL-0516`
 - [Radiation Sensor (By sionyx)](https://github.com/sionyx/flipper_radsens) `Req: RadSens`
-- [Radio WIP (By victormico)](https://github.com/victormico/flipperzero-radio) `Req: TEA5767`
 - [RC2014 ColecoVision (By ezod)](https://github.com/ezod/flipperzero-rc2014-coleco)
 - [RCWL-516 Motion Sensor (By ahmedafe1)](https://github.com/ahmedafe1/rcwl_0516-Flipperzero)
 - [Remote Maker (By gid9798)](https://github.com/DarkFlippers/unleashed-firmware/pull/487)
