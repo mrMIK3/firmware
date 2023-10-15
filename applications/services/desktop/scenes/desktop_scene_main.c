@@ -242,6 +242,11 @@ bool desktop_scene_main_on_event(void* context, SceneManagerEvent event) {
             desktop_scene_main_open_app_or_profile(desktop, PASSPORT_APP);
             break;
         }
+        case DesktopMainEventOpenAboutBattery: {
+            loader_start(desktop->loader, "Power", "about_battery", NULL);
+            consumed = true;
+            break;
+        }
         case DesktopMainEventOpenSnake: {
             desktop_scene_main_open_app_or_profile(desktop, SNAKE_APP);
             break;
