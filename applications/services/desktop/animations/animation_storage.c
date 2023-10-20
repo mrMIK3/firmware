@@ -17,28 +17,6 @@
 #define ANIMATION_DIR EXT_PATH("dolphin")
 #define TAG "AnimationStorage"
 
-<<<<<<< HEAD
-//Animation Theme Filenames must match the menu!
-const char* const anim_style_filenames[AnimStyleCount] = {
-    "%s/manifest_None.txt",       "%s/manifest.txt",
-    "%s/manifest_Minimal.txt",    "%s/manifest_420.txt",
-    "%s/manifest_42018.txt",      "%s/manifest_ALL.txt",
-    "%s/manifest_Anime.txt",      "%s/manifest_Anime420.txt",
-    "%s/manifest_Anime42018.txt", "%s/manifest_BMO.txt",
-    "%s/manifest_Cherry.txt",     "%s/manifest_CorpLogos.txt",
-    "%s/manifest_DBZ.txt",        "%s/manifest_Digim0n.txt",
-    "%s/manifest_Dolphin.txt",    "%s/manifest_Hackz.txt",
-    "%s/manifest_Mario.txt",      "%s/manifest_NYAN.txt",
-    "%s/manifest_OnePiece.txt",   "%s/manifest_P0kemon.txt",
-    "%s/manifest_RM18.txt",       "%s/manifest_RMSelect.txt",
-    "%s/manifest_RMSelect18.txt", "%s/manifest_SAO.txt",
-    "%s/manifest_Science.txt",    "%s/manifest_SJUMP.txt",
-    "%s/manifest_Squatch.txt",    "%s/manifest_Stock.txt",
-    "%s/manifest_WatchDogs.txt",  "%s/manifest_Leeroy.txt",
-};
-
-=======
->>>>>>> cddc6140c48753532024659eddcde578525bf766
 static void animation_storage_free_bubbles(BubbleAnimation* animation);
 static void animation_storage_free_frames(BubbleAnimation* animation);
 static void animation_storage_free_animation(BubbleAnimation** storage_animation);
@@ -146,6 +124,9 @@ static bool animation_storage_load_single_manifest_info(
         break;
     case AnimStyleWatchDogs:
         furi_string_printf(anim_manifest, "%s/manifest_WatchDogs.txt", ANIMATION_DIR);
+        break;
+    case AnimStyleLeeroy:
+        furi_string_printf(anim_manifest, "%s/manifest_Leeroy.txt", ANIMATION_DIR);
         break;
     default:
         furi_string_printf(anim_manifest, "%s/manifest.txt", ANIMATION_DIR);
@@ -299,6 +280,9 @@ void animation_storage_fill_animation_list(StorageAnimationList_t* animation_lis
         break;
     case AnimStyleWatchDogs:
         furi_string_printf(anim_manifest, "%s/manifest_WatchDogs.txt", ANIMATION_DIR);
+        break;
+    case AnimStyleLeeroy:
+        furi_string_printf(anim_manifest, "%s/manifest_Leeroy.txt", ANIMATION_DIR);
         break;
     default:
         furi_string_printf(anim_manifest, "%s/manifest.txt", ANIMATION_DIR);
