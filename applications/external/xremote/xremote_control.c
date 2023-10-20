@@ -7,6 +7,7 @@
  */
 
 #include "xremote_control.h"
+#include "xremote_edit.h"
 #include "infrared/infrared_remote.h"
 
 #include "views/xremote_general_view.h"
@@ -25,9 +26,9 @@ static uint32_t xremote_control_view_exit_callback(void* context) {
     return XRemoteViewIRSubmenu;
 }
 
-static void xremote_ir_clear_callback(void* context) {
+static void xremote_buttons_clear_callback(void* context) {
     xremote_app_assert_void(context);
-    infrared_remote_free((InfraredRemote*)context);
+    xremote_app_buttons_free((XRemoteAppButtons*)context);
 }
 
 static void xremote_control_submenu_callback(void* context, uint32_t index) {
@@ -44,37 +45,28 @@ static void xremote_control_submenu_callback(void* context, uint32_t index) {
     else if(index == XRemoteViewIRPlayback)
         xremote_app_view_alloc(app, index, xremote_player_view_alloc);
     else if(index == XRemoteViewIRCustomPage)
-        xremote_app_view_alloc(app, index, xremote_custom_view_alloc);
+        xremote_app_view_alloc2(app, index, xremote_custom_view_alloc, app->context);
+    else if(index == XRemoteViewIRCustomEditPage)
+        xremote_edit_view_alloc(app, index, app->context);
 
     if(app->view_ctx != NULL) {
-        xremote_app_view_set_previous_callback(app, xremote_control_view_exit_callback);
-        xremote_app_set_view_context(app, app->context, NULL);
+        if(index != XRemoteViewIRCustomEditPage) {
+            xremote_app_view_set_previous_callback(app, xremote_control_view_exit_callback);
+            xremote_app_set_view_context(app, app->context, NULL);
+        }
+
         xremote_app_switch_to_view(app, index);
     }
 }
 
-static InfraredRemote* xremote_load_ir_buttons(XRemoteAppContext* app_ctx) {
-    /* Show file selection dialog (returns selected file path with app_ctx->file_path) */
-    if(!xremote_app_browser_select_file(app_ctx, XREMOTE_APP_EXTENSION)) return NULL;
-    InfraredRemote* remote = infrared_remote_alloc();
-
-    /* Load buttons from the selected path */
-    if(!infrared_remote_load(remote, app_ctx->file_path)) {
-        infrared_remote_free(remote);
-        return NULL;
-    }
-
-    return remote;
-}
-
 XRemoteApp* xremote_control_alloc(XRemoteAppContext* app_ctx) {
     /* Open file browser and load buttons from selected file */
-    InfraredRemote* remote = xremote_load_ir_buttons(app_ctx);
-    xremote_app_assert(remote, NULL);
+    XRemoteAppButtons* buttons = xremote_app_buttons_load(app_ctx);
+    xremote_app_assert(buttons, NULL);
 
     /* Allocate remote controller app with submenu */
     XRemoteApp* app = xremote_app_alloc(app_ctx);
-    xremote_app_set_user_context(app, remote, xremote_ir_clear_callback);
+    xremote_app_set_user_context(app, buttons, xremote_buttons_clear_callback);
     xremote_app_submenu_alloc(app, XRemoteViewIRSubmenu, xremote_control_submenu_exit_callback);
 
     xremote_app_submenu_add(
@@ -87,6 +79,8 @@ XRemoteApp* xremote_control_alloc(XRemoteAppContext* app_ctx) {
         app, "Playback", XRemoteViewIRPlayback, xremote_control_submenu_callback);
     xremote_app_submenu_add(
         app, "Custom", XRemoteViewIRCustomPage, xremote_control_submenu_callback);
+    xremote_app_submenu_add(
+        app, "Edit", XRemoteViewIRCustomEditPage, xremote_control_submenu_callback);
 
     return app;
 }
