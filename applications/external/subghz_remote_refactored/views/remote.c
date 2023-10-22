@@ -216,10 +216,17 @@ bool subrem_view_remote_input(InputEvent* event, void* context) {
     furi_assert(context);
     SubRemViewRemote* subrem_view_remote = context;
 
-    if(event->key == InputKeyBack && event->type == InputTypeLong) {
+    /* Changed from long button press to short. The creator was obviously thinking of using the
+       back button as a remote button, but they didnt do it. Some of the code is there, and it doesnt need to be! */
+    if(event->key == InputKeyBack) {
         subrem_view_remote->callback(SubRemCustomEventViewRemoteBack, subrem_view_remote->context);
         return true;
-    } else if(event->key == InputKeyBack && event->type == InputTypeShort) {
+    }
+
+    /* This bit of code is fucked. they dont use the back button for a remote button. 
+     I am using short back press for exit now, so fuk this crap off.
+
+    else if(event->key == InputKeyBack && event->type == InputTypeShort) {
         with_view_model(
             subrem_view_remote->view,
             SubRemViewRemoteModel * model,
@@ -230,7 +237,7 @@ bool subrem_view_remote_input(InputEvent* event, void* context) {
         return true;
     } else if(event->key == InputKeyBack) {
         return true;
-    }
+    }*/
     // BACK button processing end
 
     if(event->key == InputKeyUp && event->type == InputTypePress) {
