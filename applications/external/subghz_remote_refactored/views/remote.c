@@ -235,32 +235,40 @@ bool subrem_view_remote_input(InputEvent* event, void* context) {
         subrem_view_remote->callback(
             SubRemCustomEventViewRemoteForcedStop, subrem_view_remote->context);
         return true;
-    } else if(event->key == InputKeyBack) {
-        return true;
     }*/
-    // BACK button processing end
 
-    if(event->key == InputKeyUp && event->type == InputTypePress) {
+    else if(event->key == InputKeyBack) {
+        return true;
+    }
+    * /
+        // BACK button processing end
+
+        if(event->key == InputKeyUp && event->type == InputTypePress) {
         subrem_view_remote->callback(
             SubRemCustomEventViewRemoteStartUP, subrem_view_remote->context);
         return true;
-    } else if(event->key == InputKeyDown && event->type == InputTypePress) {
+    }
+    else if(event->key == InputKeyDown && event->type == InputTypePress) {
         subrem_view_remote->callback(
             SubRemCustomEventViewRemoteStartDOWN, subrem_view_remote->context);
         return true;
-    } else if(event->key == InputKeyLeft && event->type == InputTypePress) {
+    }
+    else if(event->key == InputKeyLeft && event->type == InputTypePress) {
         subrem_view_remote->callback(
             SubRemCustomEventViewRemoteStartLEFT, subrem_view_remote->context);
         return true;
-    } else if(event->key == InputKeyRight && event->type == InputTypePress) {
+    }
+    else if(event->key == InputKeyRight && event->type == InputTypePress) {
         subrem_view_remote->callback(
             SubRemCustomEventViewRemoteStartRIGHT, subrem_view_remote->context);
         return true;
-    } else if(event->key == InputKeyOk && event->type == InputTypePress) {
+    }
+    else if(event->key == InputKeyOk && event->type == InputTypePress) {
         subrem_view_remote->callback(
             SubRemCustomEventViewRemoteStartOK, subrem_view_remote->context);
         return true;
-    } else if(event->type == InputTypeRelease) {
+    }
+    else if(event->type == InputTypeRelease) {
         subrem_view_remote->callback(SubRemCustomEventViewRemoteStop, subrem_view_remote->context);
         return true;
     }
