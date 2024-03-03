@@ -1,0 +1,14 @@
+App(
+    appid="bool",
+    name="BoolFP",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="bool",
+    cdefines=["APP_HELLO_WORLD"],
+    requires=[
+        "gui",
+    ],
+    stack_size=2 * 1024,
+    order=20,
+    fap_icon="bool.png",
+    fap_category="I_Made_These",
+)
