@@ -32,12 +32,14 @@ static struct {
     uint8_t rainbow_speed;
     uint32_t rainbow_interval;
     uint32_t rainbow_saturation;
-} rgb_settings = {
+}rgb_settings = {
     .colors =
         {
-            {255, 69, 0},
-            {255, 69, 0},
-            {255, 69, 0},
+            {240, 69, 0}, // Color for LED 1
+            {240, 69, 0}, // Color for LED 2
+            {240, 69, 0}, // Color for LED 3
+            {240, 69, 0}, // Additional Color for LED 4
+            {240, 69, 0}, // Additional Color for LED 5
         },
     .rainbow_mode = RGBBacklightRainbowModeOff,
     .rainbow_speed = 5,
@@ -239,19 +241,18 @@ void rgb_backlight_update(uint8_t brightness, bool tick) {
         furi_check(furi_mutex_release(rgb_state.mutex) == FuriStatusOk);
         return;
     }
-
     switch(rgb_settings.rainbow_mode) {
-    case RGBBacklightRainbowModeOff: {
+        case RGBBacklightRainbowModeOff: {
         float bright = brightness / 255.0f;
         for(uint8_t i = 0; i < SK6805_get_led_count(); i++) {
-            SK6805_set_led_color(
-                i,
-                rgb_settings.colors[i].r * bright,
-                rgb_settings.colors[i].g * bright,
-                rgb_settings.colors[i].b * bright);
+                SK6805_set_led_color(
+                    i,
+                    (uint8_t)(rgb_settings.colors[i].r * bright),
+                    (uint8_t)(rgb_settings.colors[i].g * bright),
+                    (uint8_t)(rgb_settings.colors[i].b * bright));
+            }
+            break;
         }
-        break;
-    }
 
     case RGBBacklightRainbowModeWave:
     case RGBBacklightRainbowModeSolid: {
@@ -265,15 +266,17 @@ void rgb_backlight_update(uint8_t brightness, bool tick) {
         hsv2rgb(&rgb_state.rainbow_hsv, &rgb);
 
         if(rgb_settings.rainbow_mode == RGBBacklightRainbowModeWave) {
-            HsvColor hsv = rgb_state.rainbow_hsv;
-            for(uint8_t i = 0; i < SK6805_get_led_count(); i++) {
-                if(i) {
-                    hsv.h += (50 * i);
-                    hsv2rgb(&hsv, &rgb);
+            HsvColor hsv;
+            int baseHue = rgb_state.rainbow_hsv.h; // This should be updated elsewhere in your code to shift the hue over time
+            int hueIncrement = 15; // Example granular increment. Adjust based on desired effect.
+        for(uint8_t i = 0; i < SK6805_get_led_count(); i++) {
+                hsv.h = (baseHue + (hueIncrement * i)) % 360; // Calculate the hue for each LED
+                hsv.s = rgb_state.rainbow_hsv.s; // Maintain the saturation from the global state
+                hsv.v = rgb_state.rainbow_hsv.v; // Maintain the brightness from the global state
+                hsv2rgb(&hsv, &rgb); // Convert to RGB
+                SK6805_set_led_color(i, rgb.r, rgb.g, rgb.b); // Set the color for each LED
                 }
-                SK6805_set_led_color(i, rgb.r, rgb.g, rgb.b);
-            }
-        } else {
+            } else {
             for(uint8_t i = 0; i < SK6805_get_led_count(); i++) {
                 SK6805_set_led_color(i, rgb.r, rgb.g, rgb.b);
             }

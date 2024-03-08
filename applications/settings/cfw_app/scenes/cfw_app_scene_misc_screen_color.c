@@ -42,9 +42,9 @@ bool cfw_app_scene_misc_screen_color_on_event(void* context, SceneManagerEvent e
             switch(cfw_settings.lcd_style) {
             case 0:
                 notification_message(app->notification, &sequence_display_backlight_off);
-                rgb_backlight_set_color(0, &app->lcd_color);
-                rgb_backlight_set_color(1, &app->lcd_color);
-                rgb_backlight_set_color(2, &app->lcd_color);
+                for (uint8_t i = 0; i < 5; i++) { // Update for 5 LEDs
+                    rgb_backlight_set_color(i, &app->lcd_color);
+                }
                 notification_message(app->notification, &sequence_display_backlight_on);
                 app->save_backlight = true;
                 break;

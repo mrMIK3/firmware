@@ -5,6 +5,8 @@ enum VarItemListIndex {
     VarItemListIndexLcdColor0,
     VarItemListIndexLcdColor1,
     VarItemListIndexLcdColor2,
+    VarItemListIndexLcdColor3,
+    VarItemListIndexLcdColor4,
     VarItemListIndexRainbowLcd,
     VarItemListIndexRainbowSpeed,
     VarItemListIndexRainbowInterval,
@@ -21,9 +23,9 @@ static void cfw_app_scene_misc_screen_lcd_static_color_changed(VariableItem* ite
     uint8_t index = variable_item_get_current_value_index(item);
     variable_item_set_current_value_text(item, lcd_colors[index].name);
     notification_message(app->notification, &sequence_display_backlight_off);
-    rgb_backlight_set_color(0, &lcd_colors[index].color);
-    rgb_backlight_set_color(1, &lcd_colors[index].color);
-    rgb_backlight_set_color(2, &lcd_colors[index].color);
+    for (uint8_t i = 0; i < 5; i++) { // Loop through all 5 LEDs
+        rgb_backlight_set_color(i, &lcd_colors[index].color); // Set color for each LED
+    }
     notification_message(app->notification, &sequence_display_backlight_on);
     app->save_backlight = true;
 }
@@ -44,6 +46,12 @@ static void cfw_app_scene_misc_screen_lcd_color_1_changed(VariableItem* item) {
 }
 static void cfw_app_scene_misc_screen_lcd_color_2_changed(VariableItem* item) {
     cfw_app_scene_misc_screen_lcd_color_changed(item, 2);
+}
+static void cfw_app_scene_misc_screen_lcd_color_3_changed(VariableItem* item) {
+    cfw_app_scene_misc_screen_lcd_color_changed(item, 3);
+}
+static void cfw_app_scene_misc_screen_lcd_color_4_changed(VariableItem* item) {
+    cfw_app_scene_misc_screen_lcd_color_changed(item, 4);
 }
 const char* const rainbow_lcd_names[RGBBacklightRainbowModeCount] = {
     "OFF",
@@ -128,6 +136,8 @@ void cfw_app_scene_misc_screen_rgb_settings_on_enter(void* context) {
         {0, cfw_app_scene_misc_screen_lcd_color_0_changed},
         {1, cfw_app_scene_misc_screen_lcd_color_1_changed},
         {2, cfw_app_scene_misc_screen_lcd_color_2_changed},
+        {3, cfw_app_scene_misc_screen_lcd_color_3_changed}, // Added for LED 4
+        {4, cfw_app_scene_misc_screen_lcd_color_4_changed}, // Added for LED 5
     };
 
     size_t lcd_sz = COUNT_OF(lcd_colors);
@@ -255,6 +265,8 @@ bool cfw_app_scene_misc_screen_rgb_settings_on_event(void* context, SceneManager
         case VarItemListIndexLcdColor0:
         case VarItemListIndexLcdColor1:
         case VarItemListIndexLcdColor2:
+        case VarItemListIndexLcdColor3: // Add handling for LED 4
+        case VarItemListIndexLcdColor4: // Add handling for LED 5
             if(cfw_settings.lcd_style == 0 || cfw_settings.lcd_style == 1) {
                 scene_manager_set_scene_state(
                     app->scene_manager,

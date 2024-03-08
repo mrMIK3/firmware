@@ -73,7 +73,7 @@ void CFW_SETTINGS_LOAD() {
     furi_record_close(RECORD_STORAGE);
 
     rgb_backlight_load_settings(x->rgb_backlight);
-    FURI_LOG_I(TAG, "RM WUZ HERE");
+    FURI_LOG_I(TAG, "RM WUZ HERE AND .RAW TOO, MESSING EVERYTHING UP! SORRY.");
 }
 
 void CFW_SETTINGS_SAVE() {
