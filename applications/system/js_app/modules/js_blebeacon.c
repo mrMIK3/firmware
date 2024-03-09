@@ -176,10 +176,7 @@ static void js_blebeacon_stop(struct mjs* mjs) {
         blebeacon->saved_prev_active = true;
         blebeacon->prev_active = furi_hal_bt_extra_beacon_is_active();
     }
-    if(!furi_hal_bt_extra_beacon_stop()) {
-        ret_int_err(mjs, "Failed stopping beacon");
-        return;
-    }
+    furi_hal_bt_extra_beacon_stop();
 
     mjs_return(mjs, MJS_UNDEFINED);
 }
@@ -212,7 +209,7 @@ static void js_blebeacon_destroy(void* inst) {
     JsBlebeaconInst* blebeacon = inst;
     if(!blebeacon->keep_alive) {
         if(furi_hal_bt_extra_beacon_is_active()) {
-            furi_check(furi_hal_bt_extra_beacon_stop());
+            furi_hal_bt_extra_beacon_stop();
         }
         if(blebeacon->saved_prev_cfg && blebeacon->prev_cfg_set) {
             furi_check(furi_hal_bt_extra_beacon_set_config(&blebeacon->prev_cfg));
