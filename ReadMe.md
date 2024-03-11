@@ -62,6 +62,7 @@ This software is for experimental purposes only and is not meant for any illegal
 - Updated: [Digimon F-Com v1.1 (By TylerWilley)](https://github.com/TylerWilley/flipper-f-com)
 - Added: [JS Script: Windows_Exfil-GSHD.js (By Gas Station Hot Dog)](https://github.com/User84User/User84PublicUser/blob/main/Windows_Exfil-GSHD.js)
 - [Fix JS Load (By RogueMaster)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/7034b4ded5db7d7436f064ef031f652d8682b942)
+- [Updated Archive Plugin for Disk Image support (By Willy-JL)](https://github.com/RogueMaster/flipperzero-firmware-wPlugins/commit/)
 
 <a name="release">
 
